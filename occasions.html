@@ -26,11 +26,11 @@ body{
   overflow-x:hidden;
 }
 
-/* �"?�"? IC�"NES REMPLACEMENT EMOJIS �"?�"? */
+/* ── ICÔNES REMPLACEMENT EMOJIS ── */
 .hb-dot{width:8px;height:8px;border-radius:50%;background:var(--vwl);flex-shrink:0;}
 .crow-bar{display:inline-block;width:3px;height:16px;background:var(--vwm);border-radius:2px;flex-shrink:0;margin-top:3px;}
 
-/* �"?�"? NAV �"?�"? */
+/* ── NAV ── */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:200;
   display:flex;align-items:center;justify-content:space-between;
@@ -102,7 +102,7 @@ nav{
 
 
 
-/* �"?�"? PAGE OCCASIONS �"?�"? */
+/* ── PAGE OCCASIONS ── */
 .occ-hero{
   min-height:300px;
   background:var(--vw);
@@ -245,7 +245,7 @@ nav{
 .d2{transition-delay:.24s;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-/* �"?�"? FOOTER �"?�"? */
+/* ── FOOTER ── */
 footer{
   background:var(--vw);
   padding:52px 56px 0;
@@ -269,14 +269,14 @@ footer{
 .f-priv:hover{color:var(--vwl);}
 @media(max-width:960px){footer{grid-template-columns:1fr;padding:40px 24px 0;}.f-col{padding-bottom:28px;}}
 
-/* �"?�"? REVEAL �"?�"? */
+/* ── REVEAL ── */
 .r{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
 .r.v{opacity:1;transform:none;}
 .rl{opacity:0;transform:translateX(-28px);transition:opacity .7s ease,transform .7s ease;}
 .rl.v{opacity:1;transform:none;}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
 
-/* �"?�"? RESPONSIVE �"?�"? */
+/* ── RESPONSIVE ── */
 @media(max-width:960px){
   nav{padding:0 20px;}
   .nav-links{display:none;}
@@ -298,17 +298,17 @@ footer{
   .f-right{text-align:left;}
 }
 
-/* �"?�"? COOKIE BANNER �"?�"? */
+/* ── COOKIE BANNER ── */
 @media(max-width:640px){}
 
-/* �"?�"? COOKIE BANNER �"?�"? */
+/* ── COOKIE BANNER ── */
 .cookie-text{}
 .cookie-desc a:hover{text-decoration:underline;}
 @media(max-width:960px){
 }
 
 
-/* �"?�"? PRIVACY PAGE �"?�"? */
+/* ── PRIVACY PAGE ── */
 .privacy-section{background:var(--off);}
 .privacy-inner{max-width:860px;}
 .privacy-content{margin-top:48px;display:flex;flex-direction:column;gap:0;}
@@ -343,9 +343,9 @@ footer{
   nav{padding:0 24px;}
 }
 
-/* �.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.�
+/* ═══════════════════════════════════════
    RESPONSIVE — TABLETTE & MOBILE
-�.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.� */
+═══════════════════════════════════════ */
 
 /* Hamburger bouton */
 .nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:4px;}
@@ -354,14 +354,14 @@ footer{
 .nav-burger.open span:nth-child(2){opacity:0;}
 .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
-/* �"?�"? TABLETTE (�?�900px) �"?�"? */
+/* ── TABLETTE (≤900px) ── */
 @media(max-width:900px){
   nav{padding:0 24px;}
   .nav-links{gap:1px;}
   .nav-links>li>a{font-size:12px;padding:6px 10px;}
 }
 
-/* �"?�"? MOBILE (�?�700px) �"?�"? */
+/* ── MOBILE (≤700px) ── */
 @media(max-width:700px){
   nav{padding:0 20px;height:60px;}
   .nav-burger{display:flex;}
@@ -465,7 +465,7 @@ footer{
   .cookie-accept,.cookie-refuse{flex:1;text-align:center;}
 }
 
-/* �"?�"? TABLETTE (701px—900px) �"?�"? */
+/* ── TABLETTE (701px–900px) ── */
 @media(min-width:701px) and (max-width:900px){
   .membres-wrap{grid-template-columns:repeat(3,1fr);}
   .card-email{font-size:11px;word-break:break-all;}
@@ -474,7 +474,7 @@ footer{
   .hero-content{padding:120px 40px 80px;}
 }
 
-/* �"?�"? FIX OVERFLOW MOBILE �"?�"? */
+/* ── FIX OVERFLOW MOBILE ── */
 @media(max-width:700px){
   /* Histoire — timeline */
   .t-body{width:100%;max-width:100%;overflow:hidden;}
@@ -520,11 +520,11 @@ footer{
     <li>
       <a href="index.html#vente" class="has-drop mob-toggle" style="color:var(--vw);">Vente</a>
       <div class="nav-drop">
-        <a href="https://www.volkswagen.ch/fr/configurateur.html?---=%7B%22configuration-step-navigation-service%22%3A%22%2F%3FconfigStep%3D%257B%2522context%2522%253A%2522mofa-standalone%2522%252C%2522selectedStep%2522%253A%2522carline%2522%257D%22%7D" target="_blank">Véhicules neufs VW �?'</a>
-        <a href="https://www.volkswagen-nutzfahrzeuge.ch/fr.html" target="_blank">Véhicules neufs VW Utilitaire �?'</a>
+        <a href="https://www.volkswagen.ch/fr/configurateur.html?---=%7B%22configuration-step-navigation-service%22%3A%22%2F%3FconfigStep%3D%257B%2522context%2522%253A%2522mofa-standalone%2522%252C%2522selectedStep%2522%253A%2522carline%2522%257D%22%7D" target="_blank">Véhicules neufs VW →</a>
+        <a href="https://www.volkswagen-nutzfahrzeuge.ch/fr.html" target="_blank">Véhicules neufs VW Utilitaire →</a>
         <a href="occasions.html">Véhicules d'occasion</a>
         <div class="nav-drop-sep"></div>
-        <a href="https://www.amag-leasing.ch/fr.html" target="_blank">Offre de financement �?'</a>
+        <a href="https://www.amag-leasing.ch/fr.html" target="_blank">Offre de financement →</a>
       </div>
     </li>
     <li>
@@ -579,7 +579,7 @@ footer{
           <div class="occ-widget-bar-sub">AutoScout24</div>
         </div>
       </div>
-      <a href="https://www.autoscout24.ch/fr/s/seller-61042" target="_blank" class="occ-widget-bar-link">Voir sur AutoScout24 �?'</a>
+      <a href="https://www.autoscout24.ch/fr/s/seller-61042" target="_blank" class="occ-widget-bar-link">Voir sur AutoScout24 →</a>
     </div>
     <div class="occ-as-container">
       <div class="hci-container" data-config-id="3352" data-language="fr" data-entry-point="search"></div>
@@ -591,8 +591,8 @@ footer{
 <div class="occ-cta">
   <div class="occ-cta-txt">Une question sur<br><strong>un véhicule ?</strong></div>
   <div class="occ-cta-btns">
-    <a href="index.html#nous-contacter" class="occ-cta-p">Nous contacter �?'</a>
-    <a href="tel:+41266602586" class="occ-cta-s">Appeler �?'</a>
+    <a href="index.html#nous-contacter" class="occ-cta-p">Nous contacter →</a>
+    <a href="tel:+41266602586" class="occ-cta-s">Appeler →</a>
   </div>
 </div>
 
@@ -610,7 +610,7 @@ footer{
   </div>
   <div class="f-col">
     <div class="f-col-title">Horaires</div>
-    <div class="f-info">Lun — Ven · 07h30 — 12h00 / 13h30 — 17h30</div>
+    <div class="f-info">Lun – Ven · 07h30 – 12h00 / 13h30 – 17h30</div>
     <div class="f-info">Samedi · sur rendez-vous</div>
     <div class="f-info" style="margin-top:6px;">Digibox · 24h/24 · 7j/7</div>
   </div>
@@ -721,7 +721,7 @@ revEls.forEach(el => io.observe(el));
                 font-family:'Plus Jakarta Sans',sans-serif;
                 font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
                 transition:all .35s;">
-        Voir notre stock AutoScout24 �?'
+        Voir notre stock AutoScout24 →
       </a>`;
     container.appendChild(fb);
   }

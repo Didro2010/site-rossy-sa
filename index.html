@@ -26,7 +26,7 @@ body{
   overflow-x:hidden;
 }
 
-/* �"?�"? NAV �"?�"? */
+/* ── NAV ── */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:200;
   display:flex;align-items:center;justify-content:space-between;
@@ -97,7 +97,7 @@ nav{
   50%{box-shadow:0 0 0 8px rgba(0,64,193,0);}
 }
 
-/* �"?�"? HERO �"?�"? */
+/* ── HERO ── */
 .hero{min-height:65vh;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;background:var(--vw);}
 .hero-parallax{position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;}
 .hero-parallax video{width:100%;height:100%;object-fit:cover;object-position:center 35%;}
@@ -136,7 +136,7 @@ nav{
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-/* �"?�"? MARQUEE �"?�"? */
+/* ── MARQUEE ── */
 
 
 
@@ -145,13 +145,13 @@ nav{
 
 100%{transform:translateX(-50%)}}
 
-/* �"?�"? PHOTO BAND �"?�"? */
+/* ── PHOTO BAND ── */
 .pb{overflow:hidden;position:relative;}
 .pb img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease,filter .5s;}
 .pb:hover img{transform:scale(1.05);filter:brightness(1.05);}
 .pb-cap{position:absolute;bottom:0;left:0;right:0;padding:40px 20px 16px;background:linear-gradient(transparent,rgba(0,30,80,.65));font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.8);}
 
-/* �"?�"? SECTION BASE �"?�"? */
+/* ── SECTION BASE ── */
 .section{padding:100px 56px;}
 .s-eye{font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--vwm);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
 .s-eye::before{content:'';display:block;width:22px;height:1.5px;background:var(--vwm);}
@@ -160,7 +160,7 @@ nav{
 .s-title em{font-style:italic;font-weight:200;color:var(--vwm);}
 .s-title-w{color:#fff;}
 
-/* �"?�"? SERVICES — IMAGE CARDS WITH PARALLAX �"?�"? */
+/* ── SERVICES — IMAGE CARDS WITH PARALLAX ── */
 .services{background:var(--off);}
 .svc-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;}
 .svc-head-desc{max-width:360px;font-size:14px;font-weight:300;line-height:1.85;color:var(--grey);}
@@ -211,7 +211,7 @@ nav{
 .svc-tags{display:flex;flex-wrap:wrap;gap:6px;}
 .svc-tag{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--vwl);border:1px solid rgba(0,176,240,.3);padding:3px 10px;background:rgba(0,176,240,.07);}
 
-/* �"?�"? TEAM �"?�"? */
+/* ── TEAM ── */
 .team{background:var(--w);}
 .team-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;}
 .team-sub{max-width:320px;font-size:13px;font-weight:300;line-height:1.8;color:var(--grey);}
@@ -228,7 +228,7 @@ nav{
 .tcard-name{font-size:17px;font-weight:700;color:var(--vw);letter-spacing:-.2px;margin-bottom:2px;}
 .tcard-role{font-size:12px;color:var(--grey);}
 
-/* �"?�"? SERVICE CAM �"?�"? */
+/* ── SERVICE CAM ── */
 .svcam{max-width:1180px;margin:0 auto 90px;padding:0 40px;}
 .cam-head{margin-bottom:58px;}
 .cam-name-row{display:flex;align-items:center;gap:18px;}
@@ -266,7 +266,7 @@ nav{
   .cam-photos{grid-template-columns:1fr;gap:16px;}
 }
 
-/* �"?�"? DIGIBOX �"?�"? */
+/* ── DIGIBOX ── */
 .digibox{background:var(--w);padding:100px 56px;}
 .digi-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
 .digi-eye{color:var(--vwm)!important;}
@@ -291,7 +291,7 @@ nav{
 .svc-key-text{font-size:12px;font-weight:600;color:rgba(255,255,255,.85);letter-spacing:.3px;}
 .svc-key-text em{font-style:normal;color:var(--vwl);}
 
-/* �"?�"? AVIS GOOGLE �"?�"? */
+/* ── AVIS GOOGLE ── */
 .reviews{background:var(--off);padding:100px 56px;}
 .rev-inner{max-width:1320px;margin:0 auto;}
 .rev-head{display:flex;align-items:flex-start;justify-content:space-between;gap:48px;margin-bottom:56px;flex-wrap:wrap;}
@@ -372,7 +372,7 @@ nav{
   .rev-next{right:-8px;}
 }
 
-/* �"?�"? CONTACT FORM �"?�"? */
+/* ── CONTACT FORM ── */
 .contactform{background:var(--w);}
 .cf-inner{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:flex-start;}
 .cf-desc{font-size:14px;font-weight:300;line-height:1.85;color:var(--grey);margin-top:20px;max-width:340px;}
@@ -397,7 +397,7 @@ nav{
 .cf-success.show{display:block;}
 @media(max-width:960px){.cf-inner{grid-template-columns:1fr;gap:40px;}.cf-form{padding:24px;}.cf-row{grid-template-columns:1fr;gap:0;}}
 
-/* �"?�"? CONTACT SECTION �"?�"? */
+/* ── CONTACT SECTION ── */
 .contact{background:var(--off);}
 .contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px;}
 .ccard{background:var(--w);border-radius:3px;box-shadow:0 4px 20px rgba(0,30,80,.06);overflow:hidden;}
@@ -424,7 +424,7 @@ nav{
 .map-foot a{color:#fff;text-decoration:none;font-size:12px;font-weight:600;display:flex;align-items:center;gap:8px;transition:gap var(--t);}
 .map-foot a:hover{gap:14px;}
 
-/* �"?�"? CTA �"?�"? */
+/* ── CTA ── */
 .cta{background:var(--vwm);padding:80px 56px;display:flex;justify-content:space-between;align-items:center;gap:40px;}
 .cta-txt{font-size:clamp(28px,4vw,52px);font-weight:200;color:#fff;letter-spacing:-1px;line-height:.95;}
 .cta-txt strong{font-weight:800;}
@@ -434,7 +434,7 @@ nav{
 .cta-s{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.85);text-decoration:none;padding:14px 28px;border-radius:2px;transition:all var(--t);}
 .cta-s:hover{border-color:#fff;color:#fff;}
 
-/* �"?�"? FOOTER �"?�"? */
+/* ── FOOTER ── */
 footer{
   background:var(--vw);
   padding:52px 56px 0;
@@ -445,7 +445,7 @@ footer{
   gap:0 48px;
 }
 
-/* �"?�"? COOKIE BANNER �"?�"? */
+/* ── COOKIE BANNER ── */
 .cookie-banner{
   position:fixed;bottom:0;left:0;right:0;z-index:9999;
   background:var(--vw);
@@ -492,7 +492,7 @@ footer{
 }
 
 
-/* �"?�"? PRIVACY PAGE �"?�"? */
+/* ── PRIVACY PAGE ── */
 .privacy-section{background:var(--off);}
 .privacy-inner{max-width:860px;}
 .privacy-content{margin-top:48px;display:flex;flex-direction:column;gap:0;}
@@ -518,14 +518,14 @@ footer{
 .cf-legal a:hover{text-decoration:underline;}
 
 
-/* �"?�"? IC�"NES REMPLACEMENT EMOJIS �"?�"? */
+/* ── ICÔNES REMPLACEMENT EMOJIS ── */
 .svc-icon-line{width:28px;height:2px;background:var(--vwl);margin-bottom:18px;}
 .digi-dash{color:var(--vwl);font-weight:700;font-size:16px;flex-shrink:0;}
 .crow-bar{display:inline-block;width:3px;height:16px;background:var(--vwm);border-radius:2px;flex-shrink:0;margin-top:3px;}
 .cf-info-bar{display:inline-block;width:3px;height:14px;background:var(--vwm);border-radius:2px;flex-shrink:0;}
 .svc-key-dash{color:var(--vwl);font-weight:700;flex-shrink:0;}
 
-/* �"?�"? FOOTER COLONNES �"?�"? */
+/* ── FOOTER COLONNES ── */
 .f-col{display:flex;flex-direction:column;gap:10px;padding-bottom:40px;}
 .f-col-title{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--vwl);margin-bottom:6px;}
 .f-info{font-size:12px;color:rgba(255,255,255,.6);line-height:1.7;}
@@ -537,7 +537,7 @@ footer{
 .f-priv:hover{color:var(--vwl);}
 .f-tag{font-size:12px;font-weight:300;font-style:italic;color:rgba(255,255,255,.5);line-height:1.7;}
 
-/* �"?�"? COOKIE BANNER �"?�"? */
+/* ── COOKIE BANNER ── */
 #cookieBanner{
   position:fixed;bottom:0;left:0;right:0;
   background:var(--vw);
@@ -561,7 +561,7 @@ footer{
 .cookie-accept{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--vwl);color:#fff;border:none;padding:10px 22px;border-radius:2px;cursor:pointer;transition:all var(--t);}
 .cookie-accept:hover{background:#fff;color:var(--vw);}
 
-/* �"?�"? PHOTO BAND D�?FILANT �"?�"? */
+/* ── PHOTO BAND DÉFILANT ── */
 .pb-band{position:relative;height:260px;overflow:hidden;background:var(--vw);margin-bottom:80px;}
 .pb-inner{display:flex;height:100%;gap:0;animation:pb-scroll 40s linear infinite;}
 .pb-band:hover .pb-inner{animation-play-state:paused;}
@@ -572,9 +572,9 @@ footer{
 @keyframes pb-scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 @media(max-width:960px){.pb-band{height:200px;}.pb-item{flex:0 0 80%;min-width:80%;}}
 
-/* �.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.�
+/* ═══════════════════════════════════════
    RESPONSIVE — TABLETTE & MOBILE
-�.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.��.� */
+═══════════════════════════════════════ */
 
 /* Hamburger bouton */
 .nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:4px;}
@@ -583,14 +583,14 @@ footer{
 .nav-burger.open span:nth-child(2){opacity:0;}
 .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
-/* �"?�"? TABLETTE (�?�900px) �"?�"? */
+/* ── TABLETTE (≤900px) ── */
 @media(max-width:900px){
   nav{padding:0 24px;}
   .nav-links{gap:1px;}
   .nav-links>li>a{font-size:12px;padding:6px 10px;}
 }
 
-/* �"?�"? MOBILE (�?�700px) �"?�"? */
+/* ── MOBILE (≤700px) ── */
 @media(max-width:700px){
   nav{padding:0 20px;height:60px;}
   .nav-burger{display:flex;}
@@ -718,7 +718,7 @@ footer{
   .rev-card{flex:0 0 100% !important;}
 }
 
-/* �"?�"? TABLETTE (701px—900px) �"?�"? */
+/* ── TABLETTE (701px–900px) ── */
 @media(min-width:701px) and (max-width:900px){
   .membres-wrap{grid-template-columns:repeat(3,1fr);}
   .card-email{font-size:11px;word-break:break-all;}
@@ -743,11 +743,11 @@ footer{
     <li>
       <a href="#vente" class="has-drop mob-toggle">Vente</a>
       <div class="nav-drop">
-        <a href="https://www.volkswagen.ch/fr/configurateur.html?---=%7B%22configuration-step-navigation-service%22%3A%22%2F%3FconfigStep%3D%257B%2522context%2522%253A%2522mofa-standalone%2522%252C%2522selectedStep%2522%253A%2522carline%2522%257D%22%7D" target="_blank">Véhicules neufs VW �?'</a>
-        <a href="https://www.volkswagen-nutzfahrzeuge.ch/fr.html" target="_blank">Véhicules neufs VW Utilitaire �?'</a>
+        <a href="https://www.volkswagen.ch/fr/configurateur.html?---=%7B%22configuration-step-navigation-service%22%3A%22%2F%3FconfigStep%3D%257B%2522context%2522%253A%2522mofa-standalone%2522%252C%2522selectedStep%2522%253A%2522carline%2522%257D%22%7D" target="_blank">Véhicules neufs VW →</a>
+        <a href="https://www.volkswagen-nutzfahrzeuge.ch/fr.html" target="_blank">Véhicules neufs VW Utilitaire →</a>
         <a href="occasions.html">Véhicules d'occasion</a>
         <div class="nav-drop-sep"></div>
-        <a href="https://www.amag-leasing.ch/fr.html" target="_blank">Offre de financement �?'</a>
+        <a href="https://www.amag-leasing.ch/fr.html" target="_blank">Offre de financement →</a>
       </div>
     </li>
     <li>
@@ -800,7 +800,7 @@ footer{
     </div>
     <p class="hero-subtitle">Votre partenaire régional Volkswagen depuis plus de 30 ans.</p>
     <div class="hero-actions">
-      <a href="https://rossysa.sopl.ch/#loginSection" target="_blank" class="btn-p">Prendre rendez-vous <span class="arr">�?'</span></a>
+      <a href="https://rossysa.sopl.ch/#loginSection" target="_blank" class="btn-p">Prendre rendez-vous <span class="arr">→</span></a>
     </div>
   </div>
 </section>
@@ -971,14 +971,14 @@ footer{
           <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
         </svg>
         <div class="rev-badge-score">
-          <span class="rev-score-num" id="revGlobalScore">�?�</span>
+          <span class="rev-score-num" id="revGlobalScore">…</span>
           <div class="rev-stars-row" id="revGlobalStars"></div>
           <span class="rev-score-count" id="revGlobalCount"></span>
         </div>
       </div>
       <div class="rev-head-right">
         <h2 class="s-title">Ce que disent<br><strong>nos clients.</strong></h2>
-        <a href="https://search.google.com/local/writereview?placeid=ChIJN1PBjnVxjkcRoqrfpZ5e7Uc" target="_blank" class="rev-cta-link" id="revWriteLink">Laisser un avis Google �?'</a>
+        <a href="https://search.google.com/local/writereview?placeid=ChIJN1PBjnVxjkcRoqrfpZ5e7Uc" target="_blank" class="rev-cta-link" id="revWriteLink">Laisser un avis Google →</a>
       </div>
     </div>
 
@@ -1152,8 +1152,8 @@ footer{
         <div class="crow"><span class="crow-bar"></span><div><div class="crow-lbl">Adresse</div><div class="crow-val">Route de Payerne 14<br>1773 Léchelles · Fribourg · Suisse</div></div></div>
         <div class="crow"><span class="crow-bar"></span><div><div class="crow-lbl">Téléphone</div><div class="crow-val"><a href="tel:+41266602586">+41 26 660 25 86</a></div></div></div>
         <div class="crow"><span class="crow-bar"></span><div><div class="crow-lbl">E-mail</div><div class="crow-val"><a href="mailto:info@rossysa.ch">info@rossysa.ch</a></div></div></div>
-        <div class="crow"><span class="crow-bar"></span><div><div class="crow-lbl">Horaires</div><div class="crow-val">Lun — Ven · 07h30—12h00 / 13h30—17h30<br>Samedi · sur rendez-vous<br><span class="crow-hl">Digibox : 24h/24, 7j/7</span></div></div></div>
-        <div class="crow"><span class="crow-bar"></span><div><div class="crow-lbl">Rendez-vous</div><div class="crow-val"><a href="https://rossysa.sopl.ch/#loginSection" target="_blank">Réserver en ligne �?'</a></div></div></div>
+        <div class="crow"><span class="crow-bar"></span><div><div class="crow-lbl">Horaires</div><div class="crow-val">Lun – Ven · 07h30–12h00 / 13h30–17h30<br>Samedi · sur rendez-vous<br><span class="crow-hl">Digibox : 24h/24, 7j/7</span></div></div></div>
+        <div class="crow"><span class="crow-bar"></span><div><div class="crow-lbl">Rendez-vous</div><div class="crow-val"><a href="https://rossysa.sopl.ch/#loginSection" target="_blank">Réserver en ligne →</a></div></div></div>
       </div>
     </div>
     <div class="mapcard r d1">
@@ -1169,7 +1169,7 @@ footer{
           title="Garage Rossy SA — Route de Payerne 14, 1773 Léchelles">
         </iframe>
       </div>
-      <div class="map-foot"><span style="font-size:10px;color:rgba(255,255,255,.35);letter-spacing:1px;text-transform:uppercase;">Itinéraire</span><a href="https://maps.google.com/?q=Route+de+Payerne+14+1773+L%C3%A9chelles" target="_blank">Google Maps �?'</a></div>
+      <div class="map-foot"><span style="font-size:10px;color:rgba(255,255,255,.35);letter-spacing:1px;text-transform:uppercase;">Itinéraire</span><a href="https://maps.google.com/?q=Route+de+Payerne+14+1773+L%C3%A9chelles" target="_blank">Google Maps →</a></div>
     </div>
   </div>
 </section>
@@ -1204,7 +1204,7 @@ footer{
       <div class="cf-field">
         <label class="cf-label">Sujet</label>
         <select class="cf-input cf-select">
-          <option value="">Choisissez un sujet�?�</option>
+          <option value="">Choisissez un sujet…</option>
           <option>Achat d'un véhicule neuf</option>
           <option>Véhicule d'occasion</option>
           <option>Révision & Entretien</option>
@@ -1215,13 +1215,13 @@ footer{
       </div>
       <div class="cf-field">
         <label class="cf-label">Message</label>
-        <textarea class="cf-input cf-textarea" placeholder="Décrivez votre demande�?�" rows="4" required></textarea>
+        <textarea class="cf-input cf-textarea" placeholder="Décrivez votre demande…" rows="4" required></textarea>
       </div>
       <button class="cf-submit" type="submit">
         <span class="cf-submit-txt">Envoyer le message</span>
-        <span class="cf-submit-arr">�?'</span>
+        <span class="cf-submit-arr">→</span>
       </button>
-      <div class="cf-success" id="cf-success">�o" Message envoyé — nous vous répondons sous 24h.</div>
+      <div class="cf-success" id="cf-success">✓ Message envoyé — nous vous répondons sous 24h.</div>
       <p class="cf-legal">En envoyant ce message, vous acceptez que vos données personnelles soient utilisées exclusivement pour traiter votre demande, conformément à notre <a href="confidentialite.html">politique de confidentialité</a>. Aucune donnée n'est transmise à des tiers.</p>
     </form>
   </div>
@@ -1233,8 +1233,8 @@ footer{
 <div class="cta">
   <div class="cta-txt">Prêt à prendre<br><strong>rendez-vous ?</strong></div>
   <div class="cta-btns">
-    <a href="https://rossysa.sopl.ch/#loginSection" target="_blank" class="cta-p">Réserver maintenant �?'</a>
-    <a href="tel:+41266602586" class="cta-s">Appeler �?'</a>
+    <a href="https://rossysa.sopl.ch/#loginSection" target="_blank" class="cta-p">Réserver maintenant →</a>
+    <a href="tel:+41266602586" class="cta-s">Appeler →</a>
   </div>
 </div>
 
@@ -1253,7 +1253,7 @@ footer{
   </div>
   <div class="f-col">
     <div class="f-col-title">Horaires</div>
-    <div class="f-info">Lun — Ven · 07h30 — 12h00 / 13h30 — 17h30</div>
+    <div class="f-info">Lun – Ven · 07h30 – 12h00 / 13h30 – 17h30</div>
     <div class="f-info">Samedi · sur rendez-vous</div>
     <div class="f-info" style="margin-top:6px;">Digibox · 24h/24 · 7j/7</div>
   </div>
@@ -1420,4 +1420,3 @@ footer{
 </script>
 </body>
 </html>
-
