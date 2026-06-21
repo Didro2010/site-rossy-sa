@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nos Services — Garage Rossy SA — Volkswagen — Léchelles</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,200;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --vw:   #001e50;
+  --vwm:  #0040c1;
+  --vwl:  #00b0f0;
+  --w:    #ffffff;
+  --off:  #f7f8fc;
+  --grey: #7a8496;
+  --rule: rgba(0,30,80,0.1);
+  --t:    0.35s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--w);
+  color:var(--vw);
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:300;
+  overflow-x:hidden;
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 56px;height:68px;
+  background:#ffffff;
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--rule);
+}
+.nav-l{display:flex;align-items:center;gap:0;text-decoration:none;}
+.nav-logo{height:48px;filter:none;opacity:1;}
+.nav-pipe{width:1px;height:24px;background:var(--rule);}
+.nav-tag{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--grey);}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+.nav-links>li{position:relative;}
+.nav-links>li>a{font-size:13px;font-weight:500;color:var(--grey);text-decoration:none;padding:7px 14px;border-radius:2px;transition:color var(--t),background var(--t);display:flex;align-items:center;gap:5px;white-space:nowrap;}
+.nav-links>li>a:hover{color:var(--vw);background:rgba(0,30,80,.05);}
+.nav-links>li>a.has-drop::after{content:'';display:inline-block;width:0;height:0;border-left:3.5px solid transparent;border-right:3.5px solid transparent;border-top:4px solid currentColor;margin-left:2px;transition:transform var(--t);}
+.nav-links>li:hover>a.has-drop::after{transform:rotate(180deg);}
+
+/* Dropdown */
+.nav-drop{
+  visibility:hidden;
+  opacity:0;
+  position:absolute;top:100%;left:50%;
+  transform:translateX(-50%);
+  background:#fff;
+  border:1px solid var(--rule);
+  border-radius:3px;
+  box-shadow:0 12px 40px rgba(0,30,80,.12);
+  min-width:220px;
+  padding:8px 0;
+  z-index:300;
+  white-space:nowrap;
+  transition:opacity .18s ease, visibility .18s ease;
+  pointer-events:none;
+}
+/* Pont invisible pour combler le gap entre le lien et le dropdown */
+.nav-drop::before{
+  content:'';
+  position:absolute;
+  top:-12px;left:0;right:0;
+  height:12px;
+}
+.nav-links>li:hover .nav-drop{
+  visibility:visible;
+  opacity:1;
+  pointer-events:auto;
+}
+.nav-drop a{display:block;padding:9px 22px;font-size:12px;font-weight:500;color:var(--vw);text-decoration:none;transition:background var(--t),color var(--t);}
+.nav-drop a:hover{background:rgba(0,30,80,.05);color:var(--vwm);}
+.nav-drop-sep{height:1px;background:var(--rule);margin:6px 0;}
+
+.nav-btn{
+  font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  background:var(--vwm);color:#fff !important;text-decoration:none;
+  padding:11px 26px;border-radius:2px;
+  transition:all var(--t);
+  animation:navpulse 2.8s ease-in-out infinite;
+  box-shadow:0 0 0 0 rgba(0,64,193,.5);
+}
+.nav-btn:hover{
+  background:var(--vw);color:#fff !important;transform:translateY(-1px);
+  animation:none;
+  box-shadow:0 6px 20px rgba(0,30,80,.3);
+}
+@keyframes navpulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(0,64,193,.5);}
+  50%{box-shadow:0 0 0 8px rgba(0,64,193,0);}
+}
+
+/* ── HERO ── */
+.hero{min-height:78vh;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;background:var(--vw);}
+.hero-parallax{position:absolute;top:-20%;left:0;width:100%;height:140%;will-change:transform;}
+.hero-parallax img{width:100%;height:100%;object-fit:cover;object-position:center 35%;}
+.hero-wipe{position:absolute;inset:0;background:var(--vw);z-index:3;animation:wipe 1.8s cubic-bezier(.77,0,.18,1) forwards;}
+@keyframes wipe{0%{transform:scaleY(1);transform-origin:top;}100%{transform:scaleY(0);transform-origin:bottom;}}
+.hero-ov{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,30,80,.4) 0%,rgba(0,30,80,.2) 35%,rgba(0,10,30,.8) 100%);}
+
+.hero-content{position:relative;z-index:2;padding:0 56px 48px;}
+.hero-logos{position:absolute;top:96px;right:56px;z-index:4;display:flex;align-items:flex-start;gap:30px;animation:fadeUp .8s .5s ease both;}
+.hero-logos img{height:108px;width:auto;display:block;filter:drop-shadow(0 2px 10px rgba(0,0,0,.25));}
+@media(max-width:860px){.hero-logos{top:84px;right:24px;gap:18px;}.hero-logos img{height:74px;}}
+@media(max-width:560px){.hero-logos{top:80px;}.hero-logos img{height:56px;}}
+.hero-eyebrow{font-size:10px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--vwl);margin-bottom:20px;display:flex;align-items:center;gap:12px;animation:fadeUp .8s .2s ease both;}
+.hero-eyebrow::before{content:'';display:block;width:28px;height:1.5px;background:var(--vwl);}
+.hero-h1{font-size:clamp(52px,7.5vw,110px);font-weight:800;line-height:.92;letter-spacing:-2px;color:#fff;margin-bottom:8px;animation:fadeUp .8s .35s ease both;}
+.hero-subtitle{font-size:clamp(18px,2.2vw,30px);font-weight:200;line-height:1.2;color:rgba(255,255,255,.75);letter-spacing:-.3px;margin-top:18px;margin-bottom:40px;animation:fadeUp .8s .45s ease both;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;animation:fadeUp .8s .55s ease both;}
+.btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--vwl);color:var(--vw);text-decoration:none;padding:15px 32px;font-size:12px;font-weight:700;letter-spacing:1px;border-radius:2px;transition:all var(--t);}
+.btn-p:hover{background:#00d4ff;transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,176,240,.4);}
+.btn-s{display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.8);text-decoration:none;padding:14px 30px;font-size:12px;font-weight:500;border-radius:2px;transition:all var(--t);}
+.btn-s:hover{border-color:#fff;color:#fff;}
+.arr{transition:transform var(--t);}
+.btn-p:hover .arr,.btn-s:hover .arr{transform:translateX(4px);}
+
+
+/* Hero badges */
+.hero-badges{display:none;}
+
+
+
+
+
+
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── MARQUEE ── */
+.mq{overflow:hidden;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--off);}
+.mq-track{display:flex;animation:mq 30s linear infinite;white-space:nowrap;}
+.mq-item{padding:12px 44px;font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--vw);border-right:1px solid var(--rule);display:flex;align-items:center;gap:44px;opacity:.6;}
+.mq-item::after{content:'◆';font-size:5px;color:var(--vwm);}
+@keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ── PHOTO BAND ── */
+.pb{overflow:hidden;position:relative;}
+.pb img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease,filter .5s;}
+.pb:hover img{transform:scale(1.05);filter:brightness(1.05);}
+.pb-cap{position:absolute;bottom:0;left:0;right:0;padding:40px 20px 16px;background:linear-gradient(transparent,rgba(0,30,80,.65));font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.8);}
+
+/* ── SECTION BASE ── */
+.section{padding:100px 56px;}
+.s-eye{font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--vwm);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.s-eye::before{content:'';display:block;width:22px;height:1.5px;background:var(--vwm);}
+.s-title{font-size:clamp(34px,4.5vw,60px);font-weight:200;line-height:.95;letter-spacing:-1px;color:var(--vw);}
+.s-title strong{font-weight:800;}
+.s-title em{font-style:italic;font-weight:200;color:var(--vwm);}
+.s-title-w{color:#fff;}
+
+/* ── SERVICES — IMAGE CARDS WITH PARALLAX ── */
+.services{background:var(--off);}
+.svc-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;}
+.svc-head-desc{max-width:360px;font-size:14px;font-weight:300;line-height:1.85;color:var(--grey);}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+
+.svc-card{
+  position:relative;overflow:hidden;
+  min-height:440px;border-radius:3px;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  transition:transform var(--t),box-shadow var(--t);
+}
+.svc-card:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,30,80,.15);}
+
+/* Parallax image */
+.svc-bg{
+  position:absolute;
+  top:-15%;left:0;width:100%;height:130%;
+  object-fit:cover;
+  will-change:transform;
+  filter:brightness(.55) saturate(.85);
+  transition:filter .5s;
+}
+.svc-card:hover .svc-bg{filter:brightness(.7) saturate(1);}
+
+/* Blue VW gradient overlay */
+.svc-ov{
+  position:absolute;inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(0,30,80,.95) 0%,
+    rgba(0,30,80,.6) 45%,
+    rgba(0,30,80,.1) 100%
+  );
+  transition:background var(--t);
+}
+.svc-card:hover .svc-ov{background:linear-gradient(to top,rgba(0,40,100,.97) 0%,rgba(0,64,193,.55) 45%,rgba(0,64,193,.05) 100%);}
+
+/* Top line */
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;z-index:2;background:var(--vwl);transform:scaleX(0);transform-origin:left;transition:transform .5s ease;}
+.svc-card:hover::before{transform:scaleX(1);}
+
+.svc-num{position:absolute;top:20px;right:20px;z-index:2;font-size:72px;font-weight:800;color:rgba(255,255,255,.06);line-height:1;pointer-events:none;}
+.svc-content{position:relative;z-index:2;padding:32px 32px 36px;}
+.svc-icon{width:44px;height:44px;border-radius:50%;background:rgba(0,176,240,.2);border:1px solid rgba(0,176,240,.4);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:18px;transition:all var(--t);}
+.svc-card:hover .svc-icon{background:rgba(0,176,240,.35);transform:scale(1.1);}
+.svc-title{font-size:24px;font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:-.2px;}
+.svc-desc{font-size:13px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:18px;}
+.svc-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.svc-tag{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--vwl);border:1px solid rgba(0,176,240,.3);padding:3px 10px;background:rgba(0,176,240,.07);}
+
+/* ── TEAM ── */
+.team{background:var(--w);}
+.team-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;}
+.team-sub{max-width:320px;font-size:13px;font-weight:300;line-height:1.8;color:var(--grey);}
+.team-full{width:100%;height:380px;object-fit:cover;object-position:center 25%;margin-bottom:52px;border-radius:2px;filter:brightness(.9);transition:filter .5s;}
+.team-full:hover{filter:brightness(1);}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.tcard{transition:transform var(--t);}
+.tcard:hover{transform:translateY(-4px);}
+.tcard-wrap{overflow:hidden;border-radius:2px;margin-bottom:14px;position:relative;}
+.tcard-wrap img{width:100%;aspect-ratio:.85;object-fit:cover;object-position:top;filter:grayscale(.1);transition:transform .6s,filter .5s;}
+.tcard:hover .tcard-wrap img{transform:scale(1.04);filter:grayscale(0);}
+.tcard-num{position:absolute;top:10px;left:10px;font-size:9px;font-weight:700;letter-spacing:2px;color:rgba(255,255,255,.7);}
+.tcard-dept{display:inline-block;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--vwm);background:rgba(0,64,193,.07);padding:3px 10px;border-radius:20px;margin-bottom:7px;}
+.tcard-name{font-size:17px;font-weight:700;color:var(--vw);letter-spacing:-.2px;margin-bottom:2px;}
+.tcard-role{font-size:12px;color:var(--grey);}
+
+/* ── SERVICE CAM ── */
+.svcam{display:grid;grid-template-columns:1fr 1fr;min-height:560px;}
+.cam-vis{background:var(--vw);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:72px;}
+.cam-vis-bg{position:absolute;inset:0;background-image:url('img/confidentialite_01.jpg');background-size:cover;background-position:center;opacity:.25;}
+.cam-vis-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,30,80,.35),rgba(0,64,193,.15));}
+.cam-box{position:relative;z-index:2;text-align:center;}
+.cam-screen{width:260px;height:164px;background:#02050f;border:1.5px solid rgba(255,255,255,.15);border-radius:4px;margin:0 auto 20px;position:relative;display:flex;align-items:center;justify-content:center;}
+.cam-em{font-size:44px;animation:cp 3s ease-in-out infinite;}
+@keyframes cp{0%,100%{opacity:.65}50%{opacity:1}}
+.cam-rec{position:absolute;top:10px;right:12px;display:flex;align-items:center;gap:5px;font-size:9px;font-weight:700;letter-spacing:2px;color:#fff;}.cam-live-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,0,0,.2);border:1px solid rgba(255,0,0,.5);padding:6px 14px;border-radius:2px;font-size:10px;font-weight:700;letter-spacing:2px;color:#fff;margin-bottom:20px;}
+.rdot{width:6px;height:6px;border-radius:50%;background:#ff2020;animation:bl 1s infinite;}
+@keyframes bl{0%,100%{opacity:1}50%{opacity:.1}}
+.cam-lbl{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.45);}
+.cam-name{font-size:38px;font-weight:200;color:#fff;letter-spacing:-1px;margin-top:8px;}
+.cam-name strong{font-weight:800;}
+.cam-name em{font-style:italic;color:var(--vwl);}
+.cam-r{background:var(--w);display:flex;align-items:center;padding:80px 72px;}
+.cam-inner{max-width:440px;}
+.cam-pts{margin-top:40px;display:flex;flex-direction:column;}
+.cam-pt{display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--rule);transition:padding-left var(--t);}
+.cam-pt:hover{padding-left:6px;}
+.cam-pt-i{width:36px;height:36px;border-radius:50%;background:rgba(0,64,193,.07);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.cam-pt-h{font-size:14px;font-weight:600;color:var(--vw);margin-bottom:4px;}
+.cam-pt-d{font-size:13px;color:var(--grey);line-height:1.65;}
+
+/* ── DIGIBOX ── */
+.digibox{background:var(--vw);padding:100px 56px;}
+.digi-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.digi-eye{color:var(--vwl)!important;}
+.digi-eye::before{background:var(--vwl)!important;}
+.digi-desc{font-size:15px;font-weight:300;line-height:1.9;color:rgba(255,255,255,.55);margin-top:20px;}
+.digi-feats{margin-top:40px;display:flex;flex-direction:column;gap:10px;}
+.digi-feat{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:15px 22px;border-radius:2px;font-size:13px;color:rgba(255,255,255,.8);transition:background var(--t);}
+.digi-feat:hover{background:rgba(255,255,255,.1);}
+.digi-icon{font-size:18px;flex-shrink:0;}
+.digi-clock{display:flex;align-items:center;justify-content:center;height:360px;position:relative;}
+.clock-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:44px 44px;}
+.clock-card{position:relative;z-index:1;text-align:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);padding:52px 64px;border-radius:3px;box-shadow:6px 6px 0 rgba(0,176,240,.15);}
+.clock-t{font-size:76px;font-weight:800;color:#fff;letter-spacing:-2px;line-height:1;}
+.clock-t span{color:var(--vwl);}
+.clock-sep{width:48px;height:1px;background:rgba(255,255,255,.12);margin:18px auto;}
+.clock-lbl{font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.3);}
+.clock-sub{font-size:13px;font-weight:300;font-style:italic;color:var(--vwl);margin-top:6px;}
+
+.svc-keyhanding{margin-top:14px;border-top:1px solid rgba(0,176,240,.25);padding-top:12px;}
+.svc-keyhanding-inner{display:flex;align-items:center;gap:8px;}
+.svc-key-icon{font-size:16px;}
+.svc-key-text{font-size:12px;font-weight:600;color:rgba(255,255,255,.85);letter-spacing:.3px;}
+.svc-key-text em{font-style:normal;color:var(--vwl);}
+
+/* ── CONTACT FORM ── */
+.contactform{background:var(--w);}
+.cf-inner{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:flex-start;}
+.cf-desc{font-size:14px;font-weight:300;line-height:1.85;color:var(--grey);margin-top:20px;max-width:340px;}
+.cf-info{margin-top:32px;display:flex;flex-direction:column;gap:12px;}
+.cf-info-row{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--vw);}
+.cf-info-row a{color:var(--vwm);text-decoration:none;font-weight:600;}
+.cf-info-row a:hover{text-decoration:underline;}
+.cf-info-icon{font-size:16px;flex-shrink:0;}
+.cf-form{background:var(--off);border:1px solid var(--rule);border-radius:4px;padding:40px;}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.cf-field{display:flex;flex-direction:column;gap:6px;margin-bottom:20px;}
+.cf-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--vwm);}
+.cf-input{background:#fff;border:1.5px solid var(--rule);border-radius:2px;padding:12px 16px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;color:var(--vw);font-weight:300;transition:border-color var(--t),box-shadow var(--t);outline:none;}
+.cf-input:focus{border-color:var(--vwm);box-shadow:0 0 0 3px rgba(0,64,193,.08);}
+.cf-select{cursor:pointer;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%237a8496'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;}
+.cf-textarea{resize:vertical;min-height:100px;}
+.cf-submit{display:flex;align-items:center;gap:10px;background:var(--vw);color:#fff;border:none;padding:15px 32px;font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;border-radius:2px;cursor:pointer;transition:all var(--t);margin-top:4px;}
+.cf-submit:hover{background:var(--vwm);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,30,80,.2);}
+.cf-submit-arr{transition:transform var(--t);}
+.cf-submit:hover .cf-submit-arr{transform:translateX(4px);}
+.cf-success{display:none;margin-top:16px;background:rgba(0,176,240,.1);border:1px solid var(--vwl);color:var(--vw);padding:12px 16px;border-radius:2px;font-size:13px;font-weight:600;}
+.cf-success.show{display:block;}
+@media(max-width:960px){.cf-inner{grid-template-columns:1fr;gap:40px;}.cf-form{padding:24px;}.cf-row{grid-template-columns:1fr;gap:0;}}
+
+/* ── CONTACT SECTION ── */
+.contact{background:var(--off);}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px;}
+.ccard{background:var(--w);border-radius:3px;box-shadow:0 4px 20px rgba(0,30,80,.06);overflow:hidden;}
+.cc-head{background:var(--vw);padding:22px 32px;display:flex;align-items:center;gap:12px;}
+.cc-head-icon{font-size:20px;}
+.cc-head-title{font-size:14px;font-weight:700;color:#fff;letter-spacing:.3px;}
+.cc-body{padding:36px 32px;display:flex;flex-direction:column;gap:22px;}
+.crow{display:flex;gap:14px;align-items:flex-start;}
+.crow-icon{font-size:16px;margin-top:1px;flex-shrink:0;}
+.crow-lbl{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--vwm);margin-bottom:4px;}
+.crow-val{font-size:14px;font-weight:300;line-height:1.7;color:var(--vw);}
+.crow-val a{color:var(--vwm);text-decoration:none;font-weight:600;}
+.crow-val a:hover{text-decoration:underline;}
+.crow-hl{color:var(--vwl);font-style:italic;font-size:13px;}
+.mapcard{background:var(--vw);border-radius:3px;overflow:hidden;display:flex;flex-direction:column;min-height:380px;box-shadow:0 4px 20px rgba(0,30,80,.15);}
+.map-vis{flex:1;position:relative;display:flex;align-items:center;justify-content:center;padding:48px;overflow:hidden;}
+.map-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:36px 36px;}
+.map-pin{font-size:52px;position:relative;z-index:1;animation:pb 2.5s ease-in-out infinite;}
+@keyframes pb{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.map-txt{position:relative;z-index:1;text-align:center;}
+.map-addr{font-size:22px;font-weight:700;color:#fff;line-height:1.3;margin-top:10px;}
+.map-city{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:4px;}
+.map-foot{background:var(--vwm);padding:18px 32px;display:flex;justify-content:space-between;align-items:center;}
+.map-foot a{color:#fff;text-decoration:none;font-size:12px;font-weight:600;display:flex;align-items:center;gap:8px;transition:gap var(--t);}
+.map-foot a:hover{gap:14px;}
+
+/* ── CTA ── */
+.cta{background:var(--vwm);padding:80px 56px;display:flex;justify-content:space-between;align-items:center;gap:40px;}
+.cta-txt{font-size:clamp(28px,4vw,52px);font-weight:200;color:#fff;letter-spacing:-1px;line-height:.95;}
+.cta-txt strong{font-weight:800;}
+.cta-btns{display:flex;gap:14px;flex-shrink:0;}
+.cta-p{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:rgba(255,255,255,.95);color:var(--vw);text-decoration:none;padding:15px 30px;border-radius:2px;transition:all var(--t);}
+.cta-p:hover{background:#fff;transform:translateY(-2px);}
+.cta-s{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.85);text-decoration:none;padding:14px 28px;border-radius:2px;transition:all var(--t);}
+.cta-s:hover{border-color:#fff;color:#fff;}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--vw);
+  padding:52px 56px 0;
+  border-top:1px solid rgba(255,255,255,.08);
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  grid-template-rows:auto auto;
+  gap:0 48px;
+}
+
+/* ── COOKIE BANNER ── */
+.cookie-text{}
+.cookie-desc a:hover{text-decoration:underline;}
+@media(max-width:960px){
+}
+
+
+/* ── PRIVACY PAGE ── */
+.privacy-section{background:var(--off);}
+.privacy-inner{max-width:860px;}
+.privacy-content{margin-top:48px;display:flex;flex-direction:column;gap:0;}
+.priv-block{padding:28px 0;border-bottom:1px solid var(--rule);}
+.priv-block:last-child{border-bottom:none;}
+.priv-h3{font-size:14px;font-weight:700;color:var(--vw);letter-spacing:-.2px;margin-bottom:12px;text-transform:uppercase;font-size:11px;letter-spacing:2px;color:var(--vwm);}
+.priv-block p{font-size:14px;font-weight:300;line-height:1.85;color:#4a5568;margin-bottom:10px;}
+.priv-block p:last-child{margin-bottom:0;}
+.priv-block a{color:var(--vwm);text-decoration:none;font-weight:600;}
+.priv-block a:hover{text-decoration:underline;}
+.priv-list{margin:10px 0 10px 20px;display:flex;flex-direction:column;gap:6px;}
+.priv-list li{font-size:14px;font-weight:300;line-height:1.7;color:#4a5568;}
+.priv-date{font-size:12px;color:var(--grey);font-style:italic;}
+.cookie-table-wrap{overflow-x:auto;margin-top:12px;}
+.cookie-table{width:100%;border-collapse:collapse;font-size:13px;}
+.cookie-table th{background:var(--vw);color:#fff;padding:10px 16px;text-align:left;font-weight:600;font-size:11px;letter-spacing:1px;text-transform:uppercase;}
+.cookie-table td{padding:10px 16px;border-bottom:1px solid var(--rule);color:#4a5568;font-weight:300;}
+.cookie-table tr:last-child td{border-bottom:none;}
+.cookie-table tr:nth-child(even) td{background:rgba(0,30,80,.02);}
+
+.cf-legal{font-size:11px;color:var(--grey);line-height:1.7;margin-top:14px;padding-top:14px;border-top:1px solid var(--rule);}
+.cf-legal a{color:var(--vwm);text-decoration:none;font-weight:600;}
+.cf-legal a:hover{text-decoration:underline;}
+
+
+/* ── ICÔNES REMPLACEMENT EMOJIS ── */
+.svc-icon-line{width:28px;height:2px;background:var(--vwl);margin-bottom:18px;}
+.digi-dash{color:var(--vwl);font-weight:700;font-size:16px;flex-shrink:0;}
+.crow-bar{display:inline-block;width:3px;height:16px;background:var(--vwm);border-radius:2px;flex-shrink:0;margin-top:3px;}
+.cf-info-bar{display:inline-block;width:3px;height:14px;background:var(--vwm);border-radius:2px;flex-shrink:0;}
+.svc-key-dash{color:var(--vwl);font-weight:700;flex-shrink:0;}
+
+/* ── FOOTER COLONNES ── */
+.f-col{display:flex;flex-direction:column;gap:10px;padding-bottom:40px;}
+.f-col-title{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--vwl);margin-bottom:6px;}
+.f-info{font-size:12px;color:rgba(255,255,255,.6);line-height:1.7;}
+.f-info a{color:rgba(255,255,255,.6);text-decoration:none;transition:color var(--t);}
+.f-info a:hover{color:var(--vwl);}
+.f-bottom{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-top:1px solid rgba(255,255,255,.08);}
+.f-copy{font-size:11px;color:rgba(255,255,255,.45);}
+.f-priv{font-size:11px;color:rgba(255,255,255,.45);text-decoration:none;transition:color var(--t);}
+.f-priv:hover{color:var(--vwl);}
+.f-tag{font-size:12px;font-weight:300;font-style:italic;color:rgba(255,255,255,.5);line-height:1.7;}
+
+/* ── COOKIE BANNER ── */
+
+/* ── PHOTO BAND DÉFILANT ── */
+.pb-band{position:relative;height:260px;overflow:hidden;background:var(--vw);}
+.pb-inner{display:flex;height:100%;gap:3px;animation:pb-scroll 40s linear infinite;}
+.pb-band:hover .pb-inner{animation-play-state:paused;}
+.pb-item{flex:0 0 calc(25% - 2px);min-width:calc(25% - 2px);overflow:hidden;}
+.pb-item img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .6s ease;}
+.pb-band:hover .pb-item img{transform:scale(1.04);}
+.pb-source-label{position:absolute;bottom:10px;right:14px;font-size:10px;font-weight:500;letter-spacing:1px;color:rgba(255,255,255,.45);pointer-events:none;}
+@keyframes pb-scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+/* ══ PAGE SERVICES — SECTIONS ALTERNÉES ══ */
+body.page-services{padding-top:68px;}
+
+/* En-tête de page */
+.sv-intro{max-width:none;margin:0;padding:80px 56px 40px;}
+.sv-intro-inner{width:50%;box-sizing:border-box;padding:0 56px;}
+.sv-intro .s-title{margin-bottom:28px;}
+.sv-intro-lead{font-size:18px;font-weight:300;line-height:1.7;color:var(--vw);}
+.sv-intro-lead strong{font-weight:700;color:var(--vwm);}
+@media(max-width:860px){.sv-intro-inner{width:100%;padding:0;}}
+
+/* Pastilles de progression à droite */
+.sv-dots{position:fixed;top:50%;right:26px;transform:translateY(-50%);z-index:120;display:flex;flex-direction:column;gap:14px;}
+.sv-dots a{width:11px;height:11px;border-radius:50%;border:1.5px solid #fff;background:rgba(255,255,255,.25);transition:all var(--t);position:relative;box-shadow:0 0 0 1px rgba(0,30,80,.15),0 2px 6px rgba(0,0,0,.25);}
+.sv-dots a:hover,.sv-dots a.active{background:#fff;transform:scale(1.35);box-shadow:0 0 0 1px rgba(0,30,80,.2),0 2px 10px rgba(0,0,0,.3);}
+.sv-dots a span{position:absolute;right:20px;top:50%;transform:translateY(-50%);white-space:nowrap;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--vw);background:#fff;padding:4px 10px;border-radius:3px;box-shadow:0 4px 14px rgba(0,30,80,.12);opacity:0;pointer-events:none;transition:opacity var(--t);}
+.sv-dots a:hover span{opacity:1;}
+
+/* Une prestation = bande alternée */
+.sv-band{display:grid;grid-template-columns:1fr 1fr;min-height:480px;align-items:stretch;position:relative;scroll-margin-top:68px;}
+
+/* ── Animations au scroll ── */
+/* Texte : glisse depuis son côté + fondu */
+.sv-band .sv-body{opacity:0;transform:translateX(-90px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1);}
+.sv-band.alt .sv-body{transform:translateX(90px);}
+.sv-band.v .sv-body{opacity:1;transform:translateX(0);}
+/* Décalage en cascade des éléments internes du texte */
+.sv-band .sv-ico,.sv-band .sv-h,.sv-band .sv-desc,.sv-band .sv-feats,.sv-band .sv-link{opacity:0;transform:translateY(34px);transition:opacity .65s ease,transform .65s ease;}
+.sv-band.v .sv-ico{transition-delay:.1s;}
+.sv-band.v .sv-h{transition-delay:.22s;}
+.sv-band.v .sv-desc{transition-delay:.34s;}
+.sv-band.v .sv-feats{transition-delay:.46s;}
+.sv-band.v .sv-link{transition-delay:.58s;}
+.sv-band.v .sv-ico,.sv-band.v .sv-h,.sv-band.v .sv-desc,.sv-band.v .sv-feats,.sv-band.v .sv-link{opacity:1;transform:translateY(0);}
+/* Photo : zoom-out marqué à l'apparition (le JS ajuste ensuite scale+translateY pour la parallaxe) */
+.sv-visual img{transition:transform 1.4s cubic-bezier(.22,.61,.36,1);transform:scale(1.08);will-change:transform;}
+.sv-band.v .sv-visual img{transform:scale(1.0);}
+/* Voile qui se lève sur la photo à l'apparition */
+.sv-visual::before{content:'';position:absolute;inset:0;z-index:1;background:var(--vw);opacity:0;transition:opacity .9s ease;}
+.sv-band.v .sv-visual::before{opacity:0;}
+@media(prefers-reduced-motion:reduce){
+  .sv-band .sv-body,.sv-band .sv-ico,.sv-band .sv-h,.sv-band .sv-desc,.sv-band .sv-feats,.sv-band .sv-link,.sv-visual img{transition:none;transform:none;opacity:1;}
+  .sv-visual::before{display:none;}
+}
+@media(prefers-reduced-motion:reduce){
+  .sv-band .sv-body,.sv-band .sv-ico,.sv-band .sv-h,.sv-band .sv-desc,.sv-band .sv-feats,.sv-band .sv-link,.sv-visual img{transition:none;transform:none;opacity:1;}
+}
+/* alternance explicite via classe .alt (texte à droite, photo à gauche) */
+.sv-band.alt .sv-visual{order:1;}
+.sv-band.alt .sv-body{order:2;}
+
+/* Côté texte */
+.sv-body{display:flex;flex-direction:column;justify-content:center;padding:64px 60px;position:relative;overflow:hidden;}
+.sv-ico{width:54px;height:54px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:linear-gradient(135deg,var(--vw),var(--vwm));margin-bottom:24px;position:relative;}
+.sv-ico svg{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+.sv-eye{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--vwm);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.sv-eye .n{color:var(--vwl);}
+.sv-h{font-size:clamp(30px,3.4vw,48px);font-weight:200;line-height:1;letter-spacing:-1px;color:var(--vw);margin-bottom:22px;position:relative;}
+.sv-h strong{font-weight:800;}
+.sv-desc{font-size:15.5px;font-weight:300;line-height:1.75;color:var(--grey);max-width:480px;margin-bottom:26px;position:relative;}
+.sv-feats{list-style:none;display:flex;flex-direction:column;gap:11px;max-width:480px;position:relative;}
+.sv-feats li{display:flex;align-items:flex-start;gap:13px;font-size:14.5px;font-weight:300;color:var(--vw);}
+.sv-feats .tk{flex:0 0 auto;width:18px;height:18px;border-radius:50%;background:rgba(0,176,240,.12);display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.sv-feats .tk svg{width:11px;height:11px;stroke:var(--vwm);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;}
+/* Variante : nom du système + description en dessous */
+.sv-feats-stack{gap:7px;}
+#calibrage .sv-desc{max-width:520px;}
+/* Logos partenaires (Totalrepair / Totalglass) */
+.sv-logo-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;box-sizing:border-box;z-index:2;}
+.sv-visual .sv-logo-wrap img{position:static;width:70%;height:auto;max-height:60%;object-fit:contain;inset:auto;}
+/* Pas de zoom/parallaxe/voile sur les bandes à logo */
+#totalrepair .sv-visual::before{display:none;}
+#totalrepair .sv-visual::after{display:none;}
+.sv-logo-wrap img{transform:none!important;transition:none!important;}
+.sv-feats-stack li{align-items:flex-start;}
+.sv-feats-stack .ft-txt{display:flex;flex-direction:column;gap:1px;}
+.sv-feats-stack .ft-name{font-weight:700;color:var(--vw);font-size:14px;}
+.sv-feats-stack .ft-desc{font-weight:300;color:var(--grey);font-size:12.5px;line-height:1.35;}
+.sv-link{margin-top:28px;}
+.sv-link a{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--vwm);text-decoration:none;transition:gap var(--t);}
+.sv-link a:hover{gap:14px;}
+
+/* Côté visuel / photo */
+.sv-visual{position:relative;overflow:hidden;background:#111;min-height:300px;}
+.sv-visual img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;}
+.sv-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(0,30,80,.25),transparent 60%);}
+/* Placeholder quand pas encore de photo */
+.sv-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:rgba(255,255,255,.7);}
+.sv-ph svg{width:54px;height:54px;stroke:rgba(255,255,255,.55);fill:none;stroke-width:1.2;}
+.sv-ph span{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;}
+.sv-tag{position:absolute;bottom:24px;left:24px;z-index:2;background:rgba(255,255,255,.95);color:var(--vw);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:8px 16px;border-radius:3px;backdrop-filter:blur(8px);}
+.sv-band.alt .sv-tag{left:auto;right:24px;}
+
+/* CTA final */
+.sv-cta{background:linear-gradient(120deg,var(--vw),var(--vwm));color:#fff;padding:90px 56px;text-align:center;}
+.sv-cta .e{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--vwl);margin-bottom:14px;}
+.sv-cta h3{font-size:clamp(28px,3.5vw,46px);font-weight:200;letter-spacing:-1px;margin-bottom:14px;}
+.sv-cta h3 strong{font-weight:800;}
+.sv-cta p{font-size:15px;font-weight:300;color:rgba(255,255,255,.82);margin-bottom:30px;}
+.sv-cta .btn-s{border-color:rgba(255,255,255,.5);color:#fff;}
+.sv-cta .btn-s:hover{background:rgba(255,255,255,.12);}
+
+@media(max-width:920px){
+  .sv-dots{display:none;}
+  .sv-intro{padding:60px 24px 30px;}
+  .sv-band{grid-template-columns:1fr;min-height:auto;}
+  .sv-band.alt .sv-visual,.sv-band.alt .sv-body{order:initial;}
+  .sv-visual{min-height:240px;order:-1!important;}
+  .sv-body{padding:48px 24px;}
+  .sv-cta{padding:64px 24px;}
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE — TABLETTE & MOBILE
+═══════════════════════════════════════ */
+
+/* Hamburger bouton */
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:4px;}
+.nav-burger span{display:block;height:2px;background:var(--vw);border-radius:2px;transition:all .3s ease;}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-burger.open span:nth-child(2){opacity:0;}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* ── TABLETTE (≤900px) ── */
+@media(max-width:900px){
+  nav{padding:0 24px;}
+  .nav-links{gap:1px;}
+  .nav-links>li>a{font-size:12px;padding:6px 10px;}
+}
+
+/* ── MOBILE (≤700px) ── */
+@media(max-width:700px){
+  nav{padding:0 20px;height:60px;}
+  .nav-burger{display:flex;}
+
+  .nav-links{
+    display:none;
+    position:fixed;
+    top:60px;left:0;right:0;
+    height:calc(100vh - 60px);
+    background:#fff;
+    flex-direction:column;
+    align-items:stretch;
+    padding:0 0 40px;
+    overflow-y:scroll;
+    -webkit-overflow-scrolling:touch;
+    z-index:199;
+    gap:0;
+    border-top:1px solid var(--rule);
+  }
+  .nav-links.open{display:flex;}
+  .nav-links>li{width:100%;}
+  .nav-links>li>a{
+    display:flex;align-items:center;justify-content:space-between;
+    font-size:15px;font-weight:500;
+    padding:16px 24px;
+    border-radius:0;
+    border-bottom:1px solid var(--rule);
+    color:var(--vw);
+    width:100%;box-sizing:border-box;
+  }
+  .nav-links>li>a.has-drop::after{display:inline-block;margin-left:auto;margin-top:0;transition:transform .3s ease;}
+  .nav-links>li>a.has-drop.mob-open::after{transform:rotate(180deg);}
+  .nav-drop{
+    visibility:visible !important;opacity:1 !important;pointer-events:auto !important;
+    position:static !important;transform:none !important;
+    box-shadow:none !important;border:none !important;
+    border-bottom:1px solid var(--rule) !important;
+    border-radius:0 !important;background:#f5f7fa !important;
+    padding:0 !important;min-width:unset !important;
+    white-space:normal !important;
+    max-height:0 !important;overflow:hidden !important;
+    transition:max-height .3s ease !important;
+  }
+  .nav-drop.mob-open{max-height:800px !important;padding:8px 0 !important;}
+  .nav-drop a{display:block !important;padding:12px 40px !important;font-size:14px !important;border-bottom:none !important;color:var(--vw) !important;}
+  .nav-drop-sep{display:none !important;}
+  .nav-btn{margin:16px 24px;text-align:center;border-radius:2px;display:block;}
+
+  /* Services — sections alternées */
+  .sv-band{grid-template-columns:1fr !important;min-height:unset !important;overflow:hidden;}
+  .sv-band.alt .sv-visual{order:-1;}
+  .sv-visual{height:220px !important;min-height:unset !important;overflow:hidden;}
+  .sv-visual img{width:100% !important;height:220px !important;object-fit:cover !important;display:block !important;}
+  /* Totalrepair/Totalglass — 2 logos empilés, besoin de plus de hauteur */
+  #totalrepair .sv-visual{height:auto !important;min-height:260px !important;padding:24px 0 !important;display:flex !important;align-items:center !important;justify-content:center !important;}
+  #totalrepair .sv-logo-wrap{position:static !important;flex-direction:column !important;gap:16px !important;padding:0 24px !important;width:100% !important;}
+  #totalrepair .sv-logo-wrap > div{width:100% !important;margin-bottom:0 !important;}
+  #totalrepair .sv-logo-wrap img{max-width:200px !important;height:auto !important;object-fit:contain !important;}
+  .sv-body{padding:32px 24px !important;box-sizing:border-box !important;width:100% !important;max-width:100% !important;transform:none !important;opacity:1 !important;}
+  .sv-h{font-size:clamp(20px,6vw,28px) !important;letter-spacing:-0.5px !important;}
+  .sv-ico,.sv-h,.sv-desc,.sv-feats,.sv-link{opacity:1 !important;transform:none !important;}
+  .cta{flex-direction:column !important;padding:48px 24px !important;gap:24px !important;}
+  .cta-btns{flex-direction:column !important;width:100% !important;gap:12px !important;}
+  .cta-p,.cta-s{width:100% !important;text-align:center !important;box-sizing:border-box !important;}
+
+  /* Hero mobile */
+  .hero{min-height:100svh;}
+  .hero-content{padding:100px 24px 60px;}
+  .hero-title{font-size:clamp(38px,10vw,56px);letter-spacing:-1.5px;}
+  .hero-sub{font-size:15px;}
+  .hero-btns{flex-direction:column;gap:12px;}
+  .hero-btns a{width:100%;text-align:center;}
+  .hero-logos{top:72px;right:16px;gap:12px;}
+  .hero-logos img{height:52px;}
+
+  /* Sections générales */
+  .content-section,.page-hero{padding:100px 24px 60px;}
+  .page-h1{font-size:clamp(36px,9vw,52px);letter-spacing:-1px;}
+  footer{padding:40px 24px 0;grid-template-columns:1fr;}
+  .f-bottom{flex-direction:column;gap:8px;text-align:center;}
+
+  /* Notre équipe — 2 colonnes sur mobile */
+  .membres-wrap{padding:0 20px 60px;grid-template-columns:repeat(2,1fr);gap:12px;}
+  .groupe-label{padding:0 20px;margin-top:48px;margin-bottom:24px;}
+  .card-nom{font-size:14px;}
+  .card-email{font-size:11px;word-break:break-all;}
+
+  /* Occasions */
+  .occ-grid{grid-template-columns:1fr !important;}
+
+  /* Cookie banner */
+  #cookieBanner{padding:16px 20px;flex-direction:column;align-items:flex-start;gap:14px;}
+  .cookie-btns{width:100%;flex-direction:row;}
+  .cookie-accept,.cookie-refuse{flex:1;text-align:center;}
+}
+
+/* ── TABLETTE (701px–900px) ── */
+@media(min-width:701px) and (max-width:900px){
+  .membres-wrap{grid-template-columns:repeat(3,1fr);}
+  .card-email{font-size:11px;word-break:break-all;}
+  .content-section,.page-hero{padding:120px 40px 80px;}
+  footer{padding:40px 40px 0;grid-template-columns:1fr 1fr;}
+  .hero-content{padding:120px 40px 80px;}
+}
+</style>
+</head>
+<body class="page-services">
+
+<!-- NAV -->
+<nav id="nav">
+<a href="index.html" class="nav-l">
+    <img class="nav-logo" src="img/confidentialite_02.jpg" alt="Garage Rossy SA">
+  </a>
+  <button class="nav-burger" id="burger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html#hero">Accueil</a></li>
+    <li>
+      <a href="index.html#vente" class="has-drop mob-toggle">Vente</a>
+      <div class="nav-drop">
+        <a href="https://www.volkswagen.ch/fr/configurateur.html?---=%7B%22configuration-step-navigation-service%22%3A%22%2F%3FconfigStep%3D%257B%2522context%2522%253A%2522mofa-standalone%2522%252C%2522selectedStep%2522%253A%2522carline%2522%257D%22%7D" target="_blank">Véhicules neufs VW →</a>
+        <a href="https://www.volkswagen-nutzfahrzeuge.ch/fr.html" target="_blank">Véhicules neufs VW Utilitaire →</a>
+        <a href="occasions.html">Véhicules d'occasion</a>
+        <div class="nav-drop-sep"></div>
+        <a href="https://www.amag-leasing.ch/fr.html" target="_blank">Offre de financement →</a>
+      </div>
+    </li>
+    <li>
+      <a href="index.html#garage" class="has-drop mob-toggle">Notre Garage</a>
+      <div class="nav-drop">
+        <a href="notre-equipe.html">Notre équipe</a>
+        <a href="histoire.html">Histoire</a>
+        <a href="offre-emploi.html">Offre d'emploi</a>
+        <a href="sponsoring.html">Sponsoring</a>
+      </div>
+    </li>
+    <li>
+      <a href="services.html" class="has-drop mob-toggle" style="color:var(--vw);">Services</a>
+      <div class="nav-drop">
+        <a href="#entretien">Entretien et réparations</a>
+        <a href="#geometrie">Géométrie</a>
+        <a href="#calibrage">Calibrage assistants</a>
+        <a href="#pneus">Pneus et Roues</a>
+        <a href="#accessoires">Accessoires</a>
+        <a href="#carburant">Carburant</a>
+        <div class="nav-drop-sep"></div>
+        <a href="#totalmobil">Totalmobil! — Dépannage</a>
+        <a href="#totalrepair">Totalrepair &amp; Totalglass</a>
+      </div>
+    </li>
+    <li><a href="index.html#contact">Contact</a></li>
+    <li><a href="https://rossysa.sopl.ch/#loginSection" target="_blank" class="nav-btn">Rendez-vous →</a></li>
+  </ul>
+</nav>
+
+
+<!-- ══ INTRO ══ -->
+<section class="sv-intro" id="top">
+  <div class="sv-intro-inner">
+    <h2 class="s-title">Nos <strong>services</strong></h2>
+    <p class="sv-intro-lead">De l'entretien courant au dépannage d'urgence, nous prenons soin de <strong>votre véhicule</strong> avec un atelier équipé des dernières technologies et des collaborateurs formés en continu. Partenaire Volkswagen, nous entretenons et réparons aussi les autres marques du groupe — Audi, SEAT, Škoda et Cupra.</p>
+  </div>
+</section>
+
+<!-- ══ PASTILLES DE PROGRESSION ══ -->
+<div class="sv-dots" role="navigation" aria-label="Navigation des prestations">
+  <a href="#entretien" data-dot><span>Entretien &amp; réparations</span></a>
+  <a href="#geometrie" data-dot><span>Géométrie</span></a>
+  <a href="#calibrage" data-dot><span>Calibrage assistants</span></a>
+  <a href="#pneus" data-dot><span>Pneus &amp; Roues</span></a>
+  <a href="#accessoires" data-dot><span>Accessoires</span></a>
+  <a href="#carburant" data-dot><span>Carburant</span></a>
+  <a href="#totalmobil" data-dot><span>Totalmobil</span></a>
+  <a href="#totalrepair" data-dot><span>Totalrepair &amp; Totalglass</span></a>
+</div>
+
+<!-- ══ 01 · ENTRETIEN & RÉPARATIONS ══ -->
+<section class="sv-band" id="entretien">
+  <div class="sv-body">
+    <div class="sv-ico">
+      <svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6 6a1.5 1.5 0 0 0 2 2l6-6a4 4 0 0 0 5.4-5.4l-2.3 2.3-2-2 2.3-2.3z"/></svg>
+    </div>
+    <h2 class="sv-h">Entretien <strong>&amp; réparations</strong></h2>
+    <p class="sv-desc">Service périodique, diagnostic électronique, climatisation, carrosserie et peinture : nous entretenons et réparons votre véhicule dans les règles de l'art, avec des pièces d'origine.</p>
+    <ul class="sv-feats">
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Service et entretien périodique</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Diagnostic et réparations en tout genre</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Maintenance de la climatisation</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Carrosserie, peinture et préparation expertise</li>
+    </ul>
+  </div>
+  <div class="sv-visual">
+    <img src="img/services_01.jpg" alt="Atelier du Garage Rossy SA à Léchelles">
+  </div>
+</section>
+
+<!-- ══ 02 · GÉOMÉTRIE ══ -->
+<section class="sv-band alt" id="geometrie">
+  <div class="sv-body">
+    <div class="sv-ico">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="3"/></svg>
+    </div>
+    <h2 class="sv-h">Géométrie <strong>laser</strong></h2>
+    <p class="sv-desc">Un parallélisme mal réglé use vos pneus prématurément et nuit à la tenue de route. Notre banc de géométrie laser mesure et corrige les angles de vos roues au dixième de degré.</p>
+    <ul class="sv-feats">
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Mesure des trains avant et arrière</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Réglage du parallélisme et du carrossage</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Usure des pneus réduite, conduite plus sûre</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Rapport de contrôle remis au client</li>
+    </ul>
+  </div>
+  <div class="sv-visual">
+    <!-- PHOTO : géométrie du jour -->
+    <img src="img/services_02.jpg" alt="Géométrie laser — réglage du parallélisme, Garage Rossy SA">
+  </div>
+</section>
+
+<!-- ══ CALIBRAGE ADAS ══ -->
+<section class="sv-band" id="calibrage">
+  <div class="sv-body">
+    <div class="sv-ico">
+      <svg viewBox="0 0 24 24"><path d="M6 8.5 L5 10.5"/><path d="M4 12.5 L3 14.5"/><path d="M18 8.5 L19 10.5"/><path d="M20 12.5 L21 14.5"/><path d="M8 11.2l1-1.6a1.2 1.2 0 0 1 1-.6h2.8a1.2 1.2 0 0 1 1 .6l1 1.6"/><path d="M7.4 11.2h9.2a.8.8 0 0 1 .8.9v1.2h-1.2"/><path d="M9 13.3H7.4a.8.8 0 0 1-.8-.8v-.4"/><circle cx="9.4" cy="13.3" r=".9"/><circle cx="14.6" cy="13.3" r=".9"/><path d="M8.5 18.5a3.5 3.5 0 0 1 7 0z"/><path d="M12 18.5 L13.6 16.7"/></svg>
+    </div>
+    <h2 class="sv-h">Calibrage des <strong>assistants</strong></h2>
+    <p class="sv-desc">Après un remplacement de pare-brise ou un choc, les assistants de conduite doivent être recalibrés. Notre équipement règle caméras, radars et phares Matrix.</p>
+    <ul class="sv-feats sv-feats-stack">
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span><span class="ft-txt"><span class="ft-name">ACC — Adaptive Cruise Control</span><span class="ft-desc">Régulateur adaptatif qui maintient la distance avec le véhicule précédent.</span></span></li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span><span class="ft-txt"><span class="ft-name">Lane Assist</span><span class="ft-desc">Maintien dans la voie avec correction de trajectoire.</span></span></li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span><span class="ft-txt"><span class="ft-name">Travel Assist</span><span class="ft-desc">Combine ACC et centrage dans la voie pour une conduite semi-assistée sur autoroute.</span></span></li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span><span class="ft-txt"><span class="ft-name">Front Assist</span><span class="ft-desc">Freinage automatique d'urgence avec détection des véhicules, piétons et cyclistes.</span></span></li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span><span class="ft-txt"><span class="ft-name">Night Vision</span><span class="ft-desc">Caméra thermique infrarouge qui détecte piétons et animaux dans l'obscurité, au-delà des phares.</span></span></li>
+    </ul>
+  </div>
+  <div class="sv-visual">
+    <!-- PHOTO : calibrage ADAS -->
+    <img src="img/services_03.jpg" alt="Calibrage des assistants de conduite — banc ADAS">
+  </div>
+</section>
+
+<!-- ══ 03 · PNEUS & ROUES ══ -->
+<section class="sv-band alt" id="pneus">
+  <div class="sv-body">
+    <div class="sv-ico">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="6.5"/><circle cx="12" cy="12" r="1.6"/><path d="M12 5.5V10.4"/><path d="M12 13.6V18.5"/><path d="M5.5 12H10.4"/><path d="M13.6 12H18.5"/><path d="M7.4 7.4 L9.9 9.9"/><path d="M14.1 14.1 L16.6 16.6"/><path d="M16.6 7.4 L14.1 9.9"/><path d="M9.9 14.1 L7.4 16.6"/></svg>
+    </div>
+    <h2 class="sv-h">Pneus <strong>&amp; Roues</strong></h2>
+    <p class="sv-desc">Montage, équilibrage, jantes et roues complètes : nous vous conseillons les pneumatiques adaptés à votre véhicule et à la saison, et stockons vos jeux de roues pour vous.</p>
+    <ul class="sv-feats">
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Montage, équilibrage et pose</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Jantes et roues complètes</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Entreposage des roues et pneus</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Garantie Pneus (24 mois) sur les pneus neufs, crevaison et chocs&nbsp;inclus</li>
+    </ul>
+  </div>
+  <div class="sv-visual">
+    <img src="img/services_04.jpg" alt="Entreposage des pneus et roues — Garage Rossy SA">
+  </div>
+</section>
+
+<!-- ══ 04 · ACCESSOIRES ══ -->
+<section class="sv-band" id="accessoires">
+  <div class="sv-body">
+    <div class="sv-ico">
+      <svg viewBox="0 0 24 24"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.3 7.2 16.7l.9-5.4L4.2 7.7l5.4-.8z"/></svg>
+    </div>
+    <h2 class="sv-h">Accessoires <strong>d'origine</strong></h2>
+    <p class="sv-desc">Barres de toit, attelages, tapis, équipements de confort : nous montons des accessoires Volkswagen d'origine, conçus pour votre modèle et garantis par la marque.</p>
+    <ul class="sv-feats">
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Montage d'accessoires d'origine</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Pièces détachées Volkswagen</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Équipements de transport et de confort</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Conseil et commande sur mesure</li>
+    </ul>
+  </div>
+  <div class="sv-visual">
+    <img src="img/services_05.jpg" alt="Coffre de toit Volkswagen d'origine monté sur barres de toit">
+  </div>
+</section>
+
+<!-- ══ 05 · CARBURANT ══ -->
+<section class="sv-band alt" id="carburant">
+  <div class="sv-body">
+    <div class="sv-ico">
+      <svg viewBox="0 0 24 24"><path d="M4 20V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v15M3 20h12"/><path d="M14 9h2.5a1.5 1.5 0 0 1 1.5 1.5V16a1.5 1.5 0 0 0 3 0V8l-2.5-2.5"/></svg>
+    </div>
+    <h2 class="sv-h">Carburant <strong>&amp; cartes</strong></h2>
+    <p class="sv-desc">Faites le plein chez nous et profitez de nos cartes prépaiement essence et crédit, pratiques pour les particuliers comme pour les flottes d'entreprise.</p>
+    <ul class="sv-feats">
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Prix compétitifs</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Cartes prépaiement essence</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Cartes crédit pour entreprises</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Solution pratique pour les flottes</li>
+    </ul>
+  </div>
+  <div class="sv-visual">
+    <img src="img/services_06.jpg" alt="Plein de carburant à la station du Garage Rossy SA">
+  </div>
+</section>
+
+<!-- ══ 06 · TOTALMOBIL ══ -->
+<section class="sv-band" id="totalmobil">
+  <div class="sv-body">
+    <div class="sv-ico">
+      <svg viewBox="0 0 24 24"><path d="M2 16.5V12.5h11.5V16.5"/><path d="M13.5 11.5h3.2a2 2 0 0 1 1.7 1l1.4 2.3a2 2 0 0 1 .2.9v.8h-2"/><path d="M13.5 16.5h-2.6"/><path d="M6.6 16.5H4"/><circle cx="8.7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M4 12.5 L5.5 8 L8 9"/><path d="M5.5 8 L3 6.5"/><path d="M3 6.5 L2.4 7.6"/><path d="M3 6.5 L4.2 7"/></svg>
+    </div>
+    <h2 class="sv-h">Service <strong>Totalmobil!</strong></h2>
+    <p class="sv-desc">Une panne sur la route ? Le service de dépannage Totalmobil! vous assiste rapidement, partout, pour repartir en toute sérénité. Une tranquillité d'esprit pour reprendre la route l'esprit libre.</p>
+    <ul class="sv-feats">
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Assistance dépannage rapide</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Intervention sur place ou remorquage</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Couverture en Suisse et en Europe</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Véhicule de prêt couvert par Totalmobil! en cas de panne</li>
+    </ul>
+    <div class="sv-link">
+      <a href="https://www.totalmobil.ch/fr.html" target="_blank">En savoir plus sur Totalmobil! →</a>
+    </div>
+  </div>
+  <div class="sv-visual">
+    <img src="img/services_07.jpg" alt="Véhicule de dépannage Caddy Totalmobil! du Garage Rossy SA">
+  </div>
+</section>
+
+<!-- ══ TOTALREPAIR & TOTALGLASS ══ -->
+<section class="sv-band alt" id="totalrepair">
+  <div class="sv-body">
+    <div style="display:flex;gap:12px;margin-bottom:24px;">
+      <div class="sv-ico"><svg viewBox="0 0 24 24"><path d="M3 19.5c-.3-3 .1-6.5 1.1-9.6.3-.9 1-1.5 1.9-1.7l11-2.1c.7-.1 1.3.3 1.5 1l2 6.4c.1.5.2 1 .2 1.5v4.5a.5.5 0 0 1-.5.5H3.5a.5.5 0 0 1-.5-.4z"/><path d="M5.5 9.8l9.8-1.7c.5-.1.9.4.7.9l-1 2.6a1 1 0 0 1-.9.6H5.6"/><path d="M13.5 14.5h3"/></svg></div>
+      <div class="sv-ico"><svg viewBox="0 0 24 24"><path d="M2 9.5c3-2 5.8-3 10-3s7 1 10 3l-2.2 8a1.5 1.5 0 0 1-1.4 1.1H5.6A1.5 1.5 0 0 1 4.2 17.5z"/><path d="M6 10.5l1.5 3.5"/><path d="M8 10l2 4"/><path d="M17 9.5l-3.5 8.5"/></svg></div>
+    </div>
+    <h2 class="sv-h">Total<strong>repair</strong> &amp; Total<strong>glass</strong></h2>
+    <p class="sv-desc">Votre premier interlocuteur en cas de sinistre, qu'il s'agisse de carrosserie, de peinture ou de bris de glace. Toutes les réparations sont réalisées conformément aux directives du constructeur, avec des pièces d'origine.</p>
+    <ul class="sv-feats">
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Premier interlocuteur en cas de sinistre</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Garantie de réparation accordée</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Réparation durable garantie</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Conformité aux directives du constructeur</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Pièces d'origine exclusivement</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Documentation numérique et transparente</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Formalités administratives avec votre assurance prises en charge</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Partenaire Totalglass pour tous les bris de glace</li>
+    </ul>
+  </div>
+  <div class="sv-visual" style="background:#fff;">
+    <div class="sv-logo-wrap" style="flex-direction:column;gap:0;padding:0 16px;">
+      <div style="width:90%;display:flex;align-items:center;justify-content:center;margin-bottom:-30px;"><img src="img/services_totalrepair.jpg" alt="Totalrepair — votre expert en carrosserie"></div>
+      <div style="width:90%;display:flex;align-items:center;justify-content:center;"><img src="img/services_totalglass.jpg" alt="Totalglass — votre expert en vitrage auto"></div>
+    </div>
+  </div>
+</section>
+<!-- ══ CTA ══ -->
+<section class="sv-cta">
+  <div class="e">À votre service</div>
+  <h3>Prêt à confier votre <strong>véhicule</strong> ?</h3>
+  <p>Prenez rendez-vous en ligne ou passez nous voir à Léchelles.</p>
+  <div class="hero-actions" style="justify-content:center;">
+    <a href="https://rossysa.sopl.ch/#loginSection" target="_blank" class="btn-p">Prendre rendez-vous <span class="arr">→</span></a>
+    <a href="index.html#contact" class="btn-s">Nous contacter <span class="arr">→</span></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-col">
+    <div class="f-logo-text">Garage Rossy SA</div>
+    <div class="f-tag">Votre partenaire VW<br>depuis plus de 30 ans.</div>
+    <div class="f-vw">⬤ Volkswagen Partner</div>
+  </div>
+  <div class="f-col">
+    <div class="f-col-title">Contact</div>
+    <div class="f-info">Route de Payerne 14<br>1773 Léchelles · Fribourg</div>
+    <div class="f-info"><a href="tel:+41266602586">+41 26 660 25 86</a></div>
+    <div class="f-info"><a href="mailto:info@rossysa.ch">info@rossysa.ch</a></div>
+  </div>
+  <div class="f-col">
+    <div class="f-col-title">Horaires</div>
+    <div class="f-info">Lun – Ven · 07h30 – 12h00 / 13h30 – 17h30</div>
+    <div class="f-info">Samedi · sur rendez-vous</div>
+    <div class="f-info" style="margin-top:6px;">Digibox · 24h/24 · 7j/7</div>
+  </div>
+  <div class="f-bottom">
+    <div class="f-copy">© 2026 Garage Rossy SA · Tous droits réservés</div>
+    <a href="confidentialite.html" class="f-priv">Politique de confidentialité</a>
+  </div>
+</footer>
+
+<script>
+  // Parallax hero
+  const hp = document.getElementById('hero-p');
+  window.addEventListener('scroll', ()=>{
+    if(hp) hp.style.transform = `translateY(${window.scrollY * 0.4}px)`;
+  }, {passive:true});
+
+  // Parallax service card images
+  const cards = document.querySelectorAll('[data-card]');
+  window.addEventListener('scroll', ()=>{
+    cards.forEach(card => {
+      const bg = card.querySelector('.svc-bg');
+      if(!bg) return;
+      const rect = card.getBoundingClientRect();
+      const center = rect.top + rect.height / 2 - window.innerHeight / 2;
+      bg.style.transform = `translateY(${center * 0.12}px)`;
+    });
+  }, {passive:true});
+
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('v'); obs.unobserve(e.target); } });
+  }, {threshold:.08, rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.r,.rl').forEach(el => obs.observe(el));
+
+  // Reveal des bandes de prestations (déclenché quand la bande entre dans le viewport)
+  const bandReveal = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('v'); bandReveal.unobserve(e.target); } });
+  }, {threshold:.22});
+  document.querySelectorAll('.sv-band').forEach(el => bandReveal.observe(el));
+
+  // Parallaxe douce sur les photos des bandes
+
+
+  // Contact form
+  function handleContactForm(e){
+    e.preventDefault();
+    const success = document.getElementById('cf-success');
+    success.classList.add('show');
+    e.target.querySelectorAll('input,select,textarea').forEach(el => el.disabled = true);
+    e.target.querySelector('.cf-submit').style.opacity = '0.5';
+  }
+
+
+  // Cookie banner — conforme nLPD/RGPD}
+  function getCookieVal() {
+    const match = document.cookie.match(/rossysa_cookies=([^;]+)/);
+    return match ? match[1] : null;
+  }
+  // Afficher la bannière cookies après 800ms si aucun choix enregistré
+  document.addEventListener('DOMContentLoaded', function() {
+    if (!getCookieVal()) {
+      setTimeout(function() {}, 800);
+    }
+  });
+
+
+  // Pastilles de progression — section active au scroll
+  const dots = document.querySelectorAll('.sv-dots a[data-dot]');
+  const bands = document.querySelectorAll('.sv-band');
+  if (dots.length && bands.length) {
+    const dotObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const id = e.target.id;
+          dots.forEach(d => d.classList.toggle('active', d.getAttribute('href') === '#' + id));
+        }
+      });
+    }, {threshold:.5});
+    bands.forEach(b => dotObs.observe(b));
+  }
+
+  // Nav shadow
+  window.addEventListener('scroll', ()=>{
+    document.getElementById('nav').style.boxShadow =
+      window.scrollY > 60 ? '0 4px 20px rgba(0,30,80,.08)' : 'none';
+  });
+</script>
+
+
+
+
+<script>
+(function(){
+  var btn=document.getElementById('burger');
+  var links=document.getElementById('nav-links');
+  if(!btn||!links)return;
+  btn.addEventListener('click',function(){
+    btn.classList.toggle('open');
+    links.classList.toggle('open');
+    btn.setAttribute('aria-expanded', links.classList.contains('open'));
+  });
+  // Toggle sous-menus mobile
+  links.querySelectorAll('.mob-toggle').forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(window.innerWidth <= 700){
+        e.preventDefault();
+        var drop = a.parentElement.querySelector('.nav-drop');
+        if(drop){ drop.classList.toggle('mob-open'); a.classList.toggle('mob-open'); }
+      }
+    });
+  });
+  // Fermer au clic sur un lien final
+  links.querySelectorAll('a:not(.mob-toggle)').forEach(function(a){
+    a.addEventListener('click',function(){
+      btn.classList.remove('open');
+      links.classList.remove('open');
+      links.querySelectorAll('.nav-drop').forEach(function(d){ d.classList.remove('mob-open'); });
+      links.querySelectorAll('.mob-toggle').forEach(function(t){ t.classList.remove('mob-open'); });
+    });
+  });
+})();
+</script>
+</body>
+</html>

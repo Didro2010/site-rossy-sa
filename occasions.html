@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Véhicules d'occasion — Garage Rossy SA</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,200;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --vw:   #001e50;
+  --vwm:  #0040c1;
+  --vwl:  #00b0f0;
+  --w:    #ffffff;
+  --off:  #f7f8fc;
+  --grey: #7a8496;
+  --rule: rgba(0,30,80,0.1);
+  --t:    0.35s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--w);
+  color:var(--vw);
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-weight:300;
+  overflow-x:hidden;
+}
+
+/* ── ICÔNES REMPLACEMENT EMOJIS ── */
+.hb-dot{width:8px;height:8px;border-radius:50%;background:var(--vwl);flex-shrink:0;}
+.crow-bar{display:inline-block;width:3px;height:16px;background:var(--vwm);border-radius:2px;flex-shrink:0;margin-top:3px;}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 56px;height:68px;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--rule);
+}
+.nav-l{display:flex;align-items:center;gap:16px;text-decoration:none;}
+.nav-logo{height:48px;filter:none;opacity:1;}
+.nav-pipe{width:1px;height:24px;background:var(--rule);}
+.nav-tag{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--grey);}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+.nav-links>li{position:relative;}
+.nav-links>li>a{font-size:13px;font-weight:500;color:var(--grey);text-decoration:none;padding:7px 14px;border-radius:2px;transition:color var(--t),background var(--t);display:flex;align-items:center;gap:5px;white-space:nowrap;}
+.nav-links>li>a:hover{color:var(--vw);background:rgba(0,30,80,.05);}
+.nav-links>li>a.has-drop::after{content:'';display:inline-block;width:0;height:0;border-left:3.5px solid transparent;border-right:3.5px solid transparent;border-top:4px solid currentColor;margin-left:2px;transition:transform var(--t);}
+.nav-links>li:hover>a.has-drop::after{transform:rotate(180deg);}
+
+/* Dropdown */
+.nav-drop{
+  visibility:hidden;
+  opacity:0;
+  position:absolute;top:100%;left:50%;
+  transform:translateX(-50%);
+  background:#fff;
+  border:1px solid var(--rule);
+  border-radius:3px;
+  box-shadow:0 12px 40px rgba(0,30,80,.12);
+  min-width:220px;
+  padding:8px 0;
+  z-index:300;
+  white-space:nowrap;
+  transition:opacity .18s ease, visibility .18s ease;
+  pointer-events:none;
+}
+.nav-drop::before{
+  content:'';
+  position:absolute;
+  top:-12px;left:0;right:0;
+  height:12px;
+}
+.nav-links>li:hover .nav-drop{
+  visibility:visible;
+  opacity:1;
+  pointer-events:auto;
+}
+.nav-drop a{display:block;padding:9px 22px;font-size:12px;font-weight:500;color:var(--vw);text-decoration:none;transition:background var(--t),color var(--t);}
+.nav-drop a:hover{background:rgba(0,30,80,.05);color:var(--vwm);}
+.nav-drop-sep{height:1px;background:var(--rule);margin:6px 0;}
+
+.nav-btn{
+  font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  background:var(--vwm);color:#fff !important;text-decoration:none;
+  padding:11px 26px;border-radius:2px;
+  transition:all var(--t);
+  animation:navpulse 2.8s ease-in-out infinite;
+  box-shadow:0 0 0 0 rgba(0,64,193,.5);
+}
+.nav-btn:hover{
+  background:var(--vw);color:#fff !important;transform:translateY(-1px);
+  animation:none;
+  box-shadow:0 6px 20px rgba(0,30,80,.3);
+}
+@keyframes navpulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(0,64,193,.5);}
+  50%{box-shadow:0 0 0 8px rgba(0,64,193,0);}
+}
+
+
+
+/* ── PAGE OCCASIONS ── */
+.occ-hero{
+  min-height:300px;
+  background:var(--vw);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0 56px 52px;
+  margin-top:68px;
+  position:relative;
+  overflow:hidden;
+}
+.occ-hero-grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:52px 52px;
+}
+.occ-hero::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(120deg,rgba(0,30,80,.6) 0%,rgba(0,64,193,.3) 100%);
+}
+.occ-hero-content{position:relative;z-index:2;}
+.occ-eyebrow{
+  font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;
+  color:var(--vwl);margin-bottom:18px;
+  display:flex;align-items:center;gap:12px;
+  animation:fadeUp .8s .2s ease both;
+}
+.occ-eyebrow::before{content:'';display:block;width:28px;height:1.5px;background:var(--vwl);}
+.occ-h1{
+  font-size:clamp(42px,6vw,82px);font-weight:800;line-height:.9;
+  letter-spacing:-2px;color:#fff;
+  animation:fadeUp .8s .3s ease both;
+}
+.occ-h1 em{font-style:italic;font-weight:200;color:rgba(255,255,255,.6);}
+.occ-sub{
+  font-size:15px;font-weight:300;color:rgba(255,255,255,.5);
+  margin-top:14px;letter-spacing:.2px;
+  animation:fadeUp .8s .4s ease both;
+}
+
+/* Main */
+.occ-main{
+  background:var(--off);
+  padding:64px 56px 80px;
+}
+.occ-intro{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:48px;
+  gap:40px;
+}
+.occ-h2{
+  font-size:clamp(28px,3.5vw,46px);font-weight:200;
+  line-height:.95;letter-spacing:-1px;color:var(--vw);
+}
+.occ-h2 strong{font-weight:800;}
+.occ-h2 em{font-style:italic;color:var(--vwm);font-weight:200;}
+.occ-desc{
+  max-width:380px;font-size:14px;color:var(--grey);
+  line-height:1.85;flex-shrink:0;
+}
+
+/* Widget container */
+.occ-widget-wrap{
+  background:var(--w);
+  border:1px solid var(--rule);
+  border-radius:3px;
+  overflow:hidden;
+  box-shadow:0 4px 24px rgba(0,30,80,.07);
+}
+.occ-widget-bar{
+  background:var(--vw);
+  padding:16px 28px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.occ-widget-bar-l{display:flex;align-items:center;gap:14px;}
+.occ-widget-bar-dot{width:8px;height:8px;border-radius:50%;background:var(--vwl);}
+.occ-widget-bar-txt{font-size:12px;font-weight:700;color:#fff;letter-spacing:.5px;}
+.occ-widget-bar-sub{font-size:11px;color:rgba(255,255,255,.4);margin-top:1px;}
+.occ-widget-bar-link{
+  font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;
+  color:rgba(255,255,255,.6);text-decoration:none;
+  border:1px solid rgba(255,255,255,.2);padding:6px 16px;border-radius:2px;
+  transition:all var(--t);
+}
+.occ-widget-bar-link:hover{color:#fff;border-color:rgba(255,255,255,.5);}
+
+/* AutoScout embed */
+.occ-as-container{
+  width:100%;
+  min-height:900px;
+  position:relative;
+}
+
+/* Script embed zone */
+#as-widget-root{
+  width:100%;
+  min-height:900px;
+}
+
+/* Fallback visible pendant chargement */
+.occ-loading{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  min-height:500px;gap:20px;
+  color:var(--grey);
+}
+.occ-loading-bar{
+  width:48px;height:2px;background:var(--vwl);
+  animation:ld 1.4s ease-in-out infinite;
+}
+@keyframes ld{0%,100%{transform:scaleX(.3);opacity:.4}50%{transform:scaleX(1);opacity:1}}
+.occ-loading-txt{font-size:13px;letter-spacing:1px;text-transform:uppercase;}
+
+/* CTA bas */
+.occ-cta{
+  background:var(--vwm);padding:72px 56px;
+  display:flex;justify-content:space-between;align-items:center;gap:40px;
+}
+.occ-cta-txt{
+  font-size:clamp(24px,3.5vw,44px);font-weight:200;
+  color:#fff;letter-spacing:-1px;line-height:.95;
+}
+.occ-cta-txt strong{font-weight:800;}
+.occ-cta-btns{display:flex;gap:14px;flex-shrink:0;}
+.occ-cta-p{
+  font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  background:rgba(255,255,255,.95);color:var(--vw);
+  text-decoration:none;padding:15px 30px;border-radius:2px;transition:all var(--t);
+}
+.occ-cta-p:hover{background:#fff;transform:translateY(-2px);}
+.occ-cta-s{
+  font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+  border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.85);
+  text-decoration:none;padding:14px 28px;border-radius:2px;transition:all var(--t);
+}
+.occ-cta-s:hover{border-color:#fff;color:#fff;}
+
+/* Reveal */
+.r{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.r.vis{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.12s;}
+.d2{transition-delay:.24s;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--vw);
+  padding:52px 56px 0;
+  border-top:1px solid rgba(255,255,255,.08);
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  grid-template-rows:auto auto;
+  gap:0 48px;
+}
+.f-col{display:flex;flex-direction:column;gap:10px;padding-bottom:40px;}
+.f-col-title{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--vwl);margin-bottom:6px;}
+.f-logo-text{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.5px;}
+.f-tag{font-size:12px;font-weight:300;font-style:italic;color:rgba(255,255,255,.5);line-height:1.7;}
+.f-info{font-size:12px;color:rgba(255,255,255,.6);line-height:1.7;}
+.f-info a{color:rgba(255,255,255,.6);text-decoration:none;transition:color var(--t);}
+.f-info a:hover{color:var(--vwl);}
+.f-vw{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--vwl);margin-top:4px;}
+.f-bottom{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-top:1px solid rgba(255,255,255,.08);}
+.f-copy{font-size:11px;color:rgba(255,255,255,.45);}
+.f-priv{font-size:11px;color:rgba(255,255,255,.45);text-decoration:none;transition:color var(--t);}
+.f-priv:hover{color:var(--vwl);}
+@media(max-width:960px){footer{grid-template-columns:1fr;padding:40px 24px 0;}.f-col{padding-bottom:28px;}}
+
+/* ── REVEAL ── */
+.r{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.r.v{opacity:1;transform:none;}
+.rl{opacity:0;transform:translateX(-28px);transition:opacity .7s ease,transform .7s ease;}
+.rl.v{opacity:1;transform:none;}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  nav{padding:0 20px;}
+  .nav-links{display:none;}
+  .hero-content{padding:0 24px;}
+  .hero-badges{display:none;}
+  .hero-stats{grid-template-columns:1fr 1fr;}
+  .hstat{padding:20px 24px;}
+  .section,.digibox{padding:72px 24px;}
+  .photo-band{grid-template-columns:1fr;height:auto;}
+  .pb{height:220px;}
+  .svc-head,.team-head{flex-direction:column;gap:20px;align-items:flex-start;}
+  .svc-grid{grid-template-columns:1fr 1fr;}
+  .svcam{grid-template-columns:1fr;}
+  .cam-r{padding:48px 24px;}
+  .digi-inner,.contact-inner{grid-template-columns:1fr;gap:24px;}
+  .team-grid{grid-template-columns:1fr 1fr;}
+  .cta{flex-direction:column;padding:60px 24px;text-align:center;}
+  footer{grid-template-columns:1fr;gap:28px;}
+  .f-right{text-align:left;}
+}
+
+/* ── COOKIE BANNER ── */
+@media(max-width:640px){}
+
+/* ── COOKIE BANNER ── */
+.cookie-text{}
+.cookie-desc a:hover{text-decoration:underline;}
+@media(max-width:960px){
+}
+
+
+/* ── PRIVACY PAGE ── */
+.privacy-section{background:var(--off);}
+.privacy-inner{max-width:860px;}
+.privacy-content{margin-top:48px;display:flex;flex-direction:column;gap:0;}
+.priv-block{padding:28px 0;border-bottom:1px solid var(--rule);}
+.priv-block:last-child{border-bottom:none;}
+.priv-h3{font-size:14px;font-weight:700;color:var(--vw);letter-spacing:-.2px;margin-bottom:12px;text-transform:uppercase;font-size:11px;letter-spacing:2px;color:var(--vwm);}
+.priv-block p{font-size:14px;font-weight:300;line-height:1.85;color:#4a5568;margin-bottom:10px;}
+.priv-block p:last-child{margin-bottom:0;}
+.priv-block a{color:var(--vwm);text-decoration:none;font-weight:600;}
+.priv-block a:hover{text-decoration:underline;}
+.priv-list{margin:10px 0 10px 20px;display:flex;flex-direction:column;gap:6px;}
+.priv-list li{font-size:14px;font-weight:300;line-height:1.7;color:#4a5568;}
+.priv-date{font-size:12px;color:var(--grey);font-style:italic;}
+.cookie-table-wrap{overflow-x:auto;margin-top:12px;}
+.cookie-table{width:100%;border-collapse:collapse;font-size:13px;}
+.cookie-table th{background:var(--vw);color:#fff;padding:10px 16px;text-align:left;font-weight:600;font-size:11px;letter-spacing:1px;text-transform:uppercase;}
+.cookie-table td{padding:10px 16px;border-bottom:1px solid var(--rule);color:#4a5568;font-weight:300;}
+.cookie-table tr:last-child td{border-bottom:none;}
+.cookie-table tr:nth-child(even) td{background:rgba(0,30,80,.02);}
+
+.cf-legal{font-size:11px;color:var(--grey);line-height:1.7;margin-top:14px;padding-top:14px;border-top:1px solid var(--rule);}
+.cf-legal a{color:var(--vwm);text-decoration:none;font-weight:600;}
+.cf-legal a:hover{text-decoration:underline;}
+
+
+@media(max-width:960px){
+  .occ-hero{padding:0 24px 36px;min-height:240px;}
+  .occ-main{padding:40px 24px 60px;}
+  .occ-intro{flex-direction:column;gap:24px;align-items:flex-start;}
+  .occ-cta{flex-direction:column;padding:56px 24px;text-align:center;}
+  .occ-cta-btns{flex-direction:column;}
+  nav{padding:0 24px;}
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE — TABLETTE & MOBILE
+═══════════════════════════════════════ */
+
+/* Hamburger bouton */
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:4px;}
+.nav-burger span{display:block;height:2px;background:var(--vw);border-radius:2px;transition:all .3s ease;}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-burger.open span:nth-child(2){opacity:0;}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* ── TABLETTE (≤900px) ── */
+@media(max-width:900px){
+  nav{padding:0 24px;}
+  .nav-links{gap:1px;}
+  .nav-links>li>a{font-size:12px;padding:6px 10px;}
+}
+
+/* ── MOBILE (≤700px) ── */
+@media(max-width:700px){
+  nav{padding:0 20px;height:60px;}
+  .nav-burger{display:flex;}
+
+  .nav-links{
+    display:none;
+    position:fixed;
+    top:60px;left:0;right:0;
+    height:calc(100vh - 60px);
+    background:#fff;
+    flex-direction:column;
+    align-items:stretch;
+    padding:0 0 40px;
+    overflow-y:scroll;
+    -webkit-overflow-scrolling:touch;
+    z-index:199;
+    gap:0;
+    border-top:1px solid var(--rule);
+  }
+  .nav-links.open{display:flex;}
+  .nav-links>li{width:100%;}
+  .nav-links>li>a{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-size:15px;font-weight:500;
+    padding:16px 24px;
+    border-radius:0;
+    border-bottom:1px solid var(--rule);
+    color:var(--vw);
+    width:100%;
+    box-sizing:border-box;
+  }
+  .nav-links>li>a.has-drop::after{
+    display:inline-block;
+    margin-left:auto;
+    margin-top:0;
+    transition:transform .3s ease;
+  }
+  .nav-links>li>a.has-drop.mob-open::after{transform:rotate(180deg);}
+  .nav-drop{
+    visibility:visible !important;
+    opacity:1 !important;
+    pointer-events:auto !important;
+    position:static !important;
+    transform:none !important;
+    box-shadow:none !important;
+    border:none !important;
+    border-bottom:1px solid var(--rule) !important;
+    border-radius:0 !important;
+    background:#f5f7fa !important;
+    padding:0 !important;
+    min-width:unset !important;
+    white-space:normal !important;
+    max-height:0 !important;
+    overflow:hidden !important;
+    transition:max-height .3s ease !important;
+  }
+  .nav-drop.mob-open{
+    max-height:800px !important;
+    padding:8px 0 !important;
+  }
+  .nav-drop a{
+    display:block !important;
+    padding:12px 40px !important;
+    font-size:14px !important;
+    border-bottom:none !important;
+    color:var(--vw) !important;
+  }
+  .nav-drop-sep{display:none !important;}
+  .nav-btn{margin:16px 24px;text-align:center;border-radius:2px;display:block;}
+
+  /* Hero mobile */
+  .hero{min-height:100svh;}
+  .hero-content{padding:100px 24px 60px;}
+  .hero-title{font-size:clamp(38px,10vw,56px);letter-spacing:-1.5px;}
+  .hero-sub{font-size:15px;}
+  .hero-btns{flex-direction:column;gap:12px;}
+  .hero-btns a{width:100%;text-align:center;}
+  .hero-logos{top:72px;right:16px;gap:12px;}
+  .hero-logos img{height:52px;}
+
+  /* Sections générales */
+  .content-section,.page-hero{padding:100px 24px 60px;}
+  .page-h1{font-size:clamp(36px,9vw,52px);letter-spacing:-1px;}
+  footer{padding:40px 24px 0;grid-template-columns:1fr;}
+  .f-bottom{flex-direction:column;gap:8px;text-align:center;}
+
+  /* Notre équipe — 2 colonnes sur mobile */
+  .membres-wrap{padding:0 20px 60px;grid-template-columns:repeat(2,1fr);gap:12px;}
+  .groupe-label{padding:0 20px;margin-top:48px;margin-bottom:24px;}
+  .card-nom{font-size:14px;}
+  .card-email{font-size:11px;word-break:break-all;}
+
+  /* Occasions */
+  .occ-grid{grid-template-columns:1fr !important;}
+
+  /* Cookie banner */
+  #cookieBanner{padding:16px 20px;flex-direction:column;align-items:flex-start;gap:14px;}
+  .cookie-btns{width:100%;flex-direction:row;}
+  .cookie-accept,.cookie-refuse{flex:1;text-align:center;}
+}
+
+/* ── TABLETTE (701px–900px) ── */
+@media(min-width:701px) and (max-width:900px){
+  .membres-wrap{grid-template-columns:repeat(3,1fr);}
+  .card-email{font-size:11px;word-break:break-all;}
+  .content-section,.page-hero{padding:120px 40px 80px;}
+  footer{padding:40px 40px 0;grid-template-columns:1fr 1fr;}
+  .hero-content{padding:120px 40px 80px;}
+}
+
+/* ── FIX OVERFLOW MOBILE ── */
+@media(max-width:700px){
+  /* Histoire — timeline */
+  .t-body{width:100%;max-width:100%;overflow:hidden;}
+  .t-era{width:100%;max-width:100%;padding-left:20px;padding-right:20px;box-sizing:border-box;}
+  .t-heading{font-size:clamp(28px,8vw,42px);letter-spacing:-1px;}
+  .t-text{font-size:14px;}
+  .t-photos{display:flex;flex-direction:column;gap:12px;width:100%;}
+  .t-photo{width:100% !important;height:200px !important;}
+  .timeline{padding:60px 0;}
+
+  /* Notre équipe — CTA */
+  .cta-btns{flex-direction:column;gap:12px;width:100%;padding:0 24px;box-sizing:border-box;}
+  .cta-p,.cta-s{width:100%;text-align:center;box-sizing:border-box;}
+
+  /* Services — sections alternées */
+  .sv-body{width:100%;max-width:100%;padding:40px 24px;box-sizing:border-box;}
+  .sv-h{font-size:clamp(24px,7vw,36px);letter-spacing:-0.5px;}
+  .sv-desc,.sv-feats{max-width:100%;}
+  .sv-section{flex-direction:column !important;}
+  .sv-img{width:100% !important;height:260px !important;min-height:unset !important;}
+
+  /* Sponsoring — logo grid */
+  .logo-card{width:calc(50% - 10px) !important;max-width:calc(50% - 10px) !important;}
+  .logos-grid{display:flex;flex-wrap:wrap;gap:12px;padding:0 24px;box-sizing:border-box;}
+
+  /* Confidentialité — table */
+  .cookie-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -24px;padding:0 24px;}
+  .cookie-table{min-width:500px;}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+<a href="index.html" class="nav-l">
+    <img class="nav-logo" src="img/confidentialite_02.jpg" alt="Garage Rossy SA">
+  </a>
+    <button class="nav-burger" id="burger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html#hero">Accueil</a></li>
+    <li>
+      <a href="index.html#vente" class="has-drop mob-toggle" style="color:var(--vw);">Vente</a>
+      <div class="nav-drop">
+        <a href="https://www.volkswagen.ch/fr/configurateur.html?---=%7B%22configuration-step-navigation-service%22%3A%22%2F%3FconfigStep%3D%257B%2522context%2522%253A%2522mofa-standalone%2522%252C%2522selectedStep%2522%253A%2522carline%2522%257D%22%7D" target="_blank">Véhicules neufs VW →</a>
+        <a href="https://www.volkswagen-nutzfahrzeuge.ch/fr.html" target="_blank">Véhicules neufs VW Utilitaire →</a>
+        <a href="occasions.html">Véhicules d'occasion</a>
+        <div class="nav-drop-sep"></div>
+        <a href="https://www.amag-leasing.ch/fr.html" target="_blank">Offre de financement →</a>
+      </div>
+    </li>
+    <li>
+      <a href="index.html#garage" class="has-drop mob-toggle">Notre Garage</a>
+      <div class="nav-drop">
+        <a href="notre-equipe.html">Notre équipe</a>
+        <a href="histoire.html">Histoire</a>
+        <a href="offre-emploi.html">Offre d'emploi</a>
+        <a href="sponsoring.html">Sponsoring</a>
+      </div>
+    </li>
+    <li>
+      <a href="services.html" class="has-drop mob-toggle">Services</a>
+      <div class="nav-drop">
+        <a href="services.html#entretien">Entretien et réparations</a>
+        <a href="services.html#geometrie">Géométrie</a>
+        <a href="services.html#calibrage">Calibrage assistants</a>
+        <a href="services.html#pneus">Pneus et Roues</a>
+        <a href="services.html#accessoires">Accessoires</a>
+        <a href="services.html#carburant">Carburant</a>
+        <div class="nav-drop-sep"></div>
+        <a href="services.html#totalmobil">Totalmobil! — Dépannage</a>
+        <a href="services.html#totalrepair">Totalrepair — Carrosserie</a>
+        <a href="services.html#totalglass">Totalglass — Vitrage</a>
+      </div>
+    </li>
+    <li><a href="index.html#contact">Contact</a></li>
+    <li><a href="https://rossysa.sopl.ch/#loginSection" target="_blank" class="nav-btn">Rendez-vous →</a></li>
+  </ul>
+</nav>
+
+<section class="occ-hero">
+  <div class="occ-hero-grid"></div>
+  <div class="occ-hero-content">
+    <div class="occ-eyebrow">Garage Rossy SA · Léchelles</div>
+    <h1 class="occ-h1">Véhicules<br><em>d'occasion.</em></h1>
+    <p class="occ-sub">Stock sélectionné · Contrôlé · Garanti</p>
+  </div>
+</section>
+
+<section class="occ-main">
+  <div class="occ-intro">
+    <h2 class="occ-h2 r">Notre stock<br><strong>disponible</strong><br><em>maintenant.</em></h2>
+    <p class="occ-desc r d1">Chaque véhicule est inspecté par nos techniciens certifiés Volkswagen. Financement disponible sur demande.</p>
+  </div>
+
+  <div class="occ-widget-wrap r d2">
+    <div class="occ-widget-bar">
+      <div class="occ-widget-bar-l">
+        <div class="occ-widget-bar-dot"></div>
+        <div>
+          <div class="occ-widget-bar-txt">Stock Garage Rossy SA</div>
+          <div class="occ-widget-bar-sub">AutoScout24</div>
+        </div>
+      </div>
+      <a href="https://www.autoscout24.ch/fr/s/seller-61042" target="_blank" class="occ-widget-bar-link">Voir sur AutoScout24 →</a>
+    </div>
+    <div class="occ-as-container">
+      <div class="hci-container" data-config-id="3352" data-language="fr" data-entry-point="search"></div>
+      <script src="https://www.autoscout24.ch/assets/hci/v2/hci.current.js"></script>
+    </div>
+  </div>
+</section>
+
+<div class="occ-cta">
+  <div class="occ-cta-txt">Une question sur<br><strong>un véhicule ?</strong></div>
+  <div class="occ-cta-btns">
+    <a href="index.html#nous-contacter" class="occ-cta-p">Nous contacter →</a>
+    <a href="tel:+41266602586" class="occ-cta-s">Appeler →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="f-col">
+    <div class="f-logo-text">Garage Rossy SA</div>
+    <div class="f-tag">Votre partenaire VW<br>depuis plus de 30 ans.</div>
+    <div class="f-vw">⬤ Volkswagen Partner</div>
+  </div>
+  <div class="f-col">
+    <div class="f-col-title">Contact</div>
+    <div class="f-info">Route de Payerne 14<br>1773 Léchelles · Fribourg</div>
+    <div class="f-info"><a href="tel:+41266602586">+41 26 660 25 86</a></div>
+    <div class="f-info"><a href="mailto:info@rossysa.ch">info@rossysa.ch</a></div>
+  </div>
+  <div class="f-col">
+    <div class="f-col-title">Horaires</div>
+    <div class="f-info">Lun – Ven · 07h30 – 12h00 / 13h30 – 17h30</div>
+    <div class="f-info">Samedi · sur rendez-vous</div>
+    <div class="f-info" style="margin-top:6px;">Digibox · 24h/24 · 7j/7</div>
+  </div>
+  <div class="f-bottom">
+    <div class="f-copy">© 2026 Garage Rossy SA · Tous droits réservés</div>
+    <a href="confidentialite.html" class="f-priv">Politique de confidentialité</a>
+  </div>
+</footer>
+    </div>
+  </div>
+
+
+<script>
+(function(){
+  var btn=document.getElementById('burger');
+  var links=document.getElementById('nav-links');
+  if(!btn||!links)return;
+  btn.addEventListener('click',function(){
+    btn.classList.toggle('open');
+    links.classList.toggle('open');
+  });
+  // Toggle sous-menus mobile
+  links.querySelectorAll('.mob-toggle').forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(window.innerWidth <= 700){
+        e.preventDefault();
+        var drop = a.parentElement.querySelector('.nav-drop');
+        if(drop){
+          drop.classList.toggle('mob-open');
+          a.classList.toggle('mob-open');
+        }
+      }
+    });
+  });
+
+  // Fermer au clic sur un lien
+  links.querySelectorAll('a:not(.mob-toggle)').forEach(function(a){
+    a.addEventListener('click',function(){
+      btn.classList.remove('open');
+      links.classList.remove('open');
+      links.querySelectorAll('.nav-drop').forEach(function(d){ d.classList.remove('mob-open'); });
+    });
+  });
+})();
+</script>
+</body>
+
+<script>
+// Nav shadow
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').style.boxShadow =
+    window.scrollY > 60 ? '0 4px 20px rgba(0,30,80,.08)' : 'none';
+});
+
+// Reveal
+const revEls = document.querySelectorAll('.r');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('vis'); });
+}, {threshold:0.08});
+revEls.forEach(el => io.observe(el));
+
+// AutoScout24 widget
+(function() {
+  // AutoScout24 widget embed via leur script officiel
+  // Dealer ID Rossy SA: récupéré depuis rossysa.ch
+  var container = document.getElementById('as-widget-root');
+  var loading = document.getElementById('occ-loading');
+  
+  // Méthode 1: iframe embed AutoScout24 avec X-Frame-Options bypass via lien direct
+  // AutoScout24 ne permet pas iframe direct, on utilise leur API publique
+  // On affiche les voitures via un lien embed de recherche filtrée
+  
+  // Créer l'iframe avec l'URL de recherche AutoScout24 Suisse filtrée par le dealer
+  var iframe = document.createElement('iframe');
+  iframe.src = 'https://www.autoscout24.ch/fr/s/seller-61042';
+  iframe.style.cssText = 'width:100%;min-height:900px;border:0;display:none;';
+  iframe.title = 'Stock véhicules Garage Rossy SA';
+  iframe.loading = 'lazy';
+  
+  iframe.onload = function() {
+    loading.style.display = 'none';
+    iframe.style.display = 'block';
+  };
+  
+  iframe.onerror = function() {
+    showFallback();
+  };
+  
+  container.appendChild(iframe);
+  
+  // Timeout fallback si iframe bloqué (X-Frame-Options)
+  setTimeout(function() {
+    if(loading.style.display !== 'none') {
+      showFallback();
+    }
+  }, 4000);
+  
+  function showFallback() {
+    loading.style.display = 'none';
+    var fb = document.createElement('div');
+    fb.style.cssText = 'padding:60px 40px;text-align:center;';
+    fb.innerHTML = `
+      <p style="font-size:13px;color:var(--grey);margin-bottom:28px;line-height:1.8;">
+        Découvrez notre sélection de véhicules d'occasion directement<br>sur notre page AutoScout24.
+      </p>
+      <a href="https://www.autoscout24.ch/fr/s/seller-61042" 
+         target="_blank"
+         style="display:inline-flex;align-items:center;gap:10px;
+                background:var(--vw);color:#fff;text-decoration:none;
+                padding:16px 36px;border-radius:2px;
+                font-family:'Plus Jakarta Sans',sans-serif;
+                font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+                transition:all .35s;">
+        Voir notre stock AutoScout24 →
+      </a>`;
+    container.appendChild(fb);
+  }
+})();
+
+// Cookie);
+</script>
+</body>
+</html>

@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Histoire — Garage Rossy SA · Volkswagen · Léchelles</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,200;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --vw:#001e50;--vwm:#0040c1;--vwl:#00b0f0;
+  --w:#ffffff;--off:#f7f8fc;--grey:#7a8496;
+  --rule:rgba(0,30,80,0.1);--t:0.35s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth;}
+body{background:var(--w);color:var(--vw);font-family:'Plus Jakarta Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:68px;background:#ffffff;border-bottom:1px solid var(--rule);}
+.nav-l{display:flex;align-items:center;gap:16px;text-decoration:none;}
+.nav-logo{height:48px;}
+.nav-pipe{width:1px;height:24px;background:var(--rule);}
+.nav-tag{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--grey);}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+.nav-links>li{position:relative;}
+.nav-links>li>a{font-size:13px;font-weight:500;color:var(--grey);text-decoration:none;padding:7px 14px;border-radius:2px;transition:color var(--t),background var(--t);display:flex;align-items:center;gap:5px;white-space:nowrap;}
+.nav-links>li>a:hover{color:var(--vw);background:rgba(0,30,80,.05);}
+.nav-links>li>a.has-drop::after{content:'';display:inline-block;width:0;height:0;border-left:3.5px solid transparent;border-right:3.5px solid transparent;border-top:4px solid currentColor;margin-left:2px;transition:transform var(--t);}
+.nav-links>li:hover>a.has-drop::after{transform:rotate(180deg);}
+.nav-drop{visibility:hidden;opacity:0;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--rule);border-radius:3px;box-shadow:0 12px 40px rgba(0,30,80,.12);min-width:220px;padding:8px 0;z-index:300;white-space:nowrap;transition:opacity .18s ease,visibility .18s ease;pointer-events:none;}
+.nav-drop::before{content:'';position:absolute;top:-12px;left:0;right:0;height:12px;}
+.nav-links>li:hover .nav-drop{visibility:visible;opacity:1;pointer-events:auto;}
+.nav-drop a{display:block;padding:9px 22px;font-size:12px;font-weight:500;color:var(--vw);text-decoration:none;transition:background var(--t),color var(--t);}
+.nav-drop a:hover{background:rgba(0,30,80,.05);color:var(--vwm);}
+.nav-drop-sep{height:1px;background:var(--rule);margin:6px 0;}
+.nav-btn{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:var(--vwm);color:#fff !important;text-decoration:none;padding:11px 26px;border-radius:2px;transition:all var(--t);animation:navpulse 2.8s ease-in-out infinite;box-shadow:0 0 0 0 rgba(0,64,193,.5);}
+.nav-btn:hover{background:var(--vw);color:#fff !important;transform:translateY(-1px);animation:none;box-shadow:0 6px 20px rgba(0,30,80,.3);}
+@keyframes navpulse{0%,100%{box-shadow:0 0 0 0 rgba(0,64,193,.5);}50%{box-shadow:0 0 0 8px rgba(0,64,193,0);}}
+
+/* HERO */
+.page-hero{padding:140px 56px 100px;background:var(--vw);position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px;}
+.page-hero-inner{position:relative;z-index:1;max-width:700px;}
+.page-eyebrow{font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--vwl);margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+.page-eyebrow::before{content:'';display:block;width:28px;height:1.5px;background:var(--vwl);}
+.page-h1{font-size:clamp(42px,6vw,80px);font-weight:800;line-height:.92;letter-spacing:-2px;color:#fff;margin-bottom:20px;}
+.page-h1 em{font-style:italic;font-weight:200;color:var(--vwl);}
+
+/* INTRO CHIFFRES */
+.intro-band{background:var(--off);border-bottom:1px solid var(--rule);padding:52px 56px;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;}
+.intro-stat{padding:0 40px;border-right:1px solid var(--rule);}
+.intro-stat:first-child{padding-left:0;}
+.intro-stat:last-child{border-right:none;}
+.stat-num{font-size:clamp(48px,5vw,72px);font-weight:800;letter-spacing:-2px;color:var(--vwm);line-height:1;}
+.stat-label{font-size:12px;font-weight:400;color:var(--grey);margin-top:6px;line-height:1.5;}
+
+/* TIMELINE */
+.timeline-section{padding:100px 56px;}
+.timeline-title{font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--vwm);margin-bottom:72px;display:flex;align-items:center;gap:12px;}
+.timeline-title::before{content:'';display:block;width:22px;height:1.5px;background:var(--vwm);}
+
+.timeline{position:relative;max-width:900px;}
+.timeline::before{content:'';position:absolute;left:120px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--rule) 5%,var(--rule) 95%,transparent);}
+
+.t-item{display:grid;grid-template-columns:120px 1fr;gap:0;margin-bottom:0;opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.t-item.visible{opacity:1;transform:translateY(0);}
+
+.t-year{padding:0 32px 0 0;display:flex;align-items:flex-start;justify-content:flex-end;padding-top:4px;}
+.t-year-txt{font-size:13px;font-weight:700;color:var(--vwm);letter-spacing:.5px;}
+
+.t-body{padding:0 0 60px 40px;position:relative;}
+.t-body::before{content:'';position:absolute;left:-4.5px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--vwm);border:2px solid #fff;box-shadow:0 0 0 1px var(--vwm);}
+
+.t-era{font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--vwl);margin-bottom:10px;}
+.t-heading{font-size:22px;font-weight:700;color:var(--vw);letter-spacing:-.3px;margin-bottom:12px;line-height:1.2;}
+.t-text{font-size:14px;font-weight:300;color:var(--grey);line-height:1.85;max-width:580px;}
+.t-text strong{font-weight:600;color:var(--vw);}
+
+/* MILESTONE dot — years importants */
+.t-item.milestone .t-body::before{width:13px;height:13px;left:-6.5px;background:var(--vwl);box-shadow:0 0 0 3px rgba(0,176,240,.2);}
+.t-item.milestone .t-year-txt{font-size:16px;color:var(--vw);}
+.t-item.milestone .t-heading{font-size:26px;}
+
+/* AUJOURD'HUI BLOCK */
+.aujourd-hui{background:var(--vw);padding:80px 56px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.ah-left .ah-eyebrow{font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--vwl);margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+.ah-left .ah-eyebrow::before{content:'';display:block;width:22px;height:1.5px;background:var(--vwl);}
+.ah-left h2{font-size:clamp(32px,4vw,52px);font-weight:800;line-height:.95;letter-spacing:-1.5px;color:#fff;margin-bottom:24px;}
+.ah-left h2 em{font-style:italic;font-weight:200;color:var(--vwl);}
+.ah-left p{font-size:15px;font-weight:300;line-height:1.8;color:rgba(255,255,255,.65);}
+.ah-right{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+.ah-card{background:rgba(255,255,255,.06);padding:32px 28px;border:1px solid rgba(255,255,255,.08);}
+.ah-card-num{font-size:40px;font-weight:800;letter-spacing:-1px;color:#fff;line-height:1;margin-bottom:6px;}
+.ah-card-num span{font-size:20px;font-weight:300;color:var(--vwl);}
+.ah-card-label{font-size:11px;font-weight:400;color:rgba(255,255,255,.5);line-height:1.5;}
+
+/* CTA */
+.cta{background:var(--vwm);overflow:hidden;;padding:80px 56px;display:flex;justify-content:space-between;align-items:center;gap:40px;}
+.cta-txt{font-size:clamp(28px,4vw,52px);font-weight:200;color:#fff;letter-spacing:-1px;line-height:.95;}
+.cta-txt strong{font-weight:800;}
+.cta-btns{display:flex;gap:14px;flex-shrink:0;}
+.cta-p{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:rgba(255,255,255,.95);color:var(--vw);text-decoration:none;padding:15px 30px;border-radius:2px;transition:all var(--t);}
+.cta-p:hover{background:#fff;transform:translateY(-2px);}
+.cta-s{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.85);text-decoration:none;padding:14px 28px;border-radius:2px;transition:all var(--t);}
+.cta-s:hover{border-color:#fff;color:#fff;}
+
+
+/* PHOTOS TIMELINE */
+.t-photos{display:flex;gap:12px;margin-top:20px;}
+.t-photo{border-radius:3px;overflow:hidden;flex-shrink:0;}
+.t-photo img{width:200px;height:134px;object-fit:cover;display:block;filter:brightness(.9) sepia(.15);transition:filter .4s ease;}
+.t-photo img:hover{filter:brightness(1) sepia(0);}
+.t-photo.tall img{width:200px;height:200px;}
+.t-photo.wide img{width:260px;height:174px;}
+
+/* FOOTER */
+footer{background:var(--vw);padding:52px 56px 0;border-top:1px solid rgba(255,255,255,.08);display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:auto auto;gap:0 48px;}
+.f-col{display:flex;flex-direction:column;gap:10px;padding-bottom:40px;}
+.f-logo-text{font-size:18px;font-weight:800;color:#fff;letter-spacing:-.3px;}
+.f-tag{font-size:12px;font-weight:300;font-style:italic;color:rgba(255,255,255,.5);line-height:1.7;}
+.f-vw{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--vwl);margin-top:4px;}
+.f-col-title{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--vwl);margin-bottom:6px;}
+.f-info{font-size:12px;color:rgba(255,255,255,.6);line-height:1.7;}
+.f-info a{color:rgba(255,255,255,.6);text-decoration:none;transition:color var(--t);}
+.f-info a:hover{color:var(--vwl);}
+.f-bottom{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-top:1px solid rgba(255,255,255,.08);}
+.f-copy{font-size:11px;color:rgba(255,255,255,.45);}
+.f-priv{font-size:11px;color:rgba(255,255,255,.45);text-decoration:none;transition:color var(--t);}
+.f-priv:hover{color:var(--vwl);}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE — TABLETTE & MOBILE
+═══════════════════════════════════════ */
+
+/* Hamburger bouton */
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:4px;}
+.nav-burger span{display:block;height:2px;background:var(--vw);border-radius:2px;transition:all .3s ease;}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-burger.open span:nth-child(2){opacity:0;}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* ── TABLETTE (≤900px) ── */
+@media(max-width:900px){
+  nav{padding:0 24px;}
+  .nav-links{gap:1px;}
+  .nav-links>li>a{font-size:12px;padding:6px 10px;}
+}
+
+/* ── MOBILE (≤700px) ── */
+@media(max-width:700px){
+  nav{padding:0 20px;height:60px;}
+  .nav-burger{display:flex;}
+
+  .nav-links{
+    display:none;
+    position:fixed;
+    top:60px;left:0;right:0;
+    height:calc(100vh - 60px);
+    background:#fff;
+    flex-direction:column;
+    align-items:stretch;
+    padding:0 0 40px;
+    overflow-y:scroll;
+    -webkit-overflow-scrolling:touch;
+    z-index:199;
+    gap:0;
+    border-top:1px solid var(--rule);
+  }
+  .nav-links.open{display:flex;}
+  .nav-links>li{width:100%;}
+  .nav-links>li>a{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-size:15px;font-weight:500;
+    padding:16px 24px;
+    border-radius:0;
+    border-bottom:1px solid var(--rule);
+    color:var(--vw);
+    width:100%;
+    box-sizing:border-box;
+  }
+  .nav-links>li>a.has-drop::after{
+    display:inline-block;
+    margin-left:auto;
+    margin-top:0;
+    transition:transform .3s ease;
+  }
+  .nav-links>li>a.has-drop.mob-open::after{transform:rotate(180deg);}
+  .nav-drop{
+    visibility:visible !important;
+    opacity:1 !important;
+    pointer-events:auto !important;
+    position:static !important;
+    transform:none !important;
+    box-shadow:none !important;
+    border:none !important;
+    border-bottom:1px solid var(--rule) !important;
+    border-radius:0 !important;
+    background:#f5f7fa !important;
+    padding:0 !important;
+    min-width:unset !important;
+    white-space:normal !important;
+    max-height:0 !important;
+    overflow:hidden !important;
+    transition:max-height .3s ease !important;
+  }
+  .nav-drop.mob-open{
+    max-height:800px !important;
+    padding:8px 0 !important;
+  }
+  .nav-drop a{
+    display:block !important;
+    padding:12px 40px !important;
+    font-size:14px !important;
+    border-bottom:none !important;
+    color:var(--vw) !important;
+  }
+  .nav-drop-sep{display:none !important;}
+  .nav-btn{margin:16px 24px;text-align:center;border-radius:2px;display:block;}
+
+  /* Hero mobile */
+  .hero{min-height:100svh;}
+  .hero-content{padding:100px 24px 60px;}
+  .hero-title{font-size:clamp(38px,10vw,56px);letter-spacing:-1.5px;}
+  .hero-sub{font-size:15px;}
+  .hero-btns{flex-direction:column;gap:12px;}
+  .hero-btns a{width:100%;text-align:center;}
+  .hero-logos{top:72px;right:16px;gap:12px;}
+  .hero-logos img{height:52px;}
+
+  /* Sections générales */
+  .content-section,.page-hero{padding:100px 24px 60px;}
+  .page-h1{font-size:clamp(36px,9vw,52px);letter-spacing:-1px;}
+  footer{padding:40px 24px 0;grid-template-columns:1fr;}
+  .f-bottom{flex-direction:column;gap:8px;text-align:center;}
+
+  /* Notre équipe — 2 colonnes sur mobile */
+  .membres-wrap{padding:0 20px 60px;grid-template-columns:repeat(2,1fr);gap:12px;}
+  .groupe-label{padding:0 20px;margin-top:48px;margin-bottom:24px;}
+  .card-nom{font-size:14px;}
+  .card-email{font-size:11px;word-break:break-all;}
+
+  /* Occasions */
+  .occ-grid{grid-template-columns:1fr !important;}
+
+  /* Cookie banner */
+  #cookieBanner{padding:16px 20px;flex-direction:column;align-items:flex-start;gap:14px;}
+  .cookie-btns{width:100%;flex-direction:row;}
+  .cookie-accept,.cookie-refuse{flex:1;text-align:center;}
+}
+
+/* ── TABLETTE (701px–900px) ── */
+@media(min-width:701px) and (max-width:900px){
+  .membres-wrap{grid-template-columns:repeat(3,1fr);}
+  .card-email{font-size:11px;word-break:break-all;}
+  .content-section,.page-hero{padding:120px 40px 80px;}
+  footer{padding:40px 40px 0;grid-template-columns:1fr 1fr;}
+  .hero-content{padding:120px 40px 80px;}
+}
+
+/* ── FIX OVERFLOW MOBILE ── */
+@media(max-width:700px){
+  .cta{flex-direction:column !important;padding:48px 24px !important;gap:24px !important;}
+  .cta-btns{flex-direction:column !important;width:100% !important;gap:12px !important;padding:0 !important;}
+  .cta-p,.cta-s,.cta-btn{width:100% !important;text-align:center !important;box-sizing:border-box !important;}
+  /* Timeline */
+  .timeline{overflow:hidden;padding:0 16px;box-sizing:border-box;}
+  .t-item{grid-template-columns:55px 1fr !important;gap:0 !important;}
+  .t-body{padding:0 0 32px 20px;min-width:0;overflow:hidden;}
+  .t-era,.t-heading,.t-text{max-width:100%;box-sizing:border-box;}
+  .t-photos{flex-wrap:wrap;gap:8px;}
+  .t-photo{flex:0 0 calc(50% - 4px);}
+  .t-photo img,.t-photo.tall img,.t-photo.wide img{width:100% !important;height:110px !important;}
+
+  /* Aujourd'hui */
+  .aujourd-hui{grid-template-columns:1fr !important;padding:48px 24px !important;gap:32px !important;}
+  .ah-right{grid-template-columns:1fr 1fr !important;}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+<a href="index.html" class="nav-l">
+    <img class="nav-logo" src="img/confidentialite_02.jpg" alt="Garage Rossy SA">
+  </a>
+    <button class="nav-burger" id="burger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html#hero">Accueil</a></li>
+    <li>
+      <a href="index.html#vente" class="has-drop mob-toggle">Vente</a>
+      <div class="nav-drop">
+        <a href="https://www.volkswagen.ch/fr/configurateur.html?---=%7B%22configuration-step-navigation-service%22%3A%22%2F%3FconfigStep%3D%257B%2522context%2522%253A%2522mofa-standalone%2522%252C%2522selectedStep%2522%253A%2522carline%2522%257D%22%7D" target="_blank">Véhicules neufs VW →</a>
+        <a href="https://www.volkswagen-nutzfahrzeuge.ch/fr.html" target="_blank">Véhicules neufs VW Utilitaire →</a>
+        <a href="occasions.html">Véhicules d'occasion</a>
+        <div class="nav-drop-sep"></div>
+        <a href="https://www.amag-leasing.ch/fr.html" target="_blank">Offre de financement →</a>
+      </div>
+    </li>
+    <li>
+      <a href="index.html#garage" class="has-drop mob-toggle">Notre Garage</a>
+      <div class="nav-drop">
+        <a href="notre-equipe.html">Notre équipe</a>
+        <a href="histoire.html" style="color:var(--vwm);font-weight:600;">Histoire</a>
+        <a href="offre-emploi.html">Offre d'emploi</a>
+        <a href="sponsoring.html">Sponsoring</a>
+      </div>
+    </li>
+    <li>
+      <a href="services.html" class="has-drop mob-toggle">Services</a>
+      <div class="nav-drop">
+        <a href="services.html#entretien">Entretien et réparations</a>
+        <a href="services.html#geometrie">Géométrie</a>
+        <a href="services.html#calibrage">Calibrage assistants</a>
+        <a href="services.html#pneus">Pneus et Roues</a>
+        <a href="services.html#accessoires">Accessoires</a>
+        <a href="services.html#carburant">Carburant</a>
+        <div class="nav-drop-sep"></div>
+        <a href="services.html#totalmobil">Totalmobil! — Dépannage</a>
+        <a href="services.html#totalrepair">Totalrepair — Carrosserie</a>
+        <a href="services.html#totalglass">Totalglass — Vitrage</a>
+      </div>
+    </li>
+    <li><a href="index.html#contact">Contact</a></li>
+    <li><a href="https://rossysa.sopl.ch/#loginSection" target="_blank" class="nav-btn">Rendez-vous →</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-eyebrow">Notre Garage · Histoire</div>
+    <h1 class="page-h1">Notre<br><em>histoire.</em></h1>
+  </div>
+</div>
+
+<!-- CHIFFRES CLÉS -->
+<div class="intro-band">
+  <div class="intro-stat">
+    <div class="stat-num">1951</div>
+    <div class="stat-label">Année de fondation<br>du garage</div>
+  </div>
+  <div class="intro-stat">
+    <div class="stat-num">30<span style="font-size:32px;font-weight:300;color:var(--vwl);">+</span></div>
+    <div class="stat-label">Ans de partenariat<br>avec le groupe Volkswagen</div>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<div class="timeline-section">
+  <div class="timeline-title">Chronologie</div>
+
+  <div class="timeline">
+
+    <div class="t-item milestone">
+      <div class="t-year"><span class="t-year-txt">1951</span></div>
+      <div class="t-body">
+        <div class="t-era">Les débuts</div>
+        <div class="t-heading">La fondation du Garage Pierre Wicht</div>
+        <div class="t-text">Tout commence avec la construction du <strong>Garage Pierre Wicht</strong> à Léchelles. Au départ, c'est un atelier de réparations de cycles et de motos avec les agences Condor et NSU Motos. Le garage est mandaté par l'armée pour réparer et entretenir leurs motos.</div>
+        <div class="t-photos">
+          <div class="t-photo"><img src="img/histoire_ext_01.jpg" alt="Garage Wicht — les débuts" loading="lazy"></div>
+          <div class="t-photo"><img src="img/histoire_ext_02.jpg" alt="Garage Wicht — atelier" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-year"><span class="t-year-txt">1958</span></div>
+      <div class="t-body">
+        <div class="t-heading">Concession Renault agricole</div>
+        <div class="t-text">Le garage prend la concession <strong>Renault</strong> pour les machines agricoles, diversifiant son activité au-delà de la moto.</div>
+      </div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-year"><span class="t-year-txt">1959</span></div>
+      <div class="t-body">
+        <div class="t-heading">L'automobile entre en scène</div>
+        <div class="t-text">Le groupe <strong>NSU</strong> contacte ses concessionnaires motos pour les inviter à représenter leur secteur automobile. Le garage se spécialise progressivement dans la réparation de véhicules légers.</div>
+      </div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-year"><span class="t-year-txt">1962</span></div>
+      <div class="t-body">
+        <div class="t-heading">Volvo et l'arrivée de Gaston Rossy</div>
+        <div class="t-text">Le garage obtient la concession <strong>Volvo</strong> — un excellent complément à NSU : l'un construisait de petites voitures, l'autre de grandes. C'est aussi en 1962 qu'<strong>arrive Gaston Rossy</strong> dans l'entreprise, posant les premières pierres d'une aventure familiale.</div>
+      </div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-year"><span class="t-year-txt">1964</span></div>
+      <div class="t-body">
+        <div class="t-heading">Le groupe Volkswagen rachète Auto Union</div>
+        <div class="t-text">Un tournant stratégique dans l'industrie automobile qui va influencer la trajectoire du garage dans les années à venir.</div>
+      </div>
+    </div>
+
+    <div class="t-item milestone">
+      <div class="t-year"><span class="t-year-txt">1977</span></div>
+      <div class="t-body">
+        <div class="t-era">L'ère Volkswagen</div>
+        <div class="t-heading">Audi rachète NSU — le virage VW</div>
+        <div class="t-text">Audi rachète NSU et impose de lâcher la marque <strong>Volvo</strong>. Le garage devient représentant des marques <strong>Audi et NSU</strong>, puis concessionnaire officiel <strong>VW et Audi</strong> — une relation qui durera des décennies.</div>
+      </div>
+    </div>
+
+    <div class="t-item milestone">
+      <div class="t-year"><span class="t-year-txt">1993</span></div>
+      <div class="t-body">
+        <div class="t-era">La famille Rossy aux commandes</div>
+        <div class="t-heading">Gaston et Olivier Rossy reprennent le garage</div>
+        <div class="t-text">Monsieur Wicht transmet le garage à <strong>Gaston Rossy et à son fils Olivier</strong>. L'entreprise prend le nom de <em>« Garage Rossy &amp; Fils »</em>. Le garage devient entreprise formatrice et engage son premier apprenti.</div>
+        <div class="t-photos">
+          <div class="t-photo wide"><img src="img/histoire_ext_03.jpg" alt="Garage Rossy & Fils — 1993" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-year"><span class="t-year-txt">1995</span></div>
+      <div class="t-body">
+        <div class="t-heading">Aménagements et station de lavage</div>
+        <div class="t-text">Aménagement de la place extérieure et création de la <strong>station de lavage</strong>. En 1996, changement de raison sociale.</div>
+      </div>
+    </div>
+
+    <div class="t-item">
+      <div class="t-year"><span class="t-year-txt">2003</span></div>
+      <div class="t-body">
+        <div class="t-heading">Certification ISO 9001</div>
+        <div class="t-text">Le garage obtient la <strong>certification ISO 9001</strong> pour chacune des marques dont il est concessionnaire. Des audits annuels portent sur l'organisation de l'entreprise, la vente et le service après-vente.</div>
+      </div>
+    </div>
+
+    <div class="t-item milestone">
+      <div class="t-year"><span class="t-year-txt">2006</span></div>
+      <div class="t-body">
+        <div class="t-era">Expansion</div>
+        <div class="t-heading">Un nouvel atelier — VW Utilitaires</div>
+        <div class="t-text">Grande année pour Garage Rossy SA, en plein essor. Un <strong>nouvel atelier est inauguré</strong> et le garage renforce son activité avec la marque <strong>VW Utilitaires</strong>, élargissant significativement son offre.</div>
+        <div class="t-photos">
+          <div class="t-photo wide"><img src="img/histoire_ext_04.jpg" alt="Nouvel atelier 2006" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="t-item milestone">
+      <div class="t-year"><span class="t-year-txt">2012</span></div>
+      <div class="t-body">
+        <div class="t-era">Le showroom moderne</div>
+        <div class="t-heading">Inauguration du nouveau showroom</div>
+        <div class="t-text">Au printemps 2012, le nouveau showroom ouvre ses portes. Le département ventes de véhicules VW et VW Utilitaires se renforce avec l'arrivée de <strong>Pascal Grünebaum</strong>, responsable des ventes, qui vient soutenir Olivier Rossy à la direction.</div>
+        <div class="t-photos">
+          <div class="t-photo wide"><img src="img/histoire_ext_05.jpg" alt="Nouveau showroom 2012" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="t-item milestone" id="hydrowash" style="scroll-margin-top:88px;">
+      <div class="t-year"><span class="t-year-txt">2023</span></div>
+      <div class="t-body">
+        <div class="t-era">Le garage aujourd'hui</div>
+        <div class="t-heading">Agrandissement du showroom &amp; nouvelle station de lavage</div>
+        <div class="t-text">Automne 2023 : fin des travaux d'agrandissement du garage avec un <strong>showroom agrandi</strong> et de <strong>nouveaux bureaux</strong>. Le site accueille également une toute nouvelle <strong>station de lavage Hydrowash</strong> à 2 pistes — contre une seule auparavant — complétée d'un <strong>aspirateur</strong> à disposition des clients. Cette même année, le garage célèbre <strong>30 ans de partenariat et de collaboration</strong> avec le groupe AMAG.</div>
+        <div class="t-photos">
+          <div class="t-photo" style="--w:420px"><img src="img/histoire_01.jpg" alt="Nouvelle station de lavage Hydrowash 2023" loading="lazy" style="width:420px;height:240px;object-fit:cover;"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- AUJOURD'HUI -->
+<div class="aujourd-hui">
+  <div class="ah-left">
+    <div class="ah-eyebrow">Aujourd'hui</div>
+    <h2>Plus de 70 ans<br><em>d'excellence.</em></h2>
+    <p>Garage Rossy SA représente fièrement les marques <strong style="color:#fff;">Volkswagen et VW Utilitaires</strong>. Avec l'agrandissement de 2023 — nouveau showroom, nouveaux bureaux et station de lavage Hydrowash à 2 pistes — le garage continue de se moderniser au service de sa clientèle fidèle.</p>
+  </div>
+  <div class="ah-right">
+    <div class="ah-card">
+      <div class="ah-card-num">15<span> pers.</span></div>
+      <div class="ah-card-label">Collaborateurs &amp; collaboratrices dont 2 apprentis</div>
+    </div>
+    <div class="ah-card">
+      <div class="ah-card-num">2<span> marques</span></div>
+      <div class="ah-card-label">VW &amp; VW Utilitaires représentées officiellement</div>
+    </div>
+    <div class="ah-card">
+      <div class="ah-card-num">ISO<span> 9001</span></div>
+      <div class="ah-card-label">Certifié depuis 2003 sur toutes les marques</div>
+    </div>
+    <div class="ah-card">
+      <div class="ah-card-num">70<span>+ ans</span></div>
+      <div class="ah-card-label">D'histoire &amp; de savoir-faire dans la région</div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+  <div class="cta-txt">Prêt à prendre<br><strong>rendez-vous ?</strong></div>
+  <div class="cta-btns">
+    <a href="https://rossysa.sopl.ch/#loginSection" target="_blank" class="cta-p">Réserver maintenant →</a>
+    <a href="tel:+41266602586" class="cta-s">Appeler →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-col">
+    <div class="f-logo-text">Garage Rossy SA</div>
+    <div class="f-tag">Votre partenaire VW<br>depuis plus de 30 ans.</div>
+    <div class="f-vw">⬤ Volkswagen Partner</div>
+  </div>
+  <div class="f-col">
+    <div class="f-col-title">Contact</div>
+    <div class="f-info">Route de Payerne 14<br>1773 Léchelles · Fribourg</div>
+    <div class="f-info"><a href="tel:+41266602586">+41 26 660 25 86</a></div>
+    <div class="f-info"><a href="mailto:info@rossysa.ch">info@rossysa.ch</a></div>
+  </div>
+  <div class="f-col">
+    <div class="f-col-title">Horaires</div>
+    <div class="f-info">Lun – Ven · 07h30 – 12h00 / 13h30 – 17h30</div>
+    <div class="f-info">Samedi · sur rendez-vous</div>
+    <div class="f-info" style="margin-top:6px;">Digibox · 24h/24 · 7j/7</div>
+  </div>
+  <div class="f-bottom">
+    <div class="f-copy">© 2026 Garage Rossy SA · Tous droits réservés</div>
+    <a href="confidentialite.html" class="f-priv">Politique de confidentialité</a>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').style.boxShadow =
+      window.scrollY > 60 ? '0 4px 20px rgba(0,30,80,.08)' : 'none';
+  });
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, {threshold: 0.1, rootMargin: '0px 0px -40px 0px'});
+  document.querySelectorAll('.t-item').forEach(el => obs.observe(el));
+</script>
+
+<script>
+(function(){
+  var btn=document.getElementById('burger');
+  var links=document.getElementById('nav-links');
+  if(!btn||!links)return;
+  btn.addEventListener('click',function(){
+    btn.classList.toggle('open');
+    links.classList.toggle('open');
+  });
+  // Toggle sous-menus mobile
+  links.querySelectorAll('.mob-toggle').forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(window.innerWidth <= 700){
+        e.preventDefault();
+        var drop = a.parentElement.querySelector('.nav-drop');
+        if(drop){
+          drop.classList.toggle('mob-open');
+          a.classList.toggle('mob-open');
+        }
+      }
+    });
+  });
+
+  // Fermer au clic sur un lien
+  links.querySelectorAll('a:not(.mob-toggle)').forEach(function(a){
+    a.addEventListener('click',function(){
+      btn.classList.remove('open');
+      links.classList.remove('open');
+      links.querySelectorAll('.nav-drop').forEach(function(d){ d.classList.remove('mob-open'); });
+    });
+  });
+})();
+</script>
+</body>
+</html>

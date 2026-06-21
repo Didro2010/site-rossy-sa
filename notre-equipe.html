@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notre Équipe — Garage Rossy SA · Volkswagen · Léchelles</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,200;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --vw:#001e50;--vwm:#0040c1;--vwl:#00b0f0;
+  --w:#ffffff;--off:#f7f8fc;--grey:#7a8496;
+  --rule:rgba(0,30,80,0.1);--t:0.35s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth;}
+body{background:var(--w);color:var(--vw);font-family:'Plus Jakarta Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:68px;background:#ffffff;border-bottom:1px solid var(--rule);}
+.nav-l{display:flex;align-items:center;gap:16px;text-decoration:none;}
+.nav-logo{height:48px;}
+.nav-pipe{width:1px;height:24px;background:var(--rule);}
+.nav-tag{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--grey);}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+.nav-links>li{position:relative;}
+.nav-links>li>a{font-size:13px;font-weight:500;color:var(--grey);text-decoration:none;padding:7px 14px;border-radius:2px;transition:color var(--t),background var(--t);display:flex;align-items:center;gap:5px;white-space:nowrap;}
+.nav-links>li>a:hover{color:var(--vw);background:rgba(0,30,80,.05);}
+.nav-links>li>a.has-drop::after{content:'';display:inline-block;width:0;height:0;border-left:3.5px solid transparent;border-right:3.5px solid transparent;border-top:4px solid currentColor;margin-left:2px;transition:transform var(--t);}
+.nav-links>li:hover>a.has-drop::after{transform:rotate(180deg);}
+.nav-drop{visibility:hidden;opacity:0;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--rule);border-radius:3px;box-shadow:0 12px 40px rgba(0,30,80,.12);min-width:220px;padding:8px 0;z-index:300;white-space:nowrap;transition:opacity .18s ease,visibility .18s ease;pointer-events:none;}
+.nav-drop::before{content:'';position:absolute;top:-12px;left:0;right:0;height:12px;}
+.nav-links>li:hover .nav-drop{visibility:visible;opacity:1;pointer-events:auto;}
+.nav-drop a{display:block;padding:9px 22px;font-size:12px;font-weight:500;color:var(--vw);text-decoration:none;transition:background var(--t),color var(--t);}
+.nav-drop a:hover{background:rgba(0,30,80,.05);color:var(--vwm);}
+.nav-drop-sep{height:1px;background:var(--rule);margin:6px 0;}
+.nav-btn{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:var(--vwm);color:#fff !important;text-decoration:none;padding:11px 26px;border-radius:2px;transition:all var(--t);animation:navpulse 2.8s ease-in-out infinite;box-shadow:0 0 0 0 rgba(0,64,193,.5);}
+.nav-btn:hover{background:var(--vw);color:#fff !important;transform:translateY(-1px);animation:none;box-shadow:0 6px 20px rgba(0,30,80,.3);}
+@keyframes navpulse{0%,100%{box-shadow:0 0 0 0 rgba(0,64,193,.5);}50%{box-shadow:0 0 0 8px rgba(0,64,193,0);}}
+
+/* PAGE HERO SOBRE */
+.page-hero{padding:140px 56px 80px;background:var(--vw);position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px;}
+.page-hero-inner{position:relative;z-index:1;max-width:700px;}
+.page-eyebrow{font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--vwl);margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+.page-eyebrow::before{content:'';display:block;width:28px;height:1.5px;background:var(--vwl);}
+.page-h1{font-size:clamp(42px,6vw,80px);font-weight:800;line-height:.92;letter-spacing:-2px;color:#fff;margin-bottom:20px;}
+.page-h1 em{font-style:italic;font-weight:200;color:var(--vwl);}
+.page-intro{font-size:16px;font-weight:300;line-height:1.8;color:rgba(255,255,255,.6);max-width:520px;}
+
+/* GROUPE LABEL */
+.groupe-label{padding:0 56px;margin-top:80px;margin-bottom:40px;display:flex;align-items:center;gap:20px;}
+.groupe-label-text{font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--vwm);white-space:nowrap;display:flex;align-items:center;gap:12px;}
+.groupe-label-text::before{content:'';display:block;width:22px;height:1.5px;background:var(--vwm);}
+.groupe-label-line{flex:1;height:1px;background:linear-gradient(to right,var(--rule),transparent);}
+
+/* GRILLE CARTES */
+.membres-wrap{padding:0 56px 80px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.membres-wrap+.groupe-label{margin-top:20px;}
+.card{background:#fff;border:1px solid var(--rule);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease;}
+.card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,30,80,.12);}
+.card-avatar{aspect-ratio:1;background:linear-gradient(135deg,#e8edf7 0%,#c8d4eb 100%);display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:800;color:var(--vwm);letter-spacing:-1px;position:relative;overflow:hidden;}
+.card-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform .5s ease;}
+.card:hover .card-avatar img{transform:scale(1.05);}
+.card-avatar::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:var(--vwl);transform:scaleX(0);transform-origin:left;transition:transform .35s ease;}
+.card:hover .card-avatar::after{transform:scaleX(1);}
+.card-body{padding:22px 22px 20px;flex:1;display:flex;flex-direction:column;gap:6px;}
+.card-nom{font-size:16px;font-weight:700;color:var(--vw);letter-spacing:-.2px;line-height:1.2;}
+.card-poste{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--vwm);}
+.card-email{margin-top:auto;padding-top:14px;display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--grey);text-decoration:none;transition:color .25s ease;border-top:1px solid var(--rule);}
+.card-email:hover{color:var(--vwm);}
+.card-email svg{width:13px;height:13px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+
+/* MEMBRES */
+
+
+/* Photo */
+.membre-avatar-col{background:linear-gradient(135deg,#e8edf7 0%,#c8d4eb 100%);display:flex;align-items:center;justify-content:center;}
+.avatar-initials{font-size:72px;font-weight:800;letter-spacing:-2px;color:var(--vwm);line-height:1;opacity:.35;}
+.avatar-icon{width:80px;height:80px;border-radius:50%;background:rgba(0,64,193,.1);border:2px solid rgba(0,64,193,.2);display:flex;align-items:center;justify-content:center;}
+.avatar-icon svg{width:36px;height:36px;stroke:var(--vwm);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+
+/* Info */
+
+
+
+
+/* CTA */
+.cta{background:var(--vwm);padding:80px 56px;display:flex;justify-content:space-between;align-items:center;gap:40px;}
+.cta-txt{font-size:clamp(28px,4vw,52px);font-weight:200;color:#fff;letter-spacing:-1px;line-height:.95;}
+.cta-txt strong{font-weight:800;}
+.cta-btns{display:flex;gap:14px;flex-shrink:0;}
+.cta-p{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:rgba(255,255,255,.95);color:var(--vw);text-decoration:none;padding:15px 30px;border-radius:2px;transition:all var(--t);}
+.cta-p:hover{background:#fff;transform:translateY(-2px);}
+.cta-s{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.85);text-decoration:none;padding:14px 28px;border-radius:2px;transition:all var(--t);}
+.cta-s:hover{border-color:#fff;color:#fff;}
+
+/* FOOTER */
+footer{background:var(--vw);padding:52px 56px 0;border-top:1px solid rgba(255,255,255,.08);display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:auto auto;gap:0 48px;}
+.f-col{display:flex;flex-direction:column;gap:10px;padding-bottom:40px;}
+.f-logo-text{font-size:18px;font-weight:800;color:#fff;letter-spacing:-.3px;}
+.f-tag{font-size:12px;font-weight:300;font-style:italic;color:rgba(255,255,255,.5);line-height:1.7;}
+.f-vw{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--vwl);margin-top:4px;}
+.f-col-title{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--vwl);margin-bottom:6px;}
+.f-info{font-size:12px;color:rgba(255,255,255,.6);line-height:1.7;}
+.f-info a{color:rgba(255,255,255,.6);text-decoration:none;transition:color var(--t);}
+.f-info a:hover{color:var(--vwl);}
+.f-bottom{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-top:1px solid rgba(255,255,255,.08);}
+.f-copy{font-size:11px;color:rgba(255,255,255,.45);}
+.f-priv{font-size:11px;color:rgba(255,255,255,.45);text-decoration:none;transition:color var(--t);}
+.f-priv:hover{color:var(--vwl);}
+
+/* Nav scroll */
+#nav{transition:box-shadow .3s;}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE — TABLETTE & MOBILE
+═══════════════════════════════════════ */
+
+/* Hamburger bouton */
+.nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:4px;}
+.nav-burger span{display:block;height:2px;background:var(--vw);border-radius:2px;transition:all .3s ease;}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-burger.open span:nth-child(2){opacity:0;}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* ── TABLETTE (≤900px) ── */
+@media(max-width:900px){
+  nav{padding:0 24px;}
+  .nav-links{gap:1px;}
+  .nav-links>li>a{font-size:12px;padding:6px 10px;}
+}
+
+/* ── MOBILE (≤700px) ── */
+@media(max-width:700px){
+  nav{padding:0 20px;height:60px;}
+  .nav-burger{display:flex;}
+
+  .nav-links{
+    display:none;
+    position:fixed;
+    top:60px;left:0;right:0;
+    height:calc(100vh - 60px);
+    background:#fff;
+    flex-direction:column;
+    align-items:stretch;
+    padding:0 0 40px;
+    overflow-y:scroll;
+    -webkit-overflow-scrolling:touch;
+    z-index:199;
+    gap:0;
+    border-top:1px solid var(--rule);
+  }
+  .nav-links.open{display:flex;}
+  .nav-links>li{width:100%;}
+  .nav-links>li>a{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-size:15px;font-weight:500;
+    padding:16px 24px;
+    border-radius:0;
+    border-bottom:1px solid var(--rule);
+    color:var(--vw);
+    width:100%;
+    box-sizing:border-box;
+  }
+  .nav-links>li>a.has-drop::after{
+    display:inline-block;
+    margin-left:auto;
+    margin-top:0;
+    transition:transform .3s ease;
+  }
+  .nav-links>li>a.has-drop.mob-open::after{transform:rotate(180deg);}
+  .nav-drop{
+    visibility:visible !important;
+    opacity:1 !important;
+    pointer-events:auto !important;
+    position:static !important;
+    transform:none !important;
+    box-shadow:none !important;
+    border:none !important;
+    border-bottom:1px solid var(--rule) !important;
+    border-radius:0 !important;
+    background:#f5f7fa !important;
+    padding:0 !important;
+    min-width:unset !important;
+    white-space:normal !important;
+    max-height:0 !important;
+    overflow:hidden !important;
+    transition:max-height .3s ease !important;
+  }
+  .nav-drop.mob-open{
+    max-height:800px !important;
+    padding:8px 0 !important;
+  }
+  .nav-drop a{
+    display:block !important;
+    padding:12px 40px !important;
+    font-size:14px !important;
+    border-bottom:none !important;
+    color:var(--vw) !important;
+  }
+  .nav-drop-sep{display:none !important;}
+  .nav-btn{margin:16px 24px;text-align:center;border-radius:2px;display:block;}
+
+  /* Hero mobile */
+  .hero{min-height:100svh;}
+  .hero-content{padding:100px 24px 60px;}
+  .hero-title{font-size:clamp(38px,10vw,56px);letter-spacing:-1.5px;}
+  .hero-sub{font-size:15px;}
+  .hero-btns{flex-direction:column;gap:12px;}
+  .hero-btns a{width:100%;text-align:center;}
+  .hero-logos{top:72px;right:16px;gap:12px;}
+  .hero-logos img{height:52px;}
+
+  /* Sections générales */
+  .content-section,.page-hero{padding:100px 24px 60px;}
+  .page-h1{font-size:clamp(36px,9vw,52px);letter-spacing:-1px;}
+  footer{padding:40px 24px 0;grid-template-columns:1fr;}
+  .f-bottom{flex-direction:column;gap:8px;text-align:center;}
+
+  /* Notre équipe — 2 colonnes sur mobile */
+  .membres-wrap{padding:0 20px 60px;grid-template-columns:repeat(2,1fr);gap:12px;}
+  .groupe-label{padding:0 20px;margin-top:48px;margin-bottom:24px;}
+  .card-nom{font-size:14px;}
+  .card-email{font-size:11px;word-break:break-all;}
+
+  /* Occasions */
+  .occ-grid{grid-template-columns:1fr !important;}
+
+  /* Cookie banner */
+  #cookieBanner{padding:16px 20px;flex-direction:column;align-items:flex-start;gap:14px;}
+  .cookie-btns{width:100%;flex-direction:row;}
+  .cookie-accept,.cookie-refuse{flex:1;text-align:center;}
+}
+
+/* ── TABLETTE (701px–900px) ── */
+@media(min-width:701px) and (max-width:900px){
+  .membres-wrap{grid-template-columns:repeat(3,1fr);}
+  .card-email{font-size:11px;word-break:break-all;}
+  .content-section,.page-hero{padding:120px 40px 80px;}
+  footer{padding:40px 40px 0;grid-template-columns:1fr 1fr;}
+  .hero-content{padding:120px 40px 80px;}
+}
+
+/* ── FIX OVERFLOW MOBILE ── */
+@media(max-width:700px){
+  .cta{flex-direction:column;padding:48px 24px;gap:24px;}
+  .cta-btns{flex-direction:column;width:100%;gap:12px;padding:0;}
+  .cta-p,.cta-s{width:100%;text-align:center;box-sizing:border-box;}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+<a href="index.html" class="nav-l">
+    <img class="nav-logo" src="img/confidentialite_02.jpg" alt="Garage Rossy SA">
+  </a>
+    <button class="nav-burger" id="burger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html#hero">Accueil</a></li>
+    <li>
+      <a href="index.html#vente" class="has-drop mob-toggle">Vente</a>
+      <div class="nav-drop">
+        <a href="https://www.volkswagen.ch/fr/configurateur.html?---=%7B%22configuration-step-navigation-service%22%3A%22%2F%3FconfigStep%3D%257B%2522context%2522%253A%2522mofa-standalone%2522%252C%2522selectedStep%2522%253A%2522carline%2522%257D%22%7D" target="_blank">Véhicules neufs VW →</a>
+        <a href="https://www.volkswagen-nutzfahrzeuge.ch/fr.html" target="_blank">Véhicules neufs VW Utilitaire →</a>
+        <a href="occasions.html">Véhicules d'occasion</a>
+        <div class="nav-drop-sep"></div>
+        <a href="https://www.amag-leasing.ch/fr.html" target="_blank">Offre de financement →</a>
+      </div>
+    </li>
+    <li>
+      <a href="index.html#garage" class="has-drop mob-toggle" style="color:var(--vw);">Notre Garage</a>
+      <div class="nav-drop">
+        <a href="notre-equipe.html">Notre équipe</a>
+        <a href="histoire.html">Histoire</a>
+        <a href="offre-emploi.html">Offre d'emploi</a>
+        <a href="sponsoring.html">Sponsoring</a>
+      </div>
+    </li>
+    <li>
+      <a href="services.html" class="has-drop mob-toggle">Services</a>
+      <div class="nav-drop">
+        <a href="services.html#entretien">Entretien et réparations</a>
+        <a href="services.html#geometrie">Géométrie</a>
+        <a href="services.html#calibrage">Calibrage assistants</a>
+        <a href="services.html#pneus">Pneus et Roues</a>
+        <a href="services.html#accessoires">Accessoires</a>
+        <a href="services.html#carburant">Carburant</a>
+        <div class="nav-drop-sep"></div>
+        <a href="services.html#totalmobil">Totalmobil! — Dépannage</a>
+        <a href="services.html#totalrepair">Totalrepair — Carrosserie</a>
+        <a href="services.html#totalglass">Totalglass — Vitrage</a>
+      </div>
+    </li>
+    <li><a href="index.html#contact">Contact</a></li>
+    <li><a href="https://rossysa.sopl.ch/#loginSection" target="_blank" class="nav-btn">Rendez-vous →</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-eyebrow">Notre Garage · Léchelles · Fribourg</div>
+    <h1 class="page-h1">Notre<br><em>équipe.</em></h1>
+    
+  </div>
+</div>
+
+<!-- TEAM BUREAU -->
+<div class="groupe-label" id="team">
+  <div class="groupe-label-text">Team Bureau</div>
+  <div class="groupe-label-line"></div>
+</div>
+
+<div class="membres-wrap">
+  <div class="card">
+    <div class="card-avatar">
+      <img src="img/equipe/olivier-rossy.jpg" alt="Olivier Rossy" onerror="this.parentElement.innerHTML='<span>OR</span>'">
+    </div>
+    <div class="card-body">
+      <div class="card-nom">Olivier Rossy</div>
+      <div class="card-poste">Chef d'entreprise</div>
+    <a class="card-email" href="mailto:olivier.rossy@rossysa.ch">
+      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+      olivier.rossy@rossysa.ch
+    </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-avatar">
+      <img src="img/equipe/pascal-grunebaum.jpg" alt="Pascal Grünebaum" onerror="this.parentElement.innerHTML='<span>PG</span>'">
+    </div>
+    <div class="card-body">
+      <div class="card-nom">Pascal Grünebaum</div>
+      <div class="card-poste">Directeur de vente</div>
+    <a class="card-email" href="mailto:pascal.gruenebaum@rossysa.ch">
+      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+      pascal.gruenebaum@rossysa.ch
+    </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-avatar"><span>CR</span></div>
+    <div class="card-body">
+      <div class="card-nom">Cédric Rossy</div>
+      <div class="card-poste">Conseiller Service</div>
+    <a class="card-email" href="mailto:cedric.rossy@rossysa.ch">
+      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+      cedric.rossy@rossysa.ch
+    </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-avatar">
+      <img src="img/equipe/didier-schneeberger.jpg" alt="Didier Schneeberger" onerror="this.parentElement.innerHTML='<span>DS</span>'">
+    </div>
+    <div class="card-body">
+      <div class="card-nom">Didier Schneeberger</div>
+      <div class="card-poste">Conseiller Service</div>
+    <a class="card-email" href="mailto:didier.schneeberger@rossysa.ch">
+      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+      didier.schneeberger@rossysa.ch
+    </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-avatar">
+      <img src="img/equipe/pierrette-julmy-rossier.jpg" alt="Pierrette Julmy Rossier" onerror="this.parentElement.innerHTML='<span>PJ</span>'">
+    </div>
+    <div class="card-body">
+      <div class="card-nom">Pierrette Julmy Rossier</div>
+      <div class="card-poste">Administration &amp; comptabilité</div>
+    <a class="card-email" href="mailto:pierrette.julmy@rossysa.ch">
+      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+      pierrette.julmy@rossysa.ch
+    </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-avatar"><span>VM</span></div>
+    <div class="card-body">
+      <div class="card-nom">Virginie Minguely</div>
+      <div class="card-poste">Employée de bureau</div>
+    <a class="card-email" href="mailto:virginie.minguely@rossysa.ch">
+      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+      virginie.minguely@rossysa.ch
+    </a>
+    </div>
+  </div>
+</div>
+
+<!-- TEAM ATELIER -->
+<div class="groupe-label">
+  <div class="groupe-label-text">Team Atelier</div>
+  <div class="groupe-label-line"></div>
+</div>
+
+<div class="membres-wrap">
+  <div class="card">
+    <div class="card-avatar">
+      <img src="img/equipe/pascal-minguely.jpg" alt="Pascal Minguely" onerror="this.parentElement.innerHTML='<span>PM</span>'">
+    </div>
+    <div class="card-body">
+      <div class="card-nom">Pascal Minguely</div>
+      <div class="card-poste">Chef d'atelier</div>
+    <a class="card-email" href="mailto:pascal.minguely@rossysa.ch">
+      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+      pascal.minguely@rossysa.ch
+    </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-avatar"><span>GS</span></div>
+    <div class="card-body">
+      <div class="card-nom">Gérôme Stauffer</div>
+      <div class="card-poste">Mécatronicien — Brevet Fédéral</div>
+    <a class="card-email" href="mailto:gerome.stauffer@rossysa.ch">
+      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+      gerome.stauffer@rossysa.ch
+    </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-avatar">
+      <img src="img/equipe/julien-peter.jpg" alt="Julien Peter" onerror="this.parentElement.innerHTML='<span>JP</span>'">
+    </div>
+    <div class="card-body">
+      <div class="card-nom">Julien Peter</div>
+      <div class="card-poste">Diagnosticien — Brevet Fédéral</div>
+    <a class="card-email" href="mailto:julien.peter@rossysa.ch">
+      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+      julien.peter@rossysa.ch
+    </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-avatar">
+      <img src="img/equipe/valentin-roth.jpg" alt="Valentin Roth" onerror="this.parentElement.innerHTML='<span>VR</span>'">
+    </div>
+    <div class="card-body">
+      <div class="card-nom">Valentin Roth</div>
+      <div class="card-poste">Mécatronicien — Brevet Fédéral</div>
+    <a class="card-email" href="mailto:valentin.roth@rossysa.ch">
+      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+      valentin.roth@rossysa.ch
+    </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-avatar"><span>JA</span></div>
+    <div class="card-body">
+      <div class="card-nom">João Amor</div>
+      <div class="card-poste">Mécanicien</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-avatar"><span>ED</span></div>
+    <div class="card-body">
+      <div class="card-nom">Elvedin Dautovic</div>
+      <div class="card-poste">Préparateur</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-avatar"><span>LD</span></div>
+    <div class="card-body">
+      <div class="card-nom">Lucas Duarte</div>
+      <div class="card-poste">Apprenti</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-avatar"><span>LL</span></div>
+    <div class="card-body">
+      <div class="card-nom">Lucas Labrousse</div>
+      <div class="card-poste">Apprenti</div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+  <div class="cta-txt">Prêt à prendre<br><strong>rendez-vous ?</strong></div>
+  <div class="cta-btns">
+    <a href="https://rossysa.sopl.ch/#loginSection" target="_blank" class="cta-p">Réserver maintenant →</a>
+    <a href="tel:+41266602586" class="cta-s">Appeler →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-col">
+    <div class="f-logo-text">Garage Rossy SA</div>
+    <div class="f-tag">Votre partenaire VW<br>depuis plus de 30 ans.</div>
+    <div class="f-vw">⬤ Volkswagen Partner</div>
+  </div>
+  <div class="f-col">
+    <div class="f-col-title">Contact</div>
+    <div class="f-info">Route de Payerne 14<br>1773 Léchelles · Fribourg</div>
+    <div class="f-info"><a href="tel:+41266602586">+41 26 660 25 86</a></div>
+    <div class="f-info"><a href="mailto:info@rossysa.ch">info@rossysa.ch</a></div>
+  </div>
+  <div class="f-col">
+    <div class="f-col-title">Horaires</div>
+    <div class="f-info">Lun – Ven · 07h30 – 12h00 / 13h30 – 17h30</div>
+    <div class="f-info">Samedi · sur rendez-vous</div>
+    <div class="f-info" style="margin-top:6px;">Digibox · 24h/24 · 7j/7</div>
+  </div>
+  <div class="f-bottom">
+    <div class="f-copy">© 2026 Garage Rossy SA · Tous droits réservés</div>
+    <a href="confidentialite.html" class="f-priv">Politique de confidentialité</a>
+  </div>
+</footer>
+
+<script>
+  // Nav shadow on scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').style.boxShadow =
+      window.scrollY > 60 ? '0 4px 20px rgba(0,30,80,.08)' : 'none';
+  });
+
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        // délai en cascade selon l'index dans le groupe
+        setTimeout(() => e.target.classList.add('visible'), 0);
+        obs.unobserve(e.target);
+      }
+    });
+  }, {threshold: 0.1, rootMargin: '0px 0px -40px 0px'});
+  document.querySelectorAll('.membre-row').forEach(el => obs.observe(el));
+</script>
+
+<script>
+(function(){
+  var btn=document.getElementById('burger');
+  var links=document.getElementById('nav-links');
+  if(!btn||!links)return;
+  btn.addEventListener('click',function(){
+    btn.classList.toggle('open');
+    links.classList.toggle('open');
+  });
+  // Toggle sous-menus mobile
+  links.querySelectorAll('.mob-toggle').forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(window.innerWidth <= 700){
+        e.preventDefault();
+        var drop = a.parentElement.querySelector('.nav-drop');
+        if(drop){
+          drop.classList.toggle('mob-open');
+          a.classList.toggle('mob-open');
+        }
+      }
+    });
+  });
+
+  // Fermer au clic sur un lien
+  links.querySelectorAll('a:not(.mob-toggle)').forEach(function(a){
+    a.addEventListener('click',function(){
+      btn.classList.remove('open');
+      links.classList.remove('open');
+      links.querySelectorAll('.nav-drop').forEach(function(d){ d.classList.remove('mob-open'); });
+    });
+  });
+})();
+</script>
+</body>
+</html>
