@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Politique de confidentialité — Garage Rossy SA</title>
+<title>Politique de confidentialitÃ© â€” Garage Rossy SA</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,200;1,300&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -26,7 +26,7 @@ body{
   overflow-x:hidden;
 }
 
-/* ── NAV ── */
+/* â”€â”€ NAV â”€â”€ */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:200;
   display:flex;align-items:center;justify-content:space-between;
@@ -41,7 +41,7 @@ nav{
 .nav-tag{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--grey);}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
 .nav-links>li{position:relative;}
-.nav-links>li>a{font-size:13px;font-weight:500;color:var(--grey);text-decoration:none;padding:7px 14px;border-radius:2px;transition:color var(--t),background var(--t);display:flex;align-items:center;gap:5px;white-space:nowrap;}
+.nav-links>li>a{font-size:15px;font-weight:500;color:var(--grey);text-decoration:none;padding:7px 14px;border-radius:2px;transition:color var(--t),background var(--t);display:flex;align-items:center;gap:5px;white-space:nowrap;}
 .nav-links>li>a:hover{color:var(--vw);background:rgba(0,30,80,.05);}
 .nav-links>li>a.has-drop::after{content:'';display:inline-block;width:0;height:0;border-left:3.5px solid transparent;border-right:3.5px solid transparent;border-top:4px solid currentColor;margin-left:2px;transition:transform var(--t);}
 .nav-links>li:hover>a.has-drop::after{transform:rotate(180deg);}
@@ -97,7 +97,7 @@ nav{
   50%{box-shadow:0 0 0 8px rgba(0,64,193,0);}
 }
 
-/* ── HERO ── */
+/* â”€â”€ HERO â”€â”€ */
 .hero{min-height:78vh;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;background:var(--vw);}
 .hero-parallax{position:absolute;top:-20%;left:0;width:100%;height:140%;will-change:transform;}
 .hero-parallax img{width:100%;height:100%;object-fit:cover;object-position:center 35%;}
@@ -136,20 +136,20 @@ nav{
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-/* ── MARQUEE ── */
+/* â”€â”€ MARQUEE â”€â”€ */
 .mq{overflow:hidden;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--off);}
 .mq-track{display:flex;animation:mq 30s linear infinite;white-space:nowrap;}
 .mq-item{padding:12px 44px;font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--vw);border-right:1px solid var(--rule);display:flex;align-items:center;gap:44px;opacity:.6;}
-.mq-item::after{content:'◆';font-size:5px;color:var(--vwm);}
+.mq-item::after{content:'â—†';font-size:5px;color:var(--vwm);}
 @keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-/* ── PHOTO BAND ── */
+/* â”€â”€ PHOTO BAND â”€â”€ */
 .pb{overflow:hidden;position:relative;}
 .pb img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease,filter .5s;}
 .pb:hover img{transform:scale(1.05);filter:brightness(1.05);}
 .pb-cap{position:absolute;bottom:0;left:0;right:0;padding:40px 20px 16px;background:linear-gradient(transparent,rgba(0,30,80,.65));font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.8);}
 
-/* ── SECTION BASE ── */
+/* â”€â”€ SECTION BASE â”€â”€ */
 .section{padding:100px 56px;}
 .s-eye{font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--vwm);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
 .s-eye::before{content:'';display:block;width:22px;height:1.5px;background:var(--vwm);}
@@ -158,7 +158,7 @@ nav{
 .s-title em{font-style:italic;font-weight:200;color:var(--vwm);}
 .s-title-w{color:#fff;}
 
-/* ── SERVICES — IMAGE CARDS WITH PARALLAX ── */
+/* â”€â”€ SERVICES â€” IMAGE CARDS WITH PARALLAX â”€â”€ */
 .services{background:var(--off);}
 .svc-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;}
 .svc-head-desc{max-width:360px;font-size:14px;font-weight:300;line-height:1.85;color:var(--grey);}
@@ -209,7 +209,7 @@ nav{
 .svc-tags{display:flex;flex-wrap:wrap;gap:6px;}
 .svc-tag{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--vwl);border:1px solid rgba(0,176,240,.3);padding:3px 10px;background:rgba(0,176,240,.07);}
 
-/* ── TEAM ── */
+/* â”€â”€ TEAM â”€â”€ */
 .team{background:var(--w);}
 .team-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;}
 .team-sub{max-width:320px;font-size:13px;font-weight:300;line-height:1.8;color:var(--grey);}
@@ -226,7 +226,7 @@ nav{
 .tcard-name{font-size:17px;font-weight:700;color:var(--vw);letter-spacing:-.2px;margin-bottom:2px;}
 .tcard-role{font-size:12px;color:var(--grey);}
 
-/* ── SERVICE CAM ── */
+/* â”€â”€ SERVICE CAM â”€â”€ */
 .svcam{display:grid;grid-template-columns:1fr 1fr;min-height:560px;}
 .cam-vis{background:var(--vw);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:72px;}
 .cam-vis-bg{position:absolute;inset:0;background-image:url('img/confidentialite_01.jpg');background-size:cover;background-position:center;opacity:.25;}
@@ -251,7 +251,7 @@ nav{
 .cam-pt-h{font-size:14px;font-weight:600;color:var(--vw);margin-bottom:4px;}
 .cam-pt-d{font-size:13px;color:var(--grey);line-height:1.65;}
 
-/* ── DIGIBOX ── */
+/* â”€â”€ DIGIBOX â”€â”€ */
 .digibox{background:var(--vw);padding:100px 56px;}
 .digi-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
 .digi-eye{color:var(--vwl)!important;}
@@ -276,7 +276,7 @@ nav{
 .svc-key-text{font-size:12px;font-weight:600;color:rgba(255,255,255,.85);letter-spacing:.3px;}
 .svc-key-text em{font-style:normal;color:var(--vwl);}
 
-/* ── CONTACT FORM ── */
+/* â”€â”€ CONTACT FORM â”€â”€ */
 .contactform{background:var(--w);}
 .cf-inner{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:flex-start;}
 .cf-desc{font-size:14px;font-weight:300;line-height:1.85;color:var(--grey);margin-top:20px;max-width:340px;}
@@ -301,7 +301,7 @@ nav{
 .cf-success.show{display:block;}
 @media(max-width:960px){.cf-inner{grid-template-columns:1fr;gap:40px;}.cf-form{padding:24px;}.cf-row{grid-template-columns:1fr;gap:0;}}
 
-/* ── CONTACT SECTION ── */
+/* â”€â”€ CONTACT SECTION â”€â”€ */
 .contact{background:var(--off);}
 .contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px;}
 .ccard{background:var(--w);border-radius:3px;box-shadow:0 4px 20px rgba(0,30,80,.06);overflow:hidden;}
@@ -328,7 +328,7 @@ nav{
 .map-foot a{color:#fff;text-decoration:none;font-size:12px;font-weight:600;display:flex;align-items:center;gap:8px;transition:gap var(--t);}
 .map-foot a:hover{gap:14px;}
 
-/* ── CTA ── */
+/* â”€â”€ CTA â”€â”€ */
 .cta{background:var(--vwm);padding:80px 56px;display:flex;justify-content:space-between;align-items:center;gap:40px;}
 .cta-txt{font-size:clamp(28px,4vw,52px);font-weight:200;color:#fff;letter-spacing:-1px;line-height:.95;}
 .cta-txt strong{font-weight:800;}
@@ -338,7 +338,7 @@ nav{
 .cta-s{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.85);text-decoration:none;padding:14px 28px;border-radius:2px;transition:all var(--t);}
 .cta-s:hover{border-color:#fff;color:#fff;}
 
-/* ── FOOTER ── */
+/* â”€â”€ FOOTER â”€â”€ */
 footer{
   background:var(--vw);
   padding:52px 56px 0;
@@ -349,7 +349,7 @@ footer{
   gap:0 48px;
 }
 
-/* ── COOKIE BANNER ── */
+/* â”€â”€ COOKIE BANNER â”€â”€ */
 .cookie-banner{
   position:fixed;bottom:0;left:0;right:0;z-index:9999;
   background:var(--vw);
@@ -396,7 +396,7 @@ footer{
 }
 
 
-/* ── PRIVACY PAGE ── */
+/* â”€â”€ PRIVACY PAGE â”€â”€ */
 .privacy-section{background:var(--off);}
 .privacy-inner{max-width:860px;}
 .privacy-content{margin-top:48px;display:flex;flex-direction:column;gap:0;}
@@ -422,14 +422,14 @@ footer{
 .cf-legal a:hover{text-decoration:underline;}
 
 
-/* ── ICÔNES REMPLACEMENT EMOJIS ── */
+/* â”€â”€ ICÃ”NES REMPLACEMENT EMOJIS â”€â”€ */
 .svc-icon-line{width:28px;height:2px;background:var(--vwl);margin-bottom:18px;}
 .digi-dash{color:var(--vwl);font-weight:700;font-size:16px;flex-shrink:0;}
 .crow-bar{display:inline-block;width:3px;height:16px;background:var(--vwm);border-radius:2px;flex-shrink:0;margin-top:3px;}
 .cf-info-bar{display:inline-block;width:3px;height:14px;background:var(--vwm);border-radius:2px;flex-shrink:0;}
 .svc-key-dash{color:var(--vwl);font-weight:700;flex-shrink:0;}
 
-/* ── FOOTER COLONNES ── */
+/* â”€â”€ FOOTER COLONNES â”€â”€ */
 .f-col{display:flex;flex-direction:column;gap:10px;padding-bottom:40px;}
 .f-col-title{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--vwl);margin-bottom:6px;}
 .f-info{font-size:12px;color:rgba(255,255,255,.6);line-height:1.7;}
@@ -441,7 +441,7 @@ footer{
 .f-priv:hover{color:var(--vwl);}
 .f-tag{font-size:12px;font-weight:300;font-style:italic;color:rgba(255,255,255,.5);line-height:1.7;}
 
-/* ── COOKIE BANNER ── */
+/* â”€â”€ COOKIE BANNER â”€â”€ */
 #cookieBanner{
   position:fixed;bottom:0;left:0;right:0;
   background:var(--vw);
@@ -465,7 +465,7 @@ footer{
 .cookie-accept{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--vwl);color:#fff;border:none;padding:10px 22px;border-radius:2px;cursor:pointer;transition:all var(--t);}
 .cookie-accept:hover{background:#fff;color:var(--vw);}
 
-/* ── PHOTO BAND DÉFILANT ── */
+/* â”€â”€ PHOTO BAND DÃ‰FILANT â”€â”€ */
 .pb-band{position:relative;height:260px;overflow:hidden;background:var(--vw);}
 .pb-inner{display:flex;height:100%;gap:3px;animation:pb-scroll 40s linear infinite;}
 .pb-band:hover .pb-inner{animation-play-state:paused;}
@@ -476,9 +476,9 @@ footer{
 @keyframes pb-scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 @media(max-width:960px){.pb-band{height:200px;}.pb-item{flex:0 0 80%;min-width:80%;}}
 
-/* ═══════════════════════════════════════
-   RESPONSIVE — TABLETTE & MOBILE
-═══════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   RESPONSIVE â€” TABLETTE & MOBILE
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 /* Hamburger bouton */
 .nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:4px;}
@@ -487,14 +487,14 @@ footer{
 .nav-burger.open span:nth-child(2){opacity:0;}
 .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
-/* ── TABLETTE (≤900px) ── */
+/* â”€â”€ TABLETTE (â‰¤900px) â”€â”€ */
 @media(max-width:900px){
   nav{padding:0 24px;}
   .nav-links{gap:1px;}
   .nav-links>li>a{font-size:12px;padding:6px 10px;}
 }
 
-/* ── MOBILE (≤700px) ── */
+/* â”€â”€ MOBILE (â‰¤700px) â”€â”€ */
 @media(max-width:700px){
   nav{padding:0 20px;height:60px;}
   .nav-burger{display:flex;}
@@ -577,13 +577,13 @@ footer{
   .hero-logos{top:72px;right:16px;gap:12px;}
   .hero-logos img{height:52px;}
 
-  /* Sections générales */
+  /* Sections gÃ©nÃ©rales */
   .content-section,.page-hero{padding:100px 24px 60px;}
   .page-h1{font-size:clamp(36px,9vw,52px);letter-spacing:-1px;}
   footer{padding:40px 24px 0;grid-template-columns:1fr;}
   .f-bottom{flex-direction:column;gap:8px;text-align:center;}
 
-  /* Notre équipe — 2 colonnes sur mobile */
+  /* Notre Ã©quipe â€” 2 colonnes sur mobile */
   .membres-wrap{padding:0 20px 60px;grid-template-columns:repeat(2,1fr);gap:12px;}
   .groupe-label{padding:0 20px;margin-top:48px;margin-bottom:24px;}
   .card-nom{font-size:14px;}
@@ -598,7 +598,7 @@ footer{
   .cookie-accept,.cookie-refuse{flex:1;text-align:center;}
 }
 
-/* ── TABLETTE (701px–900px) ── */
+/* â”€â”€ TABLETTE (701pxâ€“900px) â”€â”€ */
 @media(min-width:701px) and (max-width:900px){
   .membres-wrap{grid-template-columns:repeat(3,1fr);}
   .card-email{font-size:11px;word-break:break-all;}
@@ -607,7 +607,7 @@ footer{
   .hero-content{padding:120px 40px 80px;}
 }
 
-/* ── FIX OVERFLOW MOBILE ── */
+/* â”€â”€ FIX OVERFLOW MOBILE â”€â”€ */
 @media(max-width:700px){
   .content-section{overflow-x:hidden !important;}
   .content-section table{display:block !important;overflow-x:auto !important;-webkit-overflow-scrolling:touch !important;max-width:calc(100vw - 48px) !important;width:max-content !important;}
@@ -636,17 +636,17 @@ footer{
     <li>
       <a href="index.html#vente" class="has-drop mob-toggle">Vente</a>
       <div class="nav-drop">
-        <a href="https://www.volkswagen.ch/fr/configurateur.html?---=%7B%22configuration-step-navigation-service%22%3A%22%2F%3FconfigStep%3D%257B%2522context%2522%253A%2522mofa-standalone%2522%252C%2522selectedStep%2522%253A%2522carline%2522%257D%22%7D" target="_blank">Véhicules neufs VW →</a>
-        <a href="https://www.volkswagen-nutzfahrzeuge.ch/fr.html" target="_blank">Véhicules neufs VW Utilitaire →</a>
-        <a href="occasions.html">Véhicules d'occasion</a>
+        <a href="https://www.volkswagen.ch/fr/configurateur.html?---=%7B%22configuration-step-navigation-service%22%3A%22%2F%3FconfigStep%3D%257B%2522context%2522%253A%2522mofa-standalone%2522%252C%2522selectedStep%2522%253A%2522carline%2522%257D%22%7D" target="_blank">VÃ©hicules neufs VW â†’</a>
+        <a href="https://www.volkswagen-nutzfahrzeuge.ch/fr.html" target="_blank">VÃ©hicules neufs VW Utilitaire â†’</a>
+        <a href="occasions.html">VÃ©hicules d'occasion</a>
         <div class="nav-drop-sep"></div>
-        <a href="https://www.amag-leasing.ch/fr.html" target="_blank">Offre de financement →</a>
+        <a href="https://www.amag-leasing.ch/fr.html" target="_blank">Offre de financement â†’</a>
       </div>
     </li>
     <li>
       <a href="index.html#garage" class="has-drop mob-toggle">Notre Garage</a>
       <div class="nav-drop">
-        <a href="notre-equipe.html">Notre équipe</a>
+        <a href="notre-equipe.html">Notre Ã©quipe</a>
         <a href="histoire.html">Histoire</a>
         <a href="offre-emploi.html">Offre d'emploi</a>
         <a href="sponsoring.html">Sponsoring</a>
@@ -655,16 +655,16 @@ footer{
     <li>
       <a href="services.html" class="has-drop mob-toggle">Services</a>
       <div class="nav-drop">
-        <a href="services.html#entretien">Entretien et réparations</a>
-        <a href="services.html#geometrie">Géométrie</a>
+        <a href="services.html#entretien">Entretien et rÃ©parations</a>
+        <a href="services.html#geometrie">GÃ©omÃ©trie</a>
         <a href="services.html#calibrage">Calibrage assistants</a>
         <a href="services.html#pneus">Pneus et Roues</a>
         <a href="services.html#accessoires">Accessoires</a>
         <a href="services.html#carburant">Carburant</a>
         <div class="nav-drop-sep"></div>
-        <a href="services.html#totalmobil">Totalmobil! — Dépannage</a>
-        <a href="services.html#totalrepair">Totalrepair — Carrosserie</a>
-        <a href="services.html#totalglass">Totalglass — Vitrage</a>
+        <a href="services.html#totalmobil">Totalmobil! â€” DÃ©pannage</a>
+        <a href="services.html#totalrepair">Totalrepair â€” Carrosserie</a>
+        <a href="services.html#totalglass">Totalglass â€” Vitrage</a>
       </div>
     </li>
     <li><a href="index.html#contact">Contact</a></li>
@@ -676,82 +676,82 @@ footer{
 
 <section class="section privacy-section" id="confidentialite">
   <div class="privacy-inner">
-    <div class="s-eye r">Mentions légales</div>
-    <h2 class="s-title r">Politique de<br><strong>confidentialité.</strong></h2>
+    <div class="s-eye r">Mentions lÃ©gales</div>
+    <h2 class="s-title r">Politique de<br><strong>confidentialitÃ©.</strong></h2>
     <div class="privacy-content r">
 
       <div class="priv-block">
         <h3 class="priv-h3">1. Responsable du traitement</h3>
         <p>Garage Rossy SA<br>
         Route de Payerne 14<br>
-        1773 Léchelles · Fribourg · Suisse<br>
-        Tél. : <a href="tel:+41266602586">+41 26 660 25 86</a><br>
+        1773 LÃ©chelles Â· Fribourg Â· Suisse<br>
+        TÃ©l. : <a href="tel:+41266602586">+41 26 660 25 86</a><br>
         E-mail : <a href="mailto:info@rossysa.ch">info@rossysa.ch</a></p>
       </div>
 
       <div class="priv-block">
-        <h3 class="priv-h3">2. Données collectées</h3>
-        <p>Nous collectons uniquement les données que vous nous transmettez volontairement via notre formulaire de contact : nom, prénom, adresse e-mail, numéro de téléphone et message. Aucune donnée sensible n'est collectée.</p>
-        <p>Par ailleurs, notre site utilise des cookies techniques nécessaires au bon fonctionnement du site, et, avec votre consentement, des cookies d'analyse d'audience (statistiques de navigation anonymisées).</p>
+        <h3 class="priv-h3">2. DonnÃ©es collectÃ©es</h3>
+        <p>Nous collectons uniquement les donnÃ©es que vous nous transmettez volontairement via notre formulaire de contact : nom, prÃ©nom, adresse e-mail, numÃ©ro de tÃ©lÃ©phone et message. Aucune donnÃ©e sensible n'est collectÃ©e.</p>
+        <p>Par ailleurs, notre site utilise des cookies techniques nÃ©cessaires au bon fonctionnement du site, et, avec votre consentement, des cookies d'analyse d'audience (statistiques de navigation anonymisÃ©es).</p>
       </div>
 
       <div class="priv-block">
-        <h3 class="priv-h3">3. Finalité du traitement</h3>
-        <p>Les données personnelles collectées sont utilisées exclusivement pour :</p>
+        <h3 class="priv-h3">3. FinalitÃ© du traitement</h3>
+        <p>Les donnÃ©es personnelles collectÃ©es sont utilisÃ©es exclusivement pour :</p>
         <ul class="priv-list">
-          <li>Répondre à vos demandes de contact et de rendez-vous</li>
+          <li>RÃ©pondre Ã  vos demandes de contact et de rendez-vous</li>
           <li>Vous informer de nos offres et services si vous y avez consenti</li>
-          <li>Améliorer l'expérience de navigation sur notre site (cookies analytiques, avec consentement)</li>
+          <li>AmÃ©liorer l'expÃ©rience de navigation sur notre site (cookies analytiques, avec consentement)</li>
         </ul>
       </div>
 
       <div class="priv-block">
-        <h3 class="priv-h3">4. Base légale</h3>
-        <p>Le traitement de vos données repose sur votre <strong>consentement explicite</strong> (formulaire de contact, cookies) et sur notre <strong>intérêt légitime</strong> à gérer les relations avec nos clients, conformément à la nLPD (Loi fédérale sur la protection des données, en vigueur depuis le 1er septembre 2023).</p>
+        <h3 class="priv-h3">4. Base lÃ©gale</h3>
+        <p>Le traitement de vos donnÃ©es repose sur votre <strong>consentement explicite</strong> (formulaire de contact, cookies) et sur notre <strong>intÃ©rÃªt lÃ©gitime</strong> Ã  gÃ©rer les relations avec nos clients, conformÃ©ment Ã  la nLPD (Loi fÃ©dÃ©rale sur la protection des donnÃ©es, en vigueur depuis le 1er septembre 2023).</p>
       </div>
 
       <div class="priv-block">
-        <h3 class="priv-h3">5. Durée de conservation</h3>
+        <h3 class="priv-h3">5. DurÃ©e de conservation</h3>
         <ul class="priv-list">
-          <li><strong>Données de contact</strong> : conservées 2 ans après le dernier échange, puis supprimées</li>
-          <li><strong>Cookies de session</strong> : supprimés à la fermeture du navigateur</li>
+          <li><strong>DonnÃ©es de contact</strong> : conservÃ©es 2 ans aprÃ¨s le dernier Ã©change, puis supprimÃ©es</li>
+          <li><strong>Cookies de session</strong> : supprimÃ©s Ã  la fermeture du navigateur</li>
           <li><strong>Cookies analytiques</strong> : 6 mois maximum</li>
         </ul>
       </div>
 
       <div class="priv-block">
-        <h3 class="priv-h3">6. Partage des données</h3>
-        <p>Vos données ne sont <strong>jamais vendues ni louées</strong> à des tiers. Elles peuvent être partagées uniquement avec nos prestataires techniques (hébergement, outils de messagerie) dans le strict cadre de la fourniture de leurs services, et sous contrat de confidentialité.</p>
+        <h3 class="priv-h3">6. Partage des donnÃ©es</h3>
+        <p>Vos donnÃ©es ne sont <strong>jamais vendues ni louÃ©es</strong> Ã  des tiers. Elles peuvent Ãªtre partagÃ©es uniquement avec nos prestataires techniques (hÃ©bergement, outils de messagerie) dans le strict cadre de la fourniture de leurs services, et sous contrat de confidentialitÃ©.</p>
       </div>
 
       <div class="priv-block">
         <h3 class="priv-h3">7. Vos droits</h3>
-        <p>Conformément à la nLPD et au RGPD (pour les résidents de l'UE), vous disposez des droits suivants :</p>
+        <p>ConformÃ©ment Ã  la nLPD et au RGPD (pour les rÃ©sidents de l'UE), vous disposez des droits suivants :</p>
         <ul class="priv-list">
-          <li><strong>Droit d'accès</strong> : obtenir une copie de vos données</li>
-          <li><strong>Droit de rectification</strong> : corriger des données inexactes</li>
-          <li><strong>Droit à l'effacement</strong> : demander la suppression de vos données</li>
-          <li><strong>Droit d'opposition</strong> : vous opposer à certains traitements</li>
-          <li><strong>Droit à la portabilité</strong> : recevoir vos données dans un format structuré</li>
+          <li><strong>Droit d'accÃ¨s</strong> : obtenir une copie de vos donnÃ©es</li>
+          <li><strong>Droit de rectification</strong> : corriger des donnÃ©es inexactes</li>
+          <li><strong>Droit Ã  l'effacement</strong> : demander la suppression de vos donnÃ©es</li>
+          <li><strong>Droit d'opposition</strong> : vous opposer Ã  certains traitements</li>
+          <li><strong>Droit Ã  la portabilitÃ©</strong> : recevoir vos donnÃ©es dans un format structurÃ©</li>
         </ul>
-        <p>Pour exercer ces droits, contactez-nous à <a href="mailto:info@rossysa.ch">info@rossysa.ch</a>. Nous répondons dans un délai de 30 jours.</p>
+        <p>Pour exercer ces droits, contactez-nous Ã  <a href="mailto:info@rossysa.ch">info@rossysa.ch</a>. Nous rÃ©pondons dans un dÃ©lai de 30 jours.</p>
       </div>
 
       <div class="priv-block">
-        <h3 class="priv-h3">8. Sécurité</h3>
-        <p>Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données contre tout accès non autorisé, perte ou divulgation.</p>
+        <h3 class="priv-h3">8. SÃ©curitÃ©</h3>
+        <p>Nous mettons en Å“uvre des mesures techniques et organisationnelles appropriÃ©es pour protÃ©ger vos donnÃ©es contre tout accÃ¨s non autorisÃ©, perte ou divulgation.</p>
       </div>
 
       <div class="priv-block">
-        <h3 class="priv-h3">9. Cookies — Détail</h3>
+        <h3 class="priv-h3">9. Cookies â€” DÃ©tail</h3>
         <div class="cookie-table-wrap">
           <table class="cookie-table">
             <thead>
-              <tr><th>Nom</th><th>Type</th><th>Durée</th><th>Finalité</th></tr>
+              <tr><th>Nom</th><th>Type</th><th>DurÃ©e</th><th>FinalitÃ©</th></tr>
             </thead>
             <tbody>
-              <tr><td>rossysa_cookies</td><td>Essentiel</td><td>6 mois</td><td>Mémorise votre choix de cookies</td></tr>
-              <tr><td>_ga, _gid</td><td>Analytique</td><td>2 ans / 24h</td><td>Statistiques de visite anonymisées (Google Analytics, si activé)</td></tr>
+              <tr><td>rossysa_cookies</td><td>Essentiel</td><td>6 mois</td><td>MÃ©morise votre choix de cookies</td></tr>
+              <tr><td>_ga, _gid</td><td>Analytique</td><td>2 ans / 24h</td><td>Statistiques de visite anonymisÃ©es (Google Analytics, si activÃ©)</td></tr>
             </tbody>
           </table>
         </div>
@@ -759,8 +759,8 @@ footer{
 
       <div class="priv-block">
         <h3 class="priv-h3">10. Modifications</h3>
-        <p>Cette politique peut être mise à jour à tout moment. La date de dernière révision est indiquée ci-dessous. Nous vous encourageons à la consulter régulièrement.</p>
-        <p class="priv-date">Dernière mise à jour : mai 2026</p>
+        <p>Cette politique peut Ãªtre mise Ã  jour Ã  tout moment. La date de derniÃ¨re rÃ©vision est indiquÃ©e ci-dessous. Nous vous encourageons Ã  la consulter rÃ©guliÃ¨rement.</p>
+        <p class="priv-date">DerniÃ¨re mise Ã  jour : mai 2026</p>
       </div>
 
     </div>
@@ -772,23 +772,23 @@ footer{
   <div class="f-col">
     <div class="f-logo-text">Garage Rossy SA</div>
     <div class="f-tag">Votre partenaire VW<br>depuis plus de 30 ans.</div>
-    <div class="f-vw">⬤ Volkswagen Partner</div>
+    <div class="f-vw">â¬¤ Volkswagen Partner</div>
   </div>
   <div class="f-col">
     <div class="f-col-title">Contact</div>
-    <div class="f-info">Route de Payerne 14<br>1773 Léchelles · Fribourg</div>
+    <div class="f-info">Route de Payerne 14<br>1773 LÃ©chelles Â· Fribourg</div>
     <div class="f-info"><a href="tel:+41266602586">+41 26 660 25 86</a></div>
     <div class="f-info"><a href="mailto:info@rossysa.ch">info@rossysa.ch</a></div>
   </div>
   <div class="f-col">
     <div class="f-col-title">Horaires</div>
-    <div class="f-info">Lun – Ven · 07h30 – 12h00 / 13h30 – 17h30</div>
-    <div class="f-info">Samedi · sur rendez-vous</div>
-    <div class="f-info" style="margin-top:6px;">Digibox · 24h/24 · 7j/7</div>
+    <div class="f-info">Lun â€“ Ven Â· 07h30 â€“ 12h00 / 13h30 â€“ 17h30</div>
+    <div class="f-info">Samedi Â· sur rendez-vous</div>
+    <div class="f-info" style="margin-top:6px;">Digibox Â· 24h/24 Â· 7j/7</div>
   </div>
   <div class="f-bottom">
-    <div class="f-copy">© 2026 Garage Rossy SA · Tous droits réservés</div>
-    <a href="confidentialite.html" class="f-priv">Politique de confidentialité</a>
+    <div class="f-copy">Â© 2026 Garage Rossy SA Â· Tous droits rÃ©servÃ©s</div>
+    <a href="confidentialite.html" class="f-priv">Politique de confidentialitÃ©</a>
   </div>
 </footer>
 
@@ -799,8 +799,8 @@ footer{
     <div class="cookie-text">
       <div class="cookie-title">Nous utilisons des cookies</div>
       <div class="cookie-desc">
-        Ce site utilise des cookies pour améliorer votre expérience de navigation, analyser le trafic et personnaliser le contenu.
-        En continuant à naviguer, vous acceptez notre utilisation des cookies.
+        Ce site utilise des cookies pour amÃ©liorer votre expÃ©rience de navigation, analyser le trafic et personnaliser le contenu.
+        En continuant Ã  naviguer, vous acceptez notre utilisation des cookies.
         <a href="#confidentialite">En savoir plus</a>
       </div>
     </div>
@@ -846,7 +846,7 @@ footer{
   }
 
 
-  // Cookie banner — conforme nLPD/RGPD
+  // Cookie banner â€” conforme nLPD/RGPD
   function setCookie(val) {
     const d = new Date();
     d.setTime(d.getTime() + (180 * 24 * 60 * 60 * 1000));
@@ -854,7 +854,7 @@ footer{
     const banner = document.getElementById('cookieBanner');
     banner.classList.remove('show');
     banner.classList.add('hide');
-    // Si accepté, on peut charger les scripts analytiques ici
+    // Si acceptÃ©, on peut charger les scripts analytiques ici
     if (val === 'accepted') {
       // Ex: charger Google Analytics dynamiquement
       // loadGoogleAnalytics();
@@ -864,7 +864,7 @@ footer{
     const match = document.cookie.match(/rossysa_cookies=([^;]+)/);
     return match ? match[1] : null;
   }
-  // Afficher la bannière cookies après 800ms si aucun choix enregistré
+  // Afficher la banniÃ¨re cookies aprÃ¨s 800ms si aucun choix enregistrÃ©
   document.addEventListener('DOMContentLoaded', function() {
     if (!getCookieVal()) {
       setTimeout(function() {
