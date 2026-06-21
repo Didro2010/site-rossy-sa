@@ -265,14 +265,14 @@ nav{
 }
 
 /* ── DIGIBOX ── */
-.digibox{background:var(--vw);padding:100px 56px;}
+.digibox{background:var(--w);padding:100px 56px;}
 .digi-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
-.digi-eye{color:var(--vwl)!important;}
-.digi-eye::before{background:var(--vwl)!important;}
-.digi-desc{font-size:15px;font-weight:300;line-height:1.9;color:rgba(255,255,255,.55);margin-top:20px;}
+.digi-eye{color:var(--vwm)!important;}
+.digi-eye::before{background:var(--vwm)!important;}
+.digi-desc{font-size:15px;font-weight:300;line-height:1.9;color:var(--grey);margin-top:20px;}
 .digi-feats{margin-top:40px;display:flex;flex-direction:column;gap:10px;}
-.digi-feat{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:15px 22px;border-radius:2px;font-size:13px;color:rgba(255,255,255,.8);transition:background var(--t);}
-.digi-feat:hover{background:rgba(255,255,255,.1);}
+.digi-feat{display:flex;align-items:center;gap:14px;background:var(--off);border:1px solid var(--rule);padding:15px 22px;border-radius:2px;font-size:13px;color:var(--vw);transition:background var(--t);}
+.digi-feat:hover{background:#eef1f8;}
 .digi-icon{font-size:18px;flex-shrink:0;}
 .digi-clock{display:flex;align-items:center;justify-content:center;height:360px;position:relative;}
 .clock-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:44px 44px;}
@@ -941,7 +941,7 @@ footer{
 <section class="digibox" id="digibox">
   <div class="digi-inner">
     <div>
-      <h2 class="s-title s-title-w r">Digibox<br><strong>24h/24.</strong></h2>
+      <h2 class="s-title r">Digibox<br><strong>24h/24.</strong></h2>
       <p class="digi-desc r">Déposez ou récupérez votre véhicule à toute heure. Un simple code personnel suffit — la clé est remise automatiquement, en toute sécurité.</p>
       <div class="digi-feats">
         <div class="digi-feat r"><span class="digi-dash">—</span>Remise automatique par code sécurisé</div>
@@ -950,7 +950,7 @@ footer{
       </div>
     </div>
     <div class="digi-clock r d1" style="overflow:hidden;border-radius:4px;">
-      <img src="img/index_11.jpg" alt="Digibox et Digisafe Garage Rossy" style="width:100%;height:100%;object-fit:cover;filter:brightness(.85) saturate(.6);">
+      <img src="img/digibox_photo.jpg" alt="Digibox et Digisafe Garage Rossy" style="width:100%;height:100%;object-fit:cover;">
     </div>
   </div>
 </section>
