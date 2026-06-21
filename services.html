@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nos Services — Garage Rossy SA — Volkswagen — Léchelles</title>
+<title>Nos Services â€” Garage Rossy SA â€” Volkswagen â€” LÃ©chelles</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,200;1,300&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -26,7 +26,7 @@ body{
   overflow-x:hidden;
 }
 
-/* ── NAV ── */
+/* â”€â”€ NAV â”€â”€ */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:200;
   display:flex;align-items:center;justify-content:space-between;
@@ -41,7 +41,7 @@ nav{
 .nav-tag{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--grey);}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
 .nav-links>li{position:relative;}
-.nav-links>li>a{font-size:13px;font-weight:500;color:var(--grey);text-decoration:none;padding:7px 14px;border-radius:2px;transition:color var(--t),background var(--t);display:flex;align-items:center;gap:5px;white-space:nowrap;}
+.nav-links>li>a{font-size:15px;font-weight:500;color:var(--grey);text-decoration:none;padding:7px 14px;border-radius:2px;transition:color var(--t),background var(--t);display:flex;align-items:center;gap:5px;white-space:nowrap;}
 .nav-links>li>a:hover{color:var(--vw);background:rgba(0,30,80,.05);}
 .nav-links>li>a.has-drop::after{content:'';display:inline-block;width:0;height:0;border-left:3.5px solid transparent;border-right:3.5px solid transparent;border-top:4px solid currentColor;margin-left:2px;transition:transform var(--t);}
 .nav-links>li:hover>a.has-drop::after{transform:rotate(180deg);}
@@ -97,7 +97,7 @@ nav{
   50%{box-shadow:0 0 0 8px rgba(0,64,193,0);}
 }
 
-/* ── HERO ── */
+/* â”€â”€ HERO â”€â”€ */
 .hero{min-height:78vh;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;background:var(--vw);}
 .hero-parallax{position:absolute;top:-20%;left:0;width:100%;height:140%;will-change:transform;}
 .hero-parallax img{width:100%;height:100%;object-fit:cover;object-position:center 35%;}
@@ -134,20 +134,20 @@ nav{
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-/* ── MARQUEE ── */
+/* â”€â”€ MARQUEE â”€â”€ */
 .mq{overflow:hidden;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--off);}
 .mq-track{display:flex;animation:mq 30s linear infinite;white-space:nowrap;}
 .mq-item{padding:12px 44px;font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--vw);border-right:1px solid var(--rule);display:flex;align-items:center;gap:44px;opacity:.6;}
-.mq-item::after{content:'◆';font-size:5px;color:var(--vwm);}
+.mq-item::after{content:'â—†';font-size:5px;color:var(--vwm);}
 @keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-/* ── PHOTO BAND ── */
+/* â”€â”€ PHOTO BAND â”€â”€ */
 .pb{overflow:hidden;position:relative;}
 .pb img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease,filter .5s;}
 .pb:hover img{transform:scale(1.05);filter:brightness(1.05);}
 .pb-cap{position:absolute;bottom:0;left:0;right:0;padding:40px 20px 16px;background:linear-gradient(transparent,rgba(0,30,80,.65));font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.8);}
 
-/* ── SECTION BASE ── */
+/* â”€â”€ SECTION BASE â”€â”€ */
 .section{padding:100px 56px;}
 .s-eye{font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--vwm);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
 .s-eye::before{content:'';display:block;width:22px;height:1.5px;background:var(--vwm);}
@@ -156,7 +156,7 @@ nav{
 .s-title em{font-style:italic;font-weight:200;color:var(--vwm);}
 .s-title-w{color:#fff;}
 
-/* ── SERVICES — IMAGE CARDS WITH PARALLAX ── */
+/* â”€â”€ SERVICES â€” IMAGE CARDS WITH PARALLAX â”€â”€ */
 .services{background:var(--off);}
 .svc-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;}
 .svc-head-desc{max-width:360px;font-size:14px;font-weight:300;line-height:1.85;color:var(--grey);}
@@ -207,7 +207,7 @@ nav{
 .svc-tags{display:flex;flex-wrap:wrap;gap:6px;}
 .svc-tag{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--vwl);border:1px solid rgba(0,176,240,.3);padding:3px 10px;background:rgba(0,176,240,.07);}
 
-/* ── TEAM ── */
+/* â”€â”€ TEAM â”€â”€ */
 .team{background:var(--w);}
 .team-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;}
 .team-sub{max-width:320px;font-size:13px;font-weight:300;line-height:1.8;color:var(--grey);}
@@ -224,7 +224,7 @@ nav{
 .tcard-name{font-size:17px;font-weight:700;color:var(--vw);letter-spacing:-.2px;margin-bottom:2px;}
 .tcard-role{font-size:12px;color:var(--grey);}
 
-/* ── SERVICE CAM ── */
+/* â”€â”€ SERVICE CAM â”€â”€ */
 .svcam{display:grid;grid-template-columns:1fr 1fr;min-height:560px;}
 .cam-vis{background:var(--vw);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:72px;}
 .cam-vis-bg{position:absolute;inset:0;background-image:url('img/confidentialite_01.jpg');background-size:cover;background-position:center;opacity:.25;}
@@ -249,7 +249,7 @@ nav{
 .cam-pt-h{font-size:14px;font-weight:600;color:var(--vw);margin-bottom:4px;}
 .cam-pt-d{font-size:13px;color:var(--grey);line-height:1.65;}
 
-/* ── DIGIBOX ── */
+/* â”€â”€ DIGIBOX â”€â”€ */
 .digibox{background:var(--vw);padding:100px 56px;}
 .digi-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
 .digi-eye{color:var(--vwl)!important;}
@@ -274,7 +274,7 @@ nav{
 .svc-key-text{font-size:12px;font-weight:600;color:rgba(255,255,255,.85);letter-spacing:.3px;}
 .svc-key-text em{font-style:normal;color:var(--vwl);}
 
-/* ── CONTACT FORM ── */
+/* â”€â”€ CONTACT FORM â”€â”€ */
 .contactform{background:var(--w);}
 .cf-inner{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:flex-start;}
 .cf-desc{font-size:14px;font-weight:300;line-height:1.85;color:var(--grey);margin-top:20px;max-width:340px;}
@@ -299,7 +299,7 @@ nav{
 .cf-success.show{display:block;}
 @media(max-width:960px){.cf-inner{grid-template-columns:1fr;gap:40px;}.cf-form{padding:24px;}.cf-row{grid-template-columns:1fr;gap:0;}}
 
-/* ── CONTACT SECTION ── */
+/* â”€â”€ CONTACT SECTION â”€â”€ */
 .contact{background:var(--off);}
 .contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:56px;}
 .ccard{background:var(--w);border-radius:3px;box-shadow:0 4px 20px rgba(0,30,80,.06);overflow:hidden;}
@@ -326,7 +326,7 @@ nav{
 .map-foot a{color:#fff;text-decoration:none;font-size:12px;font-weight:600;display:flex;align-items:center;gap:8px;transition:gap var(--t);}
 .map-foot a:hover{gap:14px;}
 
-/* ── CTA ── */
+/* â”€â”€ CTA â”€â”€ */
 .cta{background:var(--vwm);padding:80px 56px;display:flex;justify-content:space-between;align-items:center;gap:40px;}
 .cta-txt{font-size:clamp(28px,4vw,52px);font-weight:200;color:#fff;letter-spacing:-1px;line-height:.95;}
 .cta-txt strong{font-weight:800;}
@@ -336,7 +336,7 @@ nav{
 .cta-s{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.85);text-decoration:none;padding:14px 28px;border-radius:2px;transition:all var(--t);}
 .cta-s:hover{border-color:#fff;color:#fff;}
 
-/* ── FOOTER ── */
+/* â”€â”€ FOOTER â”€â”€ */
 footer{
   background:var(--vw);
   padding:52px 56px 0;
@@ -347,14 +347,14 @@ footer{
   gap:0 48px;
 }
 
-/* ── COOKIE BANNER ── */
+/* â”€â”€ COOKIE BANNER â”€â”€ */
 .cookie-text{}
 .cookie-desc a:hover{text-decoration:underline;}
 @media(max-width:960px){
 }
 
 
-/* ── PRIVACY PAGE ── */
+/* â”€â”€ PRIVACY PAGE â”€â”€ */
 .privacy-section{background:var(--off);}
 .privacy-inner{max-width:860px;}
 .privacy-content{margin-top:48px;display:flex;flex-direction:column;gap:0;}
@@ -380,14 +380,14 @@ footer{
 .cf-legal a:hover{text-decoration:underline;}
 
 
-/* ── ICÔNES REMPLACEMENT EMOJIS ── */
+/* â”€â”€ ICÃ”NES REMPLACEMENT EMOJIS â”€â”€ */
 .svc-icon-line{width:28px;height:2px;background:var(--vwl);margin-bottom:18px;}
 .digi-dash{color:var(--vwl);font-weight:700;font-size:16px;flex-shrink:0;}
 .crow-bar{display:inline-block;width:3px;height:16px;background:var(--vwm);border-radius:2px;flex-shrink:0;margin-top:3px;}
 .cf-info-bar{display:inline-block;width:3px;height:14px;background:var(--vwm);border-radius:2px;flex-shrink:0;}
 .svc-key-dash{color:var(--vwl);font-weight:700;flex-shrink:0;}
 
-/* ── FOOTER COLONNES ── */
+/* â”€â”€ FOOTER COLONNES â”€â”€ */
 .f-col{display:flex;flex-direction:column;gap:10px;padding-bottom:40px;}
 .f-col-title{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--vwl);margin-bottom:6px;}
 .f-info{font-size:12px;color:rgba(255,255,255,.6);line-height:1.7;}
@@ -399,9 +399,9 @@ footer{
 .f-priv:hover{color:var(--vwl);}
 .f-tag{font-size:12px;font-weight:300;font-style:italic;color:rgba(255,255,255,.5);line-height:1.7;}
 
-/* ── COOKIE BANNER ── */
+/* â”€â”€ COOKIE BANNER â”€â”€ */
 
-/* ── PHOTO BAND DÉFILANT ── */
+/* â”€â”€ PHOTO BAND DÃ‰FILANT â”€â”€ */
 .pb-band{position:relative;height:260px;overflow:hidden;background:var(--vw);}
 .pb-inner{display:flex;height:100%;gap:3px;animation:pb-scroll 40s linear infinite;}
 .pb-band:hover .pb-inner{animation-play-state:paused;}
@@ -410,10 +410,10 @@ footer{
 .pb-band:hover .pb-item img{transform:scale(1.04);}
 .pb-source-label{position:absolute;bottom:10px;right:14px;font-size:10px;font-weight:500;letter-spacing:1px;color:rgba(255,255,255,.45);pointer-events:none;}
 @keyframes pb-scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
-/* ══ PAGE SERVICES — SECTIONS ALTERNÉES ══ */
+/* â•â• PAGE SERVICES â€” SECTIONS ALTERNÃ‰ES â•â• */
 body.page-services{padding-top:68px;}
 
-/* En-tête de page */
+/* En-tÃªte de page */
 .sv-intro{max-width:none;margin:0;padding:80px 56px 40px;}
 .sv-intro-inner{width:50%;box-sizing:border-box;padding:0 56px;}
 .sv-intro .s-title{margin-bottom:28px;}
@@ -421,22 +421,22 @@ body.page-services{padding-top:68px;}
 .sv-intro-lead strong{font-weight:700;color:var(--vwm);}
 @media(max-width:860px){.sv-intro-inner{width:100%;padding:0;}}
 
-/* Pastilles de progression à droite */
+/* Pastilles de progression Ã  droite */
 .sv-dots{position:fixed;top:50%;right:26px;transform:translateY(-50%);z-index:120;display:flex;flex-direction:column;gap:14px;}
 .sv-dots a{width:11px;height:11px;border-radius:50%;border:1.5px solid #fff;background:rgba(255,255,255,.25);transition:all var(--t);position:relative;box-shadow:0 0 0 1px rgba(0,30,80,.15),0 2px 6px rgba(0,0,0,.25);}
 .sv-dots a:hover,.sv-dots a.active{background:#fff;transform:scale(1.35);box-shadow:0 0 0 1px rgba(0,30,80,.2),0 2px 10px rgba(0,0,0,.3);}
 .sv-dots a span{position:absolute;right:20px;top:50%;transform:translateY(-50%);white-space:nowrap;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--vw);background:#fff;padding:4px 10px;border-radius:3px;box-shadow:0 4px 14px rgba(0,30,80,.12);opacity:0;pointer-events:none;transition:opacity var(--t);}
 .sv-dots a:hover span{opacity:1;}
 
-/* Une prestation = bande alternée */
+/* Une prestation = bande alternÃ©e */
 .sv-band{display:grid;grid-template-columns:1fr 1fr;min-height:480px;align-items:stretch;position:relative;scroll-margin-top:68px;}
 
-/* ── Animations au scroll ── */
-/* Texte : glisse depuis son côté + fondu */
+/* â”€â”€ Animations au scroll â”€â”€ */
+/* Texte : glisse depuis son cÃ´tÃ© + fondu */
 .sv-band .sv-body{opacity:0;transform:translateX(-90px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1);}
 .sv-band.alt .sv-body{transform:translateX(90px);}
 .sv-band.v .sv-body{opacity:1;transform:translateX(0);}
-/* Décalage en cascade des éléments internes du texte */
+/* DÃ©calage en cascade des Ã©lÃ©ments internes du texte */
 .sv-band .sv-ico,.sv-band .sv-h,.sv-band .sv-desc,.sv-band .sv-feats,.sv-band .sv-link{opacity:0;transform:translateY(34px);transition:opacity .65s ease,transform .65s ease;}
 .sv-band.v .sv-ico{transition-delay:.1s;}
 .sv-band.v .sv-h{transition-delay:.22s;}
@@ -444,10 +444,10 @@ body.page-services{padding-top:68px;}
 .sv-band.v .sv-feats{transition-delay:.46s;}
 .sv-band.v .sv-link{transition-delay:.58s;}
 .sv-band.v .sv-ico,.sv-band.v .sv-h,.sv-band.v .sv-desc,.sv-band.v .sv-feats,.sv-band.v .sv-link{opacity:1;transform:translateY(0);}
-/* Photo : zoom-out marqué à l'apparition (le JS ajuste ensuite scale+translateY pour la parallaxe) */
+/* Photo : zoom-out marquÃ© Ã  l'apparition (le JS ajuste ensuite scale+translateY pour la parallaxe) */
 .sv-visual img{transition:transform 1.4s cubic-bezier(.22,.61,.36,1);transform:scale(1.08);will-change:transform;}
 .sv-band.v .sv-visual img{transform:scale(1.0);}
-/* Voile qui se lève sur la photo à l'apparition */
+/* Voile qui se lÃ¨ve sur la photo Ã  l'apparition */
 .sv-visual::before{content:'';position:absolute;inset:0;z-index:1;background:var(--vw);opacity:0;transition:opacity .9s ease;}
 .sv-band.v .sv-visual::before{opacity:0;}
 @media(prefers-reduced-motion:reduce){
@@ -457,11 +457,11 @@ body.page-services{padding-top:68px;}
 @media(prefers-reduced-motion:reduce){
   .sv-band .sv-body,.sv-band .sv-ico,.sv-band .sv-h,.sv-band .sv-desc,.sv-band .sv-feats,.sv-band .sv-link,.sv-visual img{transition:none;transform:none;opacity:1;}
 }
-/* alternance explicite via classe .alt (texte à droite, photo à gauche) */
+/* alternance explicite via classe .alt (texte Ã  droite, photo Ã  gauche) */
 .sv-band.alt .sv-visual{order:1;}
 .sv-band.alt .sv-body{order:2;}
 
-/* Côté texte */
+/* CÃ´tÃ© texte */
 .sv-body{display:flex;flex-direction:column;justify-content:center;padding:64px 60px;position:relative;overflow:hidden;}
 .sv-ico{width:54px;height:54px;display:flex;align-items:center;justify-content:center;border-radius:14px;background:linear-gradient(135deg,var(--vw),var(--vwm));margin-bottom:24px;position:relative;}
 .sv-ico svg{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
@@ -474,13 +474,13 @@ body.page-services{padding-top:68px;}
 .sv-feats li{display:flex;align-items:flex-start;gap:13px;font-size:14.5px;font-weight:300;color:var(--vw);}
 .sv-feats .tk{flex:0 0 auto;width:18px;height:18px;border-radius:50%;background:rgba(0,176,240,.12);display:flex;align-items:center;justify-content:center;margin-top:1px;}
 .sv-feats .tk svg{width:11px;height:11px;stroke:var(--vwm);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;}
-/* Variante : nom du système + description en dessous */
+/* Variante : nom du systÃ¨me + description en dessous */
 .sv-feats-stack{gap:7px;}
 #calibrage .sv-desc{max-width:520px;}
 /* Logos partenaires (Totalrepair / Totalglass) */
 .sv-logo-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;box-sizing:border-box;z-index:2;}
 .sv-visual .sv-logo-wrap img{position:static;width:70%;height:auto;max-height:60%;object-fit:contain;inset:auto;}
-/* Pas de zoom/parallaxe/voile sur les bandes à logo */
+/* Pas de zoom/parallaxe/voile sur les bandes Ã  logo */
 #totalrepair .sv-visual::before{display:none;}
 #totalrepair .sv-visual::after{display:none;}
 .sv-logo-wrap img{transform:none!important;transition:none!important;}
@@ -492,7 +492,7 @@ body.page-services{padding-top:68px;}
 .sv-link a{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--vwm);text-decoration:none;transition:gap var(--t);}
 .sv-link a:hover{gap:14px;}
 
-/* Côté visuel / photo */
+/* CÃ´tÃ© visuel / photo */
 .sv-visual{position:relative;overflow:hidden;background:#111;min-height:300px;}
 .sv-visual img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0;}
 .sv-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(0,30,80,.25),transparent 60%);}
@@ -522,9 +522,9 @@ body.page-services{padding-top:68px;}
   .sv-cta{padding:64px 24px;}
 }
 
-/* ═══════════════════════════════════════
-   RESPONSIVE — TABLETTE & MOBILE
-═══════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   RESPONSIVE â€” TABLETTE & MOBILE
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 /* Hamburger bouton */
 .nav-burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:4px;}
@@ -533,14 +533,14 @@ body.page-services{padding-top:68px;}
 .nav-burger.open span:nth-child(2){opacity:0;}
 .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
-/* ── TABLETTE (≤900px) ── */
+/* â”€â”€ TABLETTE (â‰¤900px) â”€â”€ */
 @media(max-width:900px){
   nav{padding:0 24px;}
   .nav-links{gap:1px;}
   .nav-links>li>a{font-size:12px;padding:6px 10px;}
 }
 
-/* ── MOBILE (≤700px) ── */
+/* â”€â”€ MOBILE (â‰¤700px) â”€â”€ */
 @media(max-width:700px){
   nav{padding:0 20px;height:60px;}
   .nav-burger{display:flex;}
@@ -589,12 +589,12 @@ body.page-services{padding-top:68px;}
   .nav-drop-sep{display:none !important;}
   .nav-btn{margin:16px 24px;text-align:center;border-radius:2px;display:block;}
 
-  /* Services — sections alternées */
+  /* Services â€” sections alternÃ©es */
   .sv-band{grid-template-columns:1fr !important;min-height:unset !important;overflow:hidden;}
   .sv-band.alt .sv-visual{order:-1;}
   .sv-visual{height:220px !important;min-height:unset !important;overflow:hidden;}
   .sv-visual img{width:100% !important;height:220px !important;object-fit:cover !important;display:block !important;}
-  /* Totalrepair/Totalglass — 2 logos empilés, besoin de plus de hauteur */
+  /* Totalrepair/Totalglass â€” 2 logos empilÃ©s, besoin de plus de hauteur */
   #totalrepair .sv-visual{height:auto !important;min-height:260px !important;padding:24px 0 !important;display:flex !important;align-items:center !important;justify-content:center !important;}
   #totalrepair .sv-logo-wrap{position:static !important;flex-direction:column !important;gap:16px !important;padding:0 24px !important;width:100% !important;}
   #totalrepair .sv-logo-wrap > div{width:100% !important;margin-bottom:0 !important;}
@@ -616,13 +616,13 @@ body.page-services{padding-top:68px;}
   .hero-logos{top:72px;right:16px;gap:12px;}
   .hero-logos img{height:52px;}
 
-  /* Sections générales */
+  /* Sections gÃ©nÃ©rales */
   .content-section,.page-hero{padding:100px 24px 60px;}
   .page-h1{font-size:clamp(36px,9vw,52px);letter-spacing:-1px;}
   footer{padding:40px 24px 0;grid-template-columns:1fr;}
   .f-bottom{flex-direction:column;gap:8px;text-align:center;}
 
-  /* Notre équipe — 2 colonnes sur mobile */
+  /* Notre Ã©quipe â€” 2 colonnes sur mobile */
   .membres-wrap{padding:0 20px 60px;grid-template-columns:repeat(2,1fr);gap:12px;}
   .groupe-label{padding:0 20px;margin-top:48px;margin-bottom:24px;}
   .card-nom{font-size:14px;}
@@ -637,7 +637,7 @@ body.page-services{padding-top:68px;}
   .cookie-accept,.cookie-refuse{flex:1;text-align:center;}
 }
 
-/* ── TABLETTE (701px–900px) ── */
+/* â”€â”€ TABLETTE (701pxâ€“900px) â”€â”€ */
 @media(min-width:701px) and (max-width:900px){
   .membres-wrap{grid-template-columns:repeat(3,1fr);}
   .card-email{font-size:11px;word-break:break-all;}
@@ -662,17 +662,17 @@ body.page-services{padding-top:68px;}
     <li>
       <a href="index.html#vente" class="has-drop mob-toggle">Vente</a>
       <div class="nav-drop">
-        <a href="https://www.volkswagen.ch/fr/configurateur.html?---=%7B%22configuration-step-navigation-service%22%3A%22%2F%3FconfigStep%3D%257B%2522context%2522%253A%2522mofa-standalone%2522%252C%2522selectedStep%2522%253A%2522carline%2522%257D%22%7D" target="_blank">Véhicules neufs VW →</a>
-        <a href="https://www.volkswagen-nutzfahrzeuge.ch/fr.html" target="_blank">Véhicules neufs VW Utilitaire →</a>
-        <a href="occasions.html">Véhicules d'occasion</a>
+        <a href="https://www.volkswagen.ch/fr/configurateur.html?---=%7B%22configuration-step-navigation-service%22%3A%22%2F%3FconfigStep%3D%257B%2522context%2522%253A%2522mofa-standalone%2522%252C%2522selectedStep%2522%253A%2522carline%2522%257D%22%7D" target="_blank">VÃ©hicules neufs VW â†’</a>
+        <a href="https://www.volkswagen-nutzfahrzeuge.ch/fr.html" target="_blank">VÃ©hicules neufs VW Utilitaire â†’</a>
+        <a href="occasions.html">VÃ©hicules d'occasion</a>
         <div class="nav-drop-sep"></div>
-        <a href="https://www.amag-leasing.ch/fr.html" target="_blank">Offre de financement →</a>
+        <a href="https://www.amag-leasing.ch/fr.html" target="_blank">Offre de financement â†’</a>
       </div>
     </li>
     <li>
       <a href="index.html#garage" class="has-drop mob-toggle">Notre Garage</a>
       <div class="nav-drop">
-        <a href="notre-equipe.html">Notre équipe</a>
+        <a href="notre-equipe.html">Notre Ã©quipe</a>
         <a href="histoire.html">Histoire</a>
         <a href="offre-emploi.html">Offre d'emploi</a>
         <a href="sponsoring.html">Sponsoring</a>
@@ -681,14 +681,14 @@ body.page-services{padding-top:68px;}
     <li>
       <a href="services.html" class="has-drop mob-toggle" style="color:var(--vw);">Services</a>
       <div class="nav-drop">
-        <a href="#entretien">Entretien et réparations</a>
-        <a href="#geometrie">Géométrie</a>
+        <a href="#entretien">Entretien et rÃ©parations</a>
+        <a href="#geometrie">GÃ©omÃ©trie</a>
         <a href="#calibrage">Calibrage assistants</a>
         <a href="#pneus">Pneus et Roues</a>
         <a href="#accessoires">Accessoires</a>
         <a href="#carburant">Carburant</a>
         <div class="nav-drop-sep"></div>
-        <a href="#totalmobil">Totalmobil! — Dépannage</a>
+        <a href="#totalmobil">Totalmobil! â€” DÃ©pannage</a>
         <a href="#totalrepair">Totalrepair &amp; Totalglass</a>
       </div>
     </li>
@@ -697,18 +697,18 @@ body.page-services{padding-top:68px;}
 </nav>
 
 
-<!-- ══ INTRO ══ -->
+<!-- â•â• INTRO â•â• -->
 <section class="sv-intro" id="top">
   <div class="sv-intro-inner">
     <h2 class="s-title">Nos <strong>services</strong></h2>
-    <p class="sv-intro-lead">De l'entretien courant au dépannage d'urgence, nous prenons soin de <strong>votre véhicule</strong> avec un atelier équipé des dernières technologies et des collaborateurs formés en continu. Partenaire Volkswagen, nous entretenons et réparons aussi les autres marques du groupe — Audi, SEAT, Škoda et Cupra.</p>
+    <p class="sv-intro-lead">De l'entretien courant au dÃ©pannage d'urgence, nous prenons soin de <strong>votre vÃ©hicule</strong> avec un atelier Ã©quipÃ© des derniÃ¨res technologies et des collaborateurs formÃ©s en continu. Partenaire Volkswagen, nous entretenons et rÃ©parons aussi les autres marques du groupe â€” Audi, SEAT, Å koda et Cupra.</p>
   </div>
 </section>
 
-<!-- ══ PASTILLES DE PROGRESSION ══ -->
+<!-- â•â• PASTILLES DE PROGRESSION â•â• -->
 <div class="sv-dots" role="navigation" aria-label="Navigation des prestations">
-  <a href="#entretien" data-dot><span>Entretien &amp; réparations</span></a>
-  <a href="#geometrie" data-dot><span>Géométrie</span></a>
+  <a href="#entretien" data-dot><span>Entretien &amp; rÃ©parations</span></a>
+  <a href="#geometrie" data-dot><span>GÃ©omÃ©trie</span></a>
   <a href="#calibrage" data-dot><span>Calibrage assistants</span></a>
   <a href="#pneus" data-dot><span>Pneus &amp; Roues</span></a>
   <a href="#accessoires" data-dot><span>Accessoires</span></a>
@@ -717,153 +717,153 @@ body.page-services{padding-top:68px;}
   <a href="#totalrepair" data-dot><span>Totalrepair &amp; Totalglass</span></a>
 </div>
 
-<!-- ══ 01 · ENTRETIEN & RÉPARATIONS ══ -->
+<!-- â•â• 01 Â· ENTRETIEN & RÃ‰PARATIONS â•â• -->
 <section class="sv-band" id="entretien">
   <div class="sv-body">
     <div class="sv-ico">
       <svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-6 6a1.5 1.5 0 0 0 2 2l6-6a4 4 0 0 0 5.4-5.4l-2.3 2.3-2-2 2.3-2.3z"/></svg>
     </div>
-    <h2 class="sv-h">Entretien <strong>&amp; réparations</strong></h2>
-    <p class="sv-desc">Service périodique, diagnostic électronique, climatisation, carrosserie et peinture : nous entretenons et réparons votre véhicule dans les règles de l'art, avec des pièces d'origine.</p>
+    <h2 class="sv-h">Entretien <strong>&amp; rÃ©parations</strong></h2>
+    <p class="sv-desc">Service pÃ©riodique, diagnostic Ã©lectronique, climatisation, carrosserie et peinture : nous entretenons et rÃ©parons votre vÃ©hicule dans les rÃ¨gles de l'art, avec des piÃ¨ces d'origine.</p>
     <ul class="sv-feats">
-      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Service et entretien périodique</li>
-      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Diagnostic et réparations en tout genre</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Service et entretien pÃ©riodique</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Diagnostic et rÃ©parations en tout genre</li>
       <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Maintenance de la climatisation</li>
-      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Carrosserie, peinture et préparation expertise</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Carrosserie, peinture et prÃ©paration expertise</li>
     </ul>
   </div>
   <div class="sv-visual">
-    <img src="img/services_01.jpg" alt="Atelier du Garage Rossy SA à Léchelles">
+    <img src="img/services_01.jpg" alt="Atelier du Garage Rossy SA Ã  LÃ©chelles">
   </div>
 </section>
 
-<!-- ══ 02 · GÉOMÉTRIE ══ -->
+<!-- â•â• 02 Â· GÃ‰OMÃ‰TRIE â•â• -->
 <section class="sv-band alt" id="geometrie">
   <div class="sv-body">
     <div class="sv-ico">
       <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="3"/></svg>
     </div>
-    <h2 class="sv-h">Géométrie <strong>laser</strong></h2>
-    <p class="sv-desc">Un parallélisme mal réglé use vos pneus prématurément et nuit à la tenue de route. Notre banc de géométrie laser mesure et corrige les angles de vos roues au dixième de degré.</p>
+    <h2 class="sv-h">GÃ©omÃ©trie <strong>laser</strong></h2>
+    <p class="sv-desc">Un parallÃ©lisme mal rÃ©glÃ© use vos pneus prÃ©maturÃ©ment et nuit Ã  la tenue de route. Notre banc de gÃ©omÃ©trie laser mesure et corrige les angles de vos roues au dixiÃ¨me de degrÃ©.</p>
     <ul class="sv-feats">
-      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Mesure des trains avant et arrière</li>
-      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Réglage du parallélisme et du carrossage</li>
-      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Usure des pneus réduite, conduite plus sûre</li>
-      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Rapport de contrôle remis au client</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Mesure des trains avant et arriÃ¨re</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>RÃ©glage du parallÃ©lisme et du carrossage</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Usure des pneus rÃ©duite, conduite plus sÃ»re</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Rapport de contrÃ´le remis au client</li>
     </ul>
   </div>
   <div class="sv-visual">
-    <!-- PHOTO : géométrie du jour -->
-    <img src="img/services_02.jpg" alt="Géométrie laser — réglage du parallélisme, Garage Rossy SA">
+    <!-- PHOTO : gÃ©omÃ©trie du jour -->
+    <img src="img/services_02.jpg" alt="GÃ©omÃ©trie laser â€” rÃ©glage du parallÃ©lisme, Garage Rossy SA">
   </div>
 </section>
 
-<!-- ══ CALIBRAGE ADAS ══ -->
+<!-- â•â• CALIBRAGE ADAS â•â• -->
 <section class="sv-band" id="calibrage">
   <div class="sv-body">
     <div class="sv-ico">
       <svg viewBox="0 0 24 24"><path d="M6 8.5 L5 10.5"/><path d="M4 12.5 L3 14.5"/><path d="M18 8.5 L19 10.5"/><path d="M20 12.5 L21 14.5"/><path d="M8 11.2l1-1.6a1.2 1.2 0 0 1 1-.6h2.8a1.2 1.2 0 0 1 1 .6l1 1.6"/><path d="M7.4 11.2h9.2a.8.8 0 0 1 .8.9v1.2h-1.2"/><path d="M9 13.3H7.4a.8.8 0 0 1-.8-.8v-.4"/><circle cx="9.4" cy="13.3" r=".9"/><circle cx="14.6" cy="13.3" r=".9"/><path d="M8.5 18.5a3.5 3.5 0 0 1 7 0z"/><path d="M12 18.5 L13.6 16.7"/></svg>
     </div>
     <h2 class="sv-h">Calibrage des <strong>assistants</strong></h2>
-    <p class="sv-desc">Après un remplacement de pare-brise ou un choc, les assistants de conduite doivent être recalibrés. Notre équipement règle caméras, radars et phares Matrix.</p>
+    <p class="sv-desc">AprÃ¨s un remplacement de pare-brise ou un choc, les assistants de conduite doivent Ãªtre recalibrÃ©s. Notre Ã©quipement rÃ¨gle camÃ©ras, radars et phares Matrix.</p>
     <ul class="sv-feats sv-feats-stack">
-      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span><span class="ft-txt"><span class="ft-name">ACC — Adaptive Cruise Control</span><span class="ft-desc">Régulateur adaptatif qui maintient la distance avec le véhicule précédent.</span></span></li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span><span class="ft-txt"><span class="ft-name">ACC â€” Adaptive Cruise Control</span><span class="ft-desc">RÃ©gulateur adaptatif qui maintient la distance avec le vÃ©hicule prÃ©cÃ©dent.</span></span></li>
       <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span><span class="ft-txt"><span class="ft-name">Lane Assist</span><span class="ft-desc">Maintien dans la voie avec correction de trajectoire.</span></span></li>
-      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span><span class="ft-txt"><span class="ft-name">Travel Assist</span><span class="ft-desc">Combine ACC et centrage dans la voie pour une conduite semi-assistée sur autoroute.</span></span></li>
-      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span><span class="ft-txt"><span class="ft-name">Front Assist</span><span class="ft-desc">Freinage automatique d'urgence avec détection des véhicules, piétons et cyclistes.</span></span></li>
-      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span><span class="ft-txt"><span class="ft-name">Night Vision</span><span class="ft-desc">Caméra thermique infrarouge qui détecte piétons et animaux dans l'obscurité, au-delà des phares.</span></span></li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span><span class="ft-txt"><span class="ft-name">Travel Assist</span><span class="ft-desc">Combine ACC et centrage dans la voie pour une conduite semi-assistÃ©e sur autoroute.</span></span></li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span><span class="ft-txt"><span class="ft-name">Front Assist</span><span class="ft-desc">Freinage automatique d'urgence avec dÃ©tection des vÃ©hicules, piÃ©tons et cyclistes.</span></span></li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span><span class="ft-txt"><span class="ft-name">Night Vision</span><span class="ft-desc">CamÃ©ra thermique infrarouge qui dÃ©tecte piÃ©tons et animaux dans l'obscuritÃ©, au-delÃ  des phares.</span></span></li>
     </ul>
   </div>
   <div class="sv-visual">
     <!-- PHOTO : calibrage ADAS -->
-    <img src="img/services_03.jpg" alt="Calibrage des assistants de conduite — banc ADAS">
+    <img src="img/services_03.jpg" alt="Calibrage des assistants de conduite â€” banc ADAS">
   </div>
 </section>
 
-<!-- ══ 03 · PNEUS & ROUES ══ -->
+<!-- â•â• 03 Â· PNEUS & ROUES â•â• -->
 <section class="sv-band alt" id="pneus">
   <div class="sv-body">
     <div class="sv-ico">
       <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="6.5"/><circle cx="12" cy="12" r="1.6"/><path d="M12 5.5V10.4"/><path d="M12 13.6V18.5"/><path d="M5.5 12H10.4"/><path d="M13.6 12H18.5"/><path d="M7.4 7.4 L9.9 9.9"/><path d="M14.1 14.1 L16.6 16.6"/><path d="M16.6 7.4 L14.1 9.9"/><path d="M9.9 14.1 L7.4 16.6"/></svg>
     </div>
     <h2 class="sv-h">Pneus <strong>&amp; Roues</strong></h2>
-    <p class="sv-desc">Montage, équilibrage, jantes et roues complètes : nous vous conseillons les pneumatiques adaptés à votre véhicule et à la saison, et stockons vos jeux de roues pour vous.</p>
+    <p class="sv-desc">Montage, Ã©quilibrage, jantes et roues complÃ¨tes : nous vous conseillons les pneumatiques adaptÃ©s Ã  votre vÃ©hicule et Ã  la saison, et stockons vos jeux de roues pour vous.</p>
     <ul class="sv-feats">
-      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Montage, équilibrage et pose</li>
-      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Jantes et roues complètes</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Montage, Ã©quilibrage et pose</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Jantes et roues complÃ¨tes</li>
       <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Entreposage des roues et pneus</li>
       <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Garantie Pneus (24 mois) sur les pneus neufs, crevaison et chocs&nbsp;inclus</li>
     </ul>
   </div>
   <div class="sv-visual">
-    <img src="img/services_04.jpg" alt="Entreposage des pneus et roues — Garage Rossy SA">
+    <img src="img/services_04.jpg" alt="Entreposage des pneus et roues â€” Garage Rossy SA">
   </div>
 </section>
 
-<!-- ══ 04 · ACCESSOIRES ══ -->
+<!-- â•â• 04 Â· ACCESSOIRES â•â• -->
 <section class="sv-band" id="accessoires">
   <div class="sv-body">
     <div class="sv-ico">
       <svg viewBox="0 0 24 24"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.3 7.2 16.7l.9-5.4L4.2 7.7l5.4-.8z"/></svg>
     </div>
     <h2 class="sv-h">Accessoires <strong>d'origine</strong></h2>
-    <p class="sv-desc">Barres de toit, attelages, tapis, équipements de confort : nous montons des accessoires Volkswagen d'origine, conçus pour votre modèle et garantis par la marque.</p>
+    <p class="sv-desc">Barres de toit, attelages, tapis, Ã©quipements de confort : nous montons des accessoires Volkswagen d'origine, conÃ§us pour votre modÃ¨le et garantis par la marque.</p>
     <ul class="sv-feats">
       <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Montage d'accessoires d'origine</li>
-      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Pièces détachées Volkswagen</li>
-      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Équipements de transport et de confort</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>PiÃ¨ces dÃ©tachÃ©es Volkswagen</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Ã‰quipements de transport et de confort</li>
       <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Conseil et commande sur mesure</li>
     </ul>
   </div>
   <div class="sv-visual">
-    <img src="img/services_05.jpg" alt="Coffre de toit Volkswagen d'origine monté sur barres de toit">
+    <img src="img/services_05.jpg" alt="Coffre de toit Volkswagen d'origine montÃ© sur barres de toit">
   </div>
 </section>
 
-<!-- ══ 05 · CARBURANT ══ -->
+<!-- â•â• 05 Â· CARBURANT â•â• -->
 <section class="sv-band alt" id="carburant">
   <div class="sv-body">
     <div class="sv-ico">
       <svg viewBox="0 0 24 24"><path d="M4 20V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v15M3 20h12"/><path d="M14 9h2.5a1.5 1.5 0 0 1 1.5 1.5V16a1.5 1.5 0 0 0 3 0V8l-2.5-2.5"/></svg>
     </div>
     <h2 class="sv-h">Carburant <strong>&amp; cartes</strong></h2>
-    <p class="sv-desc">Faites le plein chez nous et profitez de nos cartes prépaiement essence et crédit, pratiques pour les particuliers comme pour les flottes d'entreprise.</p>
+    <p class="sv-desc">Faites le plein chez nous et profitez de nos cartes prÃ©paiement essence et crÃ©dit, pratiques pour les particuliers comme pour les flottes d'entreprise.</p>
     <ul class="sv-feats">
-      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Prix compétitifs</li>
-      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Cartes prépaiement essence</li>
-      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Cartes crédit pour entreprises</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Prix compÃ©titifs</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Cartes prÃ©paiement essence</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Cartes crÃ©dit pour entreprises</li>
       <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Solution pratique pour les flottes</li>
     </ul>
   </div>
   <div class="sv-visual">
-    <img src="img/services_06.jpg" alt="Plein de carburant à la station du Garage Rossy SA">
+    <img src="img/services_06.jpg" alt="Plein de carburant Ã  la station du Garage Rossy SA">
   </div>
 </section>
 
-<!-- ══ 06 · TOTALMOBIL ══ -->
+<!-- â•â• 06 Â· TOTALMOBIL â•â• -->
 <section class="sv-band" id="totalmobil">
   <div class="sv-body">
     <div class="sv-ico">
       <svg viewBox="0 0 24 24"><path d="M2 16.5V12.5h11.5V16.5"/><path d="M13.5 11.5h3.2a2 2 0 0 1 1.7 1l1.4 2.3a2 2 0 0 1 .2.9v.8h-2"/><path d="M13.5 16.5h-2.6"/><path d="M6.6 16.5H4"/><circle cx="8.7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M4 12.5 L5.5 8 L8 9"/><path d="M5.5 8 L3 6.5"/><path d="M3 6.5 L2.4 7.6"/><path d="M3 6.5 L4.2 7"/></svg>
     </div>
     <h2 class="sv-h">Service <strong>Totalmobil!</strong></h2>
-    <p class="sv-desc">Une panne sur la route ? Le service de dépannage Totalmobil! vous assiste rapidement, partout, pour repartir en toute sérénité. Une tranquillité d'esprit pour reprendre la route l'esprit libre.</p>
+    <p class="sv-desc">Une panne sur la route ? Le service de dÃ©pannage Totalmobil! vous assiste rapidement, partout, pour repartir en toute sÃ©rÃ©nitÃ©. Une tranquillitÃ© d'esprit pour reprendre la route l'esprit libre.</p>
     <ul class="sv-feats">
-      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Assistance dépannage rapide</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Assistance dÃ©pannage rapide</li>
       <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Intervention sur place ou remorquage</li>
       <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Couverture en Suisse et en Europe</li>
-      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Véhicule de prêt couvert par Totalmobil! en cas de panne</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>VÃ©hicule de prÃªt couvert par Totalmobil! en cas de panne</li>
     </ul>
     <div class="sv-link">
-      <a href="https://www.totalmobil.ch/fr.html" target="_blank">En savoir plus sur Totalmobil! →</a>
+      <a href="https://www.totalmobil.ch/fr.html" target="_blank">En savoir plus sur Totalmobil! â†’</a>
     </div>
   </div>
   <div class="sv-visual">
-    <img src="img/services_07.jpg" alt="Véhicule de dépannage Caddy Totalmobil! du Garage Rossy SA">
+    <img src="img/services_07.jpg" alt="VÃ©hicule de dÃ©pannage Caddy Totalmobil! du Garage Rossy SA">
   </div>
 </section>
 
-<!-- ══ TOTALREPAIR & TOTALGLASS ══ -->
+<!-- â•â• TOTALREPAIR & TOTALGLASS â•â• -->
 <section class="sv-band alt" id="totalrepair">
   <div class="sv-body">
     <div style="display:flex;gap:12px;margin-bottom:24px;">
@@ -871,33 +871,33 @@ body.page-services{padding-top:68px;}
       <div class="sv-ico"><svg viewBox="0 0 24 24"><path d="M2 9.5c3-2 5.8-3 10-3s7 1 10 3l-2.2 8a1.5 1.5 0 0 1-1.4 1.1H5.6A1.5 1.5 0 0 1 4.2 17.5z"/><path d="M6 10.5l1.5 3.5"/><path d="M8 10l2 4"/><path d="M17 9.5l-3.5 8.5"/></svg></div>
     </div>
     <h2 class="sv-h">Total<strong>repair</strong> &amp; Total<strong>glass</strong></h2>
-    <p class="sv-desc">Votre premier interlocuteur en cas de sinistre, qu'il s'agisse de carrosserie, de peinture ou de bris de glace. Toutes les réparations sont réalisées conformément aux directives du constructeur, avec des pièces d'origine.</p>
+    <p class="sv-desc">Votre premier interlocuteur en cas de sinistre, qu'il s'agisse de carrosserie, de peinture ou de bris de glace. Toutes les rÃ©parations sont rÃ©alisÃ©es conformÃ©ment aux directives du constructeur, avec des piÃ¨ces d'origine.</p>
     <ul class="sv-feats">
       <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Premier interlocuteur en cas de sinistre</li>
-      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Garantie de réparation accordée</li>
-      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Réparation durable garantie</li>
-      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Conformité aux directives du constructeur</li>
-      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Pièces d'origine exclusivement</li>
-      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Documentation numérique et transparente</li>
-      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Formalités administratives avec votre assurance prises en charge</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Garantie de rÃ©paration accordÃ©e</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>RÃ©paration durable garantie</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>ConformitÃ© aux directives du constructeur</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>PiÃ¨ces d'origine exclusivement</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Documentation numÃ©rique et transparente</li>
+      <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>FormalitÃ©s administratives avec votre assurance prises en charge</li>
       <li><span class="tk"><svg viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6"/></svg></span>Partenaire Totalglass pour tous les bris de glace</li>
     </ul>
   </div>
   <div class="sv-visual" style="background:#fff;">
     <div class="sv-logo-wrap" style="flex-direction:column;gap:0;padding:0 16px;">
-      <div style="width:90%;display:flex;align-items:center;justify-content:center;margin-bottom:-30px;"><img src="img/services_totalrepair.jpg" alt="Totalrepair — votre expert en carrosserie"></div>
-      <div style="width:90%;display:flex;align-items:center;justify-content:center;"><img src="img/services_totalglass.jpg" alt="Totalglass — votre expert en vitrage auto"></div>
+      <div style="width:90%;display:flex;align-items:center;justify-content:center;margin-bottom:-30px;"><img src="img/services_totalrepair.jpg" alt="Totalrepair â€” votre expert en carrosserie"></div>
+      <div style="width:90%;display:flex;align-items:center;justify-content:center;"><img src="img/services_totalglass.jpg" alt="Totalglass â€” votre expert en vitrage auto"></div>
     </div>
   </div>
 </section>
-<!-- ══ CTA ══ -->
+<!-- â•â• CTA â•â• -->
 <section class="sv-cta">
-  <div class="e">À votre service</div>
-  <h3>Prêt à confier votre <strong>véhicule</strong> ?</h3>
-  <p>Prenez rendez-vous en ligne ou passez nous voir à Léchelles.</p>
+  <div class="e">Ã€ votre service</div>
+  <h3>PrÃªt Ã  confier votre <strong>vÃ©hicule</strong> ?</h3>
+  <p>Prenez rendez-vous en ligne ou passez nous voir Ã  LÃ©chelles.</p>
   <div class="hero-actions" style="justify-content:center;">
-    <a href="https://rossysa.sopl.ch/#loginSection" target="_blank" class="btn-p">Prendre rendez-vous <span class="arr">→</span></a>
-    <a href="index.html#contact" class="btn-s">Nous contacter <span class="arr">→</span></a>
+    <a href="https://rossysa.sopl.ch/#loginSection" target="_blank" class="btn-p">Prendre rendez-vous <span class="arr">â†’</span></a>
+    <a href="index.html#contact" class="btn-s">Nous contacter <span class="arr">â†’</span></a>
   </div>
 </section>
 
@@ -906,23 +906,23 @@ body.page-services{padding-top:68px;}
   <div class="f-col">
     <div class="f-logo-text">Garage Rossy SA</div>
     <div class="f-tag">Votre partenaire VW<br>depuis plus de 30 ans.</div>
-    <div class="f-vw">⬤ Volkswagen Partner</div>
+    <div class="f-vw">â¬¤ Volkswagen Partner</div>
   </div>
   <div class="f-col">
     <div class="f-col-title">Contact</div>
-    <div class="f-info">Route de Payerne 14<br>1773 Léchelles · Fribourg</div>
+    <div class="f-info">Route de Payerne 14<br>1773 LÃ©chelles Â· Fribourg</div>
     <div class="f-info"><a href="tel:+41266602586">+41 26 660 25 86</a></div>
     <div class="f-info"><a href="mailto:info@rossysa.ch">info@rossysa.ch</a></div>
   </div>
   <div class="f-col">
     <div class="f-col-title">Horaires</div>
-    <div class="f-info">Lun – Ven · 07h30 – 12h00 / 13h30 – 17h30</div>
-    <div class="f-info">Samedi · sur rendez-vous</div>
-    <div class="f-info" style="margin-top:6px;">Digibox · 24h/24 · 7j/7</div>
+    <div class="f-info">Lun â€“ Ven Â· 07h30 â€“ 12h00 / 13h30 â€“ 17h30</div>
+    <div class="f-info">Samedi Â· sur rendez-vous</div>
+    <div class="f-info" style="margin-top:6px;">Digibox Â· 24h/24 Â· 7j/7</div>
   </div>
   <div class="f-bottom">
-    <div class="f-copy">© 2026 Garage Rossy SA · Tous droits réservés</div>
-    <a href="confidentialite.html" class="f-priv">Politique de confidentialité</a>
+    <div class="f-copy">Â© 2026 Garage Rossy SA Â· Tous droits rÃ©servÃ©s</div>
+    <a href="confidentialite.html" class="f-priv">Politique de confidentialitÃ©</a>
   </div>
 </footer>
 
@@ -951,7 +951,7 @@ body.page-services{padding-top:68px;}
   }, {threshold:.08, rootMargin:'0px 0px -30px 0px'});
   document.querySelectorAll('.r,.rl').forEach(el => obs.observe(el));
 
-  // Reveal des bandes de prestations (déclenché quand la bande entre dans le viewport)
+  // Reveal des bandes de prestations (dÃ©clenchÃ© quand la bande entre dans le viewport)
   const bandReveal = new IntersectionObserver(entries => {
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('v'); bandReveal.unobserve(e.target); } });
   }, {threshold:.22});
@@ -970,12 +970,12 @@ body.page-services{padding-top:68px;}
   }
 
 
-  // Cookie banner — conforme nLPD/RGPD}
+  // Cookie banner â€” conforme nLPD/RGPD}
   function getCookieVal() {
     const match = document.cookie.match(/rossysa_cookies=([^;]+)/);
     return match ? match[1] : null;
   }
-  // Afficher la bannière cookies après 800ms si aucun choix enregistré
+  // Afficher la banniÃ¨re cookies aprÃ¨s 800ms si aucun choix enregistrÃ©
   document.addEventListener('DOMContentLoaded', function() {
     if (!getCookieVal()) {
       setTimeout(function() {}, 800);
@@ -983,7 +983,7 @@ body.page-services{padding-top:68px;}
   });
 
 
-  // Pastilles de progression — section active au scroll
+  // Pastilles de progression â€” section active au scroll
   const dots = document.querySelectorAll('.sv-dots a[data-dot]');
   const bands = document.querySelectorAll('.sv-band');
   if (dots.length && bands.length) {
@@ -1041,3 +1041,4 @@ body.page-services{padding-top:68px;}
 </script>
 </body>
 </html>
+
