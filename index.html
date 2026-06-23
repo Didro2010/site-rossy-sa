@@ -942,8 +942,8 @@ footer{
 
   <div class="cam-photos">
     <figure class="r">
-      <img src="img/service-cam-1.webp" alt="Inspection d'un véhicule filmée en direct par vidéo">
-      <figcaption><span class="cam-live-badge"><span class="rdot"></span>LIVE</span> 
+      <video id="scamVideo" src="video/service-cam.mp4" muted loop playsinline preload="none" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;"></video>
+      <figcaption><span class="cam-live-badge"><span class="rdot"></span>LIVE</span>
     </figure>
     <figure class="r d1">
       <img src="img/service-cam-2.jpg" alt="Technicien filmant le dessous d'un véhicule à l'atelier">
@@ -1363,6 +1363,16 @@ footer{
     document.getElementById('nav').style.boxShadow =
       window.scrollY > 60 ? '0 4px 20px rgba(0,30,80,.08)' : 'none';
   });
+
+  // Autoplay vidéo Service Cam au scroll
+  (function(){
+    var v = document.getElementById('scamVideo');
+    if(!v) return;
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ e.isIntersecting ? v.play() : v.pause(); });
+    }, {threshold:0.3});
+    obs.observe(v);
+  })();
 
   // Parallax Digibox
   (function(){
