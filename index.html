@@ -284,7 +284,7 @@ nav{
 .digi-icon{font-size:18px;flex-shrink:0;}
 .digi-clock{display:flex;align-items:center;justify-content:center;height:360px;position:relative;}
 .digi-parallax-wrap{position:relative;overflow:hidden;border-radius:4px;height:360px;}
-.digi-parallax-wrap img{position:absolute;top:-15%;left:0;width:100%;height:130%;object-fit:cover;will-change:transform;}
+.digi-parallax-wrap img{position:absolute;top:-20%;left:0;width:100%;height:140%;object-fit:cover;will-change:transform;}
 @media(max-width:700px){.digi-parallax-wrap{height:220px!important;}}
 .clock-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:44px 44px;}
 .clock-card{position:relative;z-index:1;text-align:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);padding:52px 64px;border-radius:3px;}
@@ -1373,7 +1373,7 @@ footer{
     function tick(){
       var r  = wrap.getBoundingClientRect();
       var vh = window.innerHeight;
-      var t  = ((r.top + r.height/2) / vh - 0.5) * 60;
+      var t  = ((r.top + r.height/2) / vh - 0.5) * 110;
       img.style.transform = 'translateY('+t+'px)';
       ticking = false;
     }
