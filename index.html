@@ -283,6 +283,9 @@ nav{
 .digi-feat:hover{background:#eef1f8;}
 .digi-icon{font-size:18px;flex-shrink:0;}
 .digi-clock{display:flex;align-items:center;justify-content:center;height:360px;position:relative;}
+.digi-parallax-wrap{position:relative;overflow:hidden;border-radius:4px;height:360px;}
+.digi-parallax-wrap img{position:absolute;top:-15%;left:0;width:100%;height:130%;object-fit:cover;will-change:transform;}
+@media(max-width:700px){.digi-parallax-wrap{height:220px!important;}}
 .clock-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:44px 44px;}
 .clock-card{position:relative;z-index:1;text-align:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);padding:52px 64px;border-radius:3px;}
 .clock-t{font-size:76px;font-weight:800;color:#fff;letter-spacing:-2px;line-height:1;}
@@ -962,8 +965,8 @@ footer{
         <div class="digi-feat r d2"><span class="digi-dash">—</span>Simple · rapide · sans attente</div>
       </div>
     </div>
-    <div class="digi-clock r d1" style="overflow:hidden;border-radius:4px;">
-      <img src="img/digibox_photo.jpg" alt="Digibox et Digisafe Garage Rossy" style="width:100%;height:100%;object-fit:cover;">
+    <div class="digi-parallax-wrap r d1" id="digiParallax">
+      <img src="img/digibox_photo.jpg" alt="Digibox et Digisafe Garage Rossy">
     </div>
   </div>
 </section>
@@ -1360,6 +1363,23 @@ footer{
     document.getElementById('nav').style.boxShadow =
       window.scrollY > 60 ? '0 4px 20px rgba(0,30,80,.08)' : 'none';
   });
+
+  // Parallax Digibox
+  (function(){
+    var wrap = document.getElementById('digiParallax');
+    var img  = wrap && wrap.querySelector('img');
+    if(!img) return;
+    var ticking = false;
+    function tick(){
+      var r  = wrap.getBoundingClientRect();
+      var vh = window.innerHeight;
+      var t  = ((r.top + r.height/2) / vh - 0.5) * 60;
+      img.style.transform = 'translateY('+t+'px)';
+      ticking = false;
+    }
+    window.addEventListener('scroll', function(){ if(!ticking){ requestAnimationFrame(tick); ticking=true; } }, {passive:true});
+    tick();
+  })();
 </script>
 
 <!-- COOKIE BANNER -->
