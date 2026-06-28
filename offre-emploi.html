@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -21,7 +21,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .nav-tag{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--grey);}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
 .nav-links>li{position:relative;}
-.nav-links>li>a{font-size:15px;font-weight:500;color:var(--grey);text-decoration:none;padding:7px 14px;border-radius:2px;transition:color var(--t),background var(--t);display:flex;align-items:center;gap:5px;white-space:nowrap;}
+.nav-links>li>a{font-size:13px;font-weight:500;color:var(--grey);text-decoration:none;padding:7px 14px;border-radius:2px;transition:color var(--t),background var(--t);display:flex;align-items:center;gap:5px;white-space:nowrap;}
 .nav-links>li>a:hover{color:var(--vw);background:rgba(0,30,80,.05);}
 .nav-links>li>a.has-drop::after{content:'';display:inline-block;width:0;height:0;border-left:3.5px solid transparent;border-right:3.5px solid transparent;border-top:4px solid currentColor;margin-left:2px;transition:transform var(--t);}
 .nav-links>li:hover>a.has-drop::after{transform:rotate(180deg);}
@@ -67,6 +67,41 @@ footer{background:var(--vw);padding:52px 56px 0;border-top:1px solid rgba(255,25
 .empty-contact svg{width:15px;height:15px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round;}
 
 /* ═══════════════════════════════════════
+   OFFRE D'EMPLOI — CARD
+═══════════════════════════════════════ */
+.jobs-wrap{padding:80px 56px 100px;display:flex;flex-direction:column;gap:48px;}
+.job-card{border:1px solid var(--rule);border-radius:4px;overflow:hidden;background:#fff;box-shadow:0 4px 24px rgba(0,30,80,.06);}
+.job-card-header{background:var(--vw);padding:36px 48px;display:flex;align-items:flex-start;justify-content:space-between;gap:24px;}
+.job-card-header-inner{display:flex;flex-direction:column;gap:10px;}
+.job-badge{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--vwl);}
+.job-badge::before{content:'';display:block;width:6px;height:6px;border-radius:50%;background:var(--vwl);animation:blink 2s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+.job-title{font-size:clamp(22px,3vw,30px);font-weight:800;color:#fff;letter-spacing:-.5px;line-height:1.15;}
+.job-title em{font-style:italic;font-weight:200;color:var(--vwl);}
+.job-meta{display:flex;flex-wrap:wrap;gap:16px;margin-top:4px;}
+.job-chip{font-size:11px;font-weight:500;color:rgba(255,255,255,.6);display:flex;align-items:center;gap:6px;}
+.job-chip svg{width:13px;height:13px;stroke:var(--vwl);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+.job-card-body{padding:48px 48px 40px;display:grid;grid-template-columns:1fr 1fr;gap:40px 56px;}
+.job-section{display:flex;flex-direction:column;gap:16px;}
+.job-section-full{grid-column:1/-1;}
+.job-section-title{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--vwm);display:flex;align-items:center;gap:10px;}
+.job-section-title::before{content:'';display:block;width:18px;height:1.5px;background:var(--vwm);flex-shrink:0;}
+.job-list{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.job-list li{font-size:14px;font-weight:300;color:var(--vw);line-height:1.55;padding-left:18px;position:relative;}
+.job-list li::before{content:'—';position:absolute;left:0;color:var(--vwl);font-weight:600;}
+.job-card-footer{background:var(--off);border-top:1px solid var(--rule);padding:32px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.job-footer-info{display:flex;flex-direction:column;gap:6px;}
+.job-footer-label{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--grey);}
+.job-footer-text{font-size:13px;font-weight:400;color:var(--vw);}
+.job-footer-actions{display:flex;flex-direction:column;align-items:flex-end;gap:6px;}
+.job-cta{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:var(--vwm);color:#fff;text-decoration:none;padding:14px 28px;border-radius:2px;transition:all .3s ease;}
+.job-cta:hover{background:var(--vw);transform:translateY(-1px);}
+.job-cta svg{width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.job-footer-alt{font-size:12px;font-weight:300;color:var(--grey);text-align:right;}
+.job-footer-alt a{color:var(--grey);text-decoration:none;border-bottom:1px solid var(--rule);transition:color .25s;}
+.job-footer-alt a:hover{color:var(--vwm);}
+
+/* ═══════════════════════════════════════
    RESPONSIVE — TABLETTE & MOBILE
 ═══════════════════════════════════════ */
 
@@ -82,6 +117,8 @@ footer{background:var(--vw);padding:52px 56px 0;border-top:1px solid rgba(255,25
   nav{padding:0 24px;}
   .nav-links{gap:1px;}
   .nav-links>li>a{font-size:12px;padding:6px 10px;}
+  .job-card-body{grid-template-columns:1fr;}
+  .jobs-wrap{padding:60px 40px 80px;}
 }
 
 /* ── MOBILE (≤700px) ── */
@@ -182,6 +219,15 @@ footer{background:var(--vw);padding:52px 56px 0;border-top:1px solid rgba(255,25
   /* Occasions */
   .occ-grid{grid-template-columns:1fr !important;}
 
+  /* Offre d'emploi */
+  .jobs-wrap{padding:40px 20px 60px;}
+  .job-card-header{padding:28px 24px;}
+  .job-card-body{padding:32px 24px;gap:28px;}
+  .job-card-footer{padding:24px;flex-direction:column;align-items:flex-start;}
+  .job-footer-actions{align-items:stretch;width:100%;}
+  .job-cta{justify-content:center;}
+  .job-footer-alt{text-align:left;}
+
   /* Cookie banner */
   #cookieBanner{padding:16px 20px;flex-direction:column;align-items:flex-start;gap:14px;}
   .cookie-btns{width:100%;flex-direction:row;}
@@ -273,8 +319,8 @@ footer{background:var(--vw);padding:52px 56px 0;border-top:1px solid rgba(255,25
         <a href="services.html#totalglass">Totalglass — Vitrage</a>
       </div>
     </li>
-    <li><a href="reparation-ecran-mib2.html">Actions</a></li>
     <li><a href="index.html#contact">Contact</a></li>
+    <li><a href="https://rossysa.sopl.ch/#loginSection" target="_blank" class="nav-btn">Rendez-vous →</a></li>
   </ul>
 </nav>
 
@@ -285,17 +331,99 @@ footer{background:var(--vw);padding:52px 56px 0;border-top:1px solid rgba(255,25
   </div>
 </div>
 
-<div class="empty-state">
+<div class="jobs-wrap">
+
   <div class="s-eyebrow">Postes disponibles</div>
-  <div class="empty-icon">
-    <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+
+  <div class="job-card">
+
+    <!-- EN-TÊTE -->
+    <div class="job-card-header">
+      <div class="job-card-header-inner">
+        <div class="job-badge">Poste ouvert</div>
+        <h2 class="job-title">Mécatronicien(ne) d'automobiles<br><em>/ Diagnosticien(ne) automobile</em></h2>
+        <div class="job-meta">
+          <span class="job-chip">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Léchelles, Fribourg
+          </span>
+          <span class="job-chip">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Entrée en fonction à convenir
+          </span>
+          <span class="job-chip">
+            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+            CDI · Temps plein
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CORPS -->
+    <div class="job-card-body">
+
+      <div class="job-section">
+        <div class="job-section-title">Votre profil</div>
+        <ul class="job-list">
+          <li>CFC de mécatronicien(ne) d'automobiles</li>
+          <li>Plusieurs années d'expérience en atelier</li>
+          <li>Brevet fédéral de diagnosticien(ne) automobile : un avantage</li>
+          <li>Très bonnes connaissances en mécanique, électricité, électronique et systèmes de diagnostic</li>
+          <li>Maîtrise de la recherche de pannes et capacité à analyser des problèmes techniques complexes</li>
+          <li>Personne autonome, méthodique et consciencieuse</li>
+          <li>Esprit d'équipe et sens des responsabilités</li>
+          <li>Expérience sur les marques du groupe VW : un avantage</li>
+          <li>Permis de conduire catégorie B</li>
+        </ul>
+      </div>
+
+      <div class="job-section">
+        <div class="job-section-title">Vos missions</div>
+        <ul class="job-list">
+          <li>Effectuer des diagnostics précis et des recherches de pannes</li>
+          <li>Intervenir sur les systèmes mécaniques, électriques et électroniques des véhicules</li>
+          <li>Réaliser les travaux de maintenance, réparation et remise en état</li>
+          <li>Effectuer les contrôles qualité avant restitution des véhicules aux clients</li>
+          <li>Apporter un soutien technique à l'équipe atelier</li>
+          <li>Participer au partage des connaissances et à l'évolution technique de l'atelier</li>
+        </ul>
+      </div>
+
+      <div class="job-section job-section-full">
+        <div class="job-section-title">Nous offrons</div>
+        <ul class="job-list">
+          <li>Un emploi stable au sein d'une entreprise familiale reconnue depuis plus de 30 ans</li>
+          <li>Un atelier moderne équipé avec des outils de diagnostic et équipements de dernière génération</li>
+          <li>Une activité variée avec des responsabilités et une réelle autonomie</li>
+          <li>Un environnement de travail basé sur la confiance, la qualité et l'entraide</li>
+          <li>Des possibilités de formations continues et d'évolution selon vos compétences</li>
+          <li>Des décisions rapides et un contact direct avec la direction</li>
+          <li>Des conditions salariales attractives selon votre expérience et vos qualifications</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- PIED -->
+    <div class="job-card-footer">
+      <div class="job-footer-info">
+        <div class="job-footer-label">Candidature</div>
+        <div class="job-footer-text">Dossier complet (CV, lettre de motivation, diplômes) par e-mail ou courrier postal</div>
+      </div>
+      <div class="job-footer-actions">
+        <a class="job-cta" href="mailto:pierrette.julmy@rossysa.ch?subject=Candidature%20%E2%80%94%20M%C3%A9catronicien%2FDiagnosticien">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+          Envoyer ma candidature
+        </a>
+        <div class="job-footer-alt">
+          ou par courrier : <a href="#">Garage Rossy SA · Route de Payerne 14 · 1773 Léchelles</a><br>
+          À l'attention de Mme Pierrette Julmy
+        </div>
+      </div>
+    </div>
+
   </div>
-  <div class="empty-title">Aucun poste à pourvoir actuellement.</div>
-  <div class="empty-text">Nous n'avons pas d'offre d'emploi ouverte en ce moment. Vous pouvez toutefois nous adresser une candidature spontanée — nous l'étudierons avec attention.</div>
-  <a class="empty-contact" href="mailto:info@rossysa.ch">
-    <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
-    Envoyer une candidature spontanée
-  </a>
+
 </div>
 
 <footer>
@@ -312,7 +440,7 @@ footer{background:var(--vw);padding:52px 56px 0;border-top:1px solid rgba(255,25
   </div>
   <div class="f-col">
     <div class="f-col-title">Horaires</div>
-    <div class="f-info">Lun – Jeu · 07h30 – 12h00 / 13h30 – 17h30<br>Ven · 07h30 – 12h00 / 13h30 – 17h00</div>
+    <div class="f-info">Lun – Ven · 07h30 – 12h00 / 13h30 – 17h30</div>
     <div class="f-info">Samedi · sur rendez-vous</div>
     <div class="f-info" style="margin-top:6px;">Digibox · 24h/24 · 7j/7</div>
   </div>
